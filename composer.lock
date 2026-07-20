@@ -5738,16 +5738,16 @@
         },
         {
             "name": "statamic-addon/visual-editor",
-            "version": "v1.1.4",
+            "version": "v1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/VizuallGit/statamic-addon-visual-editor.git",
-                "reference": "ec9ea27111011d26a9b0fa8023a4556302f667bb"
+                "reference": "1712f0ccca0fb8eddedf6cbb04ba0686e1f4a142"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VizuallGit/statamic-addon-visual-editor/zipball/ec9ea27111011d26a9b0fa8023a4556302f667bb",
-                "reference": "ec9ea27111011d26a9b0fa8023a4556302f667bb",
+                "url": "https://api.github.com/repos/VizuallGit/statamic-addon-visual-editor/zipball/1712f0ccca0fb8eddedf6cbb04ba0686e1f4a142",
+                "reference": "1712f0ccca0fb8eddedf6cbb04ba0686e1f4a142",
                 "shasum": ""
             },
             "require": {
@@ -5783,9 +5783,9 @@
             ],
             "support": {
                 "issues": "https://github.com/VizuallGit/statamic-addon-visual-editor/issues",
-                "source": "https://github.com/VizuallGit/statamic-addon-visual-editor/tree/v1.1.4"
+                "source": "https://github.com/VizuallGit/statamic-addon-visual-editor/tree/v1.1.6"
             },
-            "time": "2026-07-19T15:17:17+00:00"
+            "time": "2026-07-20T21:20:12+00:00"
         },
         {
             "name": "statamic-rad-pack/mailchimp",
