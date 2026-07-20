@@ -1,0 +1,41 @@
+name: 'Camilla Gylden Thomsen'
+super: false
+roles:
+  - content_editor
+id: aecc3e7e-e8a0-4c09-b361-0a4fef1d62a0
+password_hash: $2y$12$asN1vLKNVAqbWasljpoYVeyT/EKgnuoRzaTGmLhtnoX2V.Z9k/JJ6
+preferences:
+  collections:
+    pages:
+      view: tree
+      after_save: continue_editing
+    sponsor:
+      view: list
+      columns:
+        - title
+        - status
+        - sponsor_group
+    players:
+      view: list
+      columns:
+        - title
+        - squad_type
+        - slug
+        - status
+      after_save: continue_editing
+    news:
+      view: list
+    employees:
+      view: list
+      columns:
+        - title
+        - status
+        - category
+  assets:
+    assets:
+      mode: grid
+    editor_checkerboard_mode: dark
+  theme: null
+  locale: da
+  color_mode: dark
+  formatting_locale: da

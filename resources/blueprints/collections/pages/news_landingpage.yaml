@@ -1,0 +1,36 @@
+hide: true
+title: 'News landingpage'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: headline
+            field:
+              type: text
+              display: Headline
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: hide_in_main_nav
+            field:
+              type: toggle
+              display: 'Hide in main nav'

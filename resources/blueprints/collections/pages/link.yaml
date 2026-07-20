@@ -1,0 +1,64 @@
+title: Link
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: redirect
+            field:
+              type: group
+              width: '100'
+              validate:
+                - required
+              fields:
+                -
+                  handle: url
+                  field:
+                    type: link
+                    required: true
+                    width: '100'
+                    display: Location
+                -
+                  handle: status
+                  field:
+                    type: radio
+                    inline: 'true'
+                    required: true
+                    options:
+                      301: '301 (Permanent)'
+                      302: '302 (Temporary)'
+                    width: '100'
+                    display: 'HTTP Status'
+                    default: 302
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: hide_in_main_nav
+            field:
+              type: toggle
+              display: 'Hide in main nav'
+          -
+            handle: highlighted_in_main_nav
+            field:
+              type: toggle
+              display: 'Highlighted in main nav'
+              unless:
+                hide_in_main_nav: 'equals true'

@@ -1,0 +1,12 @@
+title: 'Featured players'
+fields:
+  -
+    handle: section_headline
+    field: common_fields.section_headline
+  -
+    handle: list
+    field:
+      collections:
+        - players
+      type: entries
+      display: List

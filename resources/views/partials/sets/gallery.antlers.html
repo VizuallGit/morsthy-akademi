@@ -1,0 +1,15 @@
+{{ if type == "gallery" }}
+    <div class="gallery auto-grid auto-grid-md gap-500 my-[2em]{{ if last }} !mb-0{{ /if }}" data-gallery>
+        {{ list }}
+            <div class="flow-y flow-space-600 flex flex-col">
+                <button type="button" class="image-overlay block border border-white shadow cursor-zoom-in w-full" data-src="{{ glide :src="image" width="1600" height="1200" }}">
+                    <img loading="lazy" class="w-full object-cover" src="{{ glide :src="image" width="350" height="350" }}" alt="{{ image:alt }}">
+                </button>
+                {{ if title }}
+                    <p class="opacity-80">{{ title }}</p>
+                {{ endif }}
+                <a class="font-bold flow-space-none" href="{{ image:url }}" download>Download billede/file</a>
+            </div>
+        {{ /list }}
+    </div>
+{{ /if }}

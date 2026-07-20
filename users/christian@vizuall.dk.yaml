@@ -1,0 +1,8 @@
+name: 'Christian Kloster'
+super: true
+id: 596a4ace-e809-42dc-96a6-cafa38ef0335
+password_hash: $2y$12$d1MlLDdtCOa8vVkr6QRK5uf6EqkWSvIt6g.6FZyCHWJhQIPg.p/7q
+preferences:
+  collections:
+    players:
+      view: list

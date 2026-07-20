@@ -1,0 +1,91 @@
+{{ if top_banner_image }}
+    <div class="mx-gutter">
+        <div class="rounded-sm overflow-clip">
+            {{ partial:components/picture :imagePath="top_banner_image" ratio="5" }}
+        </div>
+    </div>
+{{ endif }}
+
+<div class="wrapper py-lg space-y-gutter" x-data="{
+    selectedYear: String(new Date().getFullYear()),
+    years: [],
+    currentPage: 1,
+    perPage: 9,
+    allItems: [],
+    init() {
+        this.allItems = [...this.$el.querySelectorAll('li[data-year]')]
+        const ys = this.allItems.map(el => el.dataset.year)
+        this.years = [...new Set(ys)].sort((a, b) => b - a)
+        this.$watch('selectedYear', () => { this.currentPage = 1 })
+    },
+    get filtered() {
+        return this.allItems.filter(el => el.dataset.year === this.selectedYear)
+    },
+    get totalPages() {
+        return Math.ceil(this.filtered.length / this.perPage)
+    },
+    get pageRange() {
+        return Array.from({ length: this.totalPages }, (_, i) => i + 1)
+    },
+    isVisible(el) {
+        const idx = this.filtered.indexOf(el)
+        if (idx === -1) return false
+        const start = (this.currentPage - 1) * this.perPage
+        return idx >= start && idx < start + this.perPage
+    }
+}">
+    <div class="flex items-end justify-between gap-400">
+        <div class="flow-y">
+            <h1>{{ headline ? headline : title }}</h1>
+        </div>
+         <label class="font-heading uppercase font-medium text-sm flex items-center gap-400" for="year-filter"><span>Filtrer efter år</span>
+            <div class="relative w-[6rem] h-750">
+                <select id="year-filter" x-model="selectedYear" class="w-full h-full focus:outline-dark bg-light-glare dark:bg-dark-shade text-dark dark:text-light-glare text-sm font-heading uppercase font-semibold rounded-sm py-0 pl-[1em] pr-[calc(1em+.7em)] h-full appearance-none cursor-pointer focus:outline-1 focus:outline-dark/30">
+                    <template x-for="year in years" :key="year">
+                        <option :value="year" x-text="year"></option>
+                    </template>
+                </select>
+                {{ svg src="small-arrow" class="w-[.8em] h-auto absolute right-[1em] top-1/2 -translate-y-1/2 pointer-events-none"  }}
+            </div>
+        </label>
+    </div>
+
+    <ul class="grid md:grid-cols-3 gap-gutter">
+        {{ collection from="news" sort="date:desc" }}
+            <li class="relative flex flex-col group" data-year="{{ date format='Y' }}" x-show="isVisible($el)">
+                <div class="lqip aspect-4/3 relative rounded-t-sm overflow-clip" style="background-image: url('{{ glide:featured_image quality="1" fit="crop_focal" format="webp" width="50" height="35" }}'); background-size: cover; background-position: center;">
+                    {{ partial:components/image :imagePath="featured_image" h="350" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out" }}
+                    <div class="absolute bottom-100 left-600 leading-flat z-20 flex gap-2 *:text-xxs *:py-05em *:px-08em font-heading font-bold *:rounded-sm">
+                        <span class="bg-primary text-light-glare first-letter:uppercase">{{ if label_date }}{{ label_date iso_format="DD/MM-YYYY" }}{{ else }}{{ date iso_format="DD/MM-YYYY" }}{{ /if }}</span>
+                        {{ if author }} 
+                            <span class="bg-light-glare text-dark-shade">af: {{ author.name }}</span>
+                        {{ endif }}
+                    </div>
+                </div>
+                <div class="bg-dark-shade p-600 flow-y grow flex flex-col items-start">
+                    <h3 class="h4"><a class="link-parent line-clamp-2" href="{{ url}}">{{ title }}</a></h3>
+                    <p class="text-sm opacity-70 line-clamp-4 grow">{{ main_content | bard_text | safe_truncate(200) }}</p>
+                    <span class="h5 text-xs flex items-center gap-1em group flow-space-600"><span class="underline underline-offset-4">Læs mere her <span class="sr-only">om {{ title }}</span></span><span class="size-2em flex justify-center items-center rounded-sm relative overflow-hidden text-light-glare bg-primary-glare">{{ svg src="small-arrow" class=" absolute -rotate-90 translate-x-[-200%] group-hover:translate-x-[0%] duration-300 ease-in-out" }} {{ svg src="small-arrow" class="absolute -rotate-90 group-hover:translate-x-[200%] duration-300 ease-in-out" }}</span></span>
+                </div>
+            </li>
+        {{ /collection }}
+    </ul>
+
+    <nav class="flex items-center justify-center gap-200" x-show="totalPages > 1">
+        <button @click="currentPage--" :disabled="currentPage === 1" class="btn bg-dark-shade disabled:opacity-30">←</button>
+        <template x-for="page in pageRange" :key="page">
+            <button @click="currentPage = page" :class="currentPage === page ? 'bg-primary text-light-glare' : 'bg-dark-shade'" class="btn">
+                <span x-text="page"></span>
+            </button>
+        </template>
+        <button @click="currentPage++" :disabled="currentPage === totalPages" class="btn bg-dark-shade disabled:opacity-30">→</button>
+    </nav>
+</div>
+
+
+{{ section:view_transition }}
+    <style>
+        @view-transition { navigation: auto; }
+        ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+    </style>
+{{ /section:view_transition }}

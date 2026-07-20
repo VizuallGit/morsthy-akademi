@@ -1,0 +1,53 @@
+name: 'Frederik Andersen'
+roles:
+  - content_editor
+id: 15aa9649-6a48-4a91-8d27-2be6ca503763
+password_hash: $2y$12$vsX7VrhCZoEmwve.8PDy5eVaPmyFttVrU1wcp9ce1TOKaTnUb.QIC
+preferences:
+  collections:
+    pages:
+      view: tree
+      after_save: continue_editing
+    sponsor:
+      view: list
+      columns:
+        - title
+        - status
+        - sponsor_group
+      per_page: 100
+    players:
+      view: list
+      columns:
+        - title
+        - squad_type
+        - slug
+        - status
+      after_save: continue_editing
+    news:
+      view: list
+    employees:
+      view: list
+      columns:
+        - title
+        - status
+        - category
+    listing_mode: list
+  assets:
+    assets:
+      per_page: 100
+    editor_checkerboard_mode: dark
+    browser_thumbnail_size: 285
+  theme: null
+  locale: da
+  color_mode: light
+  formatting_locale: da
+  taxonomies:
+    sponsor_group:
+      columns:
+        - title
+        - slug
+        - order
+    squad_type:
+      columns:
+        - title
+        - slug

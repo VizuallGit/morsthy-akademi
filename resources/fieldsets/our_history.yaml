@@ -1,0 +1,38 @@
+title: 'Our history'
+fields:
+  -
+    handle: section_headline
+    field: common_fields.section_headline
+  -
+    handle: list
+    field:
+      type: replicator
+      display: List
+      collapse: accordion
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            item:
+              display: Item
+              fields:
+                -
+                  handle: year
+                  field:
+                    type: text
+                    display: Year
+                -
+                  handle: headline
+                  field:
+                    type: text
+                    display: Headline
+                -
+                  handle: text
+                  field: common_fields.simple_text
+                  config:
+                    display: Text
+                -
+                  handle: highlighted
+                  field:
+                    type: toggle
+                    display: Highlighted

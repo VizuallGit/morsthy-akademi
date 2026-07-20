@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'widescreen-fallback';
+    src: local('Helvetica'), local('Arial');
+    size-adjust: 95%;
+    ascent-override: 88%;
+    descent-override: 22%;
+    line-gap-override: 0%;
+    font-weight: 600 800;
+    font-style: normal;
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  src: url('/public/fonts/Inter.woff2') format('woff2');
+}
+
+
+@font-face {
+  font-display: swap;
+  font-family: "Iconfont";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/public/fonts/Iconfont.woff2") format("woff");
+}
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{
+  text-wrap: balance;
+  font-family: var(--font-heading);
+  line-height: var(--leading-flat);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-narrow);
+}
+  
+h1,
+.h1 {
+  font-size: var(--size-700);
+  max-width: 30ch;
+}
+
+h2,
+.h2 {
+  font-size: var(--size-600);
+  max-width: 35ch;
+}
+
+h3,
+.h3 {
+  font-size: var(--size-400);
+  max-width: 55ch;
+}
+
+h4,
+.h4 {
+  font-size: var(--size-300);
+}
+
+h5,
+.h5 {
+  font-size: var(--size-200);
+}
+
+h6,
+.h6 {
+  font-size: var(--size-200);
+}
+
+p{
+  text-wrap: pretty;
+}
+
+.title{
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.title + h1, .title + h2, .title + h3 {
+  --flow-space: .5em;
+}
+
+.text-large{
+  font-size: calc(1rem + 1px);
+  font-weight: 600;
+  line-height: var(--leading-relax);
+}
+
+p a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 600;
+}

@@ -1,0 +1,37 @@
+title: 'Sponsor group'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: main_content
+            field: main_content.main_content
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              required: true
+              validate:
+                - required
+                - 'max:200'
+          -
+            handle: order
+            field:
+              input_type: number
+              type: text
+              display: Order
+              instructions: 'Indtast nummer ud fra den rækkefølge som de skal sorteres i.'

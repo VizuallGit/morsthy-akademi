@@ -1,0 +1,10 @@
+{{ if media_top_banner }}
+<div class=" w-[calc(100vw-(var(--gutter)*2))] mx-auto rounded-sm overflow-clip">
+    {{ partial:components/picture :imagePath="media_top_banner" lgRatio="4" class="image-overlay  " }}
+</div>
+{{ endif }}
+{{ if page_sections }}
+    {{ page_sections }}
+        {{ partial src="page_sections/{{ type }}" id="{{ id }}" typeClass="{type | slugify}" prev_type="{{ prev:type }}" next_type="{{ next:type }}" }}
+    {{ /page_sections }}
+{{ endif }}

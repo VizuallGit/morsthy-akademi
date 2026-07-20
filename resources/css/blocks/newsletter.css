@@ -1,0 +1,36 @@
+.newsletter{
+    form{
+        font-size: var(--size-xxs);
+
+        label{
+            font-weight: 700;
+        }
+
+        input[type=text], input[type=email], input[type=tel]{
+            appearance: none;
+            background-color: transparent;
+            padding-inline: 1.2em;
+            padding-block: 1.1em;
+            line-height: 1;
+            width: 100%;
+            border: 1px;
+            border: 1px solid color-mix(in oklch, var(--color-light-glare), transparent 80%);
+            border-radius: var(--radius-xs);
+            @apply appearance-none focus:outline-primary focus:outline-1;
+
+            &::placeholder {
+                color: inherit;
+                opacity: .7;
+            }
+        }
+
+        textarea{
+        min-height: 5rem;
+        }
+
+
+        button{
+        cursor: pointer;
+        }
+    }
+}

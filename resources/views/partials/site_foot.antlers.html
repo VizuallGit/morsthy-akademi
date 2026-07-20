@@ -1,0 +1,73 @@
+{{ m_size = switch(
+    (size == 'small') => 'h-500',
+    (size == 'large') => 'h-700',
+    () => 'h-600'
+) }}
+
+<footer class="bg-dark-shade text-light-glare wrapper ">
+    <div class="border-b border-black py-900 flex items-center gap-900">
+        <a class="relative -mt-800 before:pointer-events-none before:absolute before:left-[10.55%] before:top-0 before:w-[46%] before:aspect-square before:bg-dark-shade before:rounded-full before:-translate-x-1/2 before:-translate-y-1/2" href="/" aria-label="Gå til {{ settings:site_name }} forside">
+            {{ svg src="logo" class="h-[clamp(4rem,10cqi,7rem)] w-auto relative z-10" }}
+        </a>
+        <div class="overflow-hidden relative grow [&::before,&::after]:absolute [&::before,&::after]:top-0 [&::before,&::after]:h-full [&::before,&::after]:w-lg [&::before,&::after]:z-10 [&::before,&::after]:bg-linear-90 [&::before,&::after]:from-dark-shade [&::before,&::after]:to-dark-shade/0 before:left-0 after:right-0 after:scale-[-1]">
+            <ul id="marquee-logos" class="site-foot__logos flex items-center gap-x-950 w-max [animation:marquee_40s_linear_infinite]">
+                {{ site_settings.sponsor_list }}
+                    <li class="shrink-0">
+                        {{ svg src="/public/assets/sponsors/svg/{{ logo }}" class="{{ _size }} w-auto fill-current/60 *:fill-current/60" }}
+                    </li>
+                {{ /site_settings.sponsor_list }}
+            </ul>
+        </div>
+    </div>
+    <div class="relative overflow-y-clip border-t border-light-glare/10 py-900 grid grid-cols-1 sm:grid-cols-[.7fr_1fr] md:grid-cols-[auto_auto_auto] lg:grid-cols-[auto_auto_auto_1fr] text-sm [&_.title]:opacity-60">
+        <div class="flow-y flow-space-400 pb-gutter md:pb-0 border-b border-b-black md:pr-gutter lg:pr-lg border-r border-black">
+            <p class="title">Kontakt info</p>
+            <p>{{ site_settings.address }}<br>{{ site_settings.zip }}<br>Cvr: {{ site_settings.cvr }}</p>
+            <ul>
+                <li><span>Tlf: </span><a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a></li>
+                <li><span>email: </span><a href="tel:{{ site_settings.email }}">{{ site_settings.email }}</a></li>
+            </ul>
+            {{ partial:components/socialmedia dark="true" }}
+        </div>
+        <div class="flow-y flow-space-400 py-gutter sm:py-none border-b border-b-black border-t border-t-white/10 sm:border-t-0 sm:pl-900 md:px-gutter lg:px-lg sm:border-x border-l-white/10 border-r-black">
+            <p class="title">Nyttige links</p>
+            <nav aria-label="footer navigation">
+                {{ nav:footer_menu as="items" }}
+                    <menu class="space-y-2.5 grid gap-x-gutter {{ items | count < 5 ? 'grid-cols-1' : 'grid-cols-[auto_auto]' }}">
+                        {{ items }}
+                            <li><a class="underline underline-offset-5 decoration-current/70" href="{{ url }}">{{ title }}</a></li>
+                        {{ /items }}
+                    </menu>
+                {{ /nav:footer_menu }}
+            </nav>
+        </div>
+        <div class="flow-y flow-space-400 pt-gutter md:pt-none border-t md:border-t-0 border-t-white/10 relative z-10 sm:col-span-2 md:col-span-1 md:pl-gutter lg:pl-lg md:border-l md:border-l-white/10">
+            <p class="title">Billetter</p>
+            <div class="flex flex-row md:flex-col gap-100 items-center md:items-start">
+                <p class="max-w-[25ch]">Du kan købe billetter her på linket nedenfor.</p>
+                {{ partial:components/btn text="Køb billet her" url="https://shop.morsthy.dk/" target_blank="true" class="bg-primary-glare hover:bg-light-glare hover:text-dark-shade" }}
+            </div>
+        </div>
+        {{ svg src="logo-icon" class="hidden xl:block absolute -right-(--container-padding) -bottom-800 text-dark-glare h-[90%] w-auto translate-x-1/4 rotate-20 border-0!" }}
+    </div>
+    
+    <div class="full-bleed bg-dark-glare relative ">
+        <div class="wrapper py-400 text-xs text-current/50 flex flex-wrap gap-y-100 gap-x-gutter items-center">
+            <p><span id="year"></span> {{ site_settings.copyright }}</p>
+            <div class="flex items-center gap-400">
+                <p>Vi samarbejder med</p>
+                <ul class="flex gap-3">
+                    {{ site_settings.samarbejdspartner }}
+                    <li><a aria-label="Link til {{ url }}" target="_blank" href="{{ prefix + url }}">
+                        {{ glide :src="logo" height="25" }}
+                            <img class="opacity-50 hover:opacity-100 transition-opacity duration-300" src="{{ url }}" width="{{ width }}" height="{{ height }}" alt="">
+                        {{ /glide }}
+                    </a></li>
+                    {{ /site_settings.samarbejdspartner }}
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+</footer>

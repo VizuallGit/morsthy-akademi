@@ -1,0 +1,26 @@
+name: Flemming
+super: true
+id: 3e9513da-d4ea-43fe-b935-005708a78c2e
+password_hash: $2y$12$yu26J3z65m7T3LCFP/VEee9voJEQJzec4lmRY7aVvmp91.SVhsC5G
+preferences:
+  locale: en
+  formatting_locale: da
+  theme: null
+  color_mode: dark
+  collections:
+    sponsor:
+      view: list
+    news:
+      view: list
+    pages:
+      view: tree
+      after_save: continue_editing
+    employees:
+      view: list
+    players:
+      view: list
+    author:
+      view: list
+  assets:
+    assets:
+      mode: grid

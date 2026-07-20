@@ -1,0 +1,20 @@
+{
+  "resources/js/addon.js": {
+    "file": "assets/addon-B6ttjKVz.js",
+    "name": "addon",
+    "src": "resources/js/addon.js",
+    "isEntry": true
+  },
+  "resources/js/bridge.js": {
+    "file": "assets/bridge-vHA5OQ01.js",
+    "name": "bridge",
+    "src": "resources/js/bridge.js",
+    "isEntry": true
+  },
+  "resources/js/preview.js": {
+    "file": "assets/preview-i_8Y6gCz.js",
+    "name": "preview",
+    "src": "resources/js/preview.js",
+    "isEntry": true
+  }
+}

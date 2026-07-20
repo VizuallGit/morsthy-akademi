@@ -1,0 +1,62 @@
+title: Intro
+fields:
+  -
+    handle: text
+    field:
+      buttons:
+        - h1
+        - bold
+        - italic
+        - removeformat
+        - Title
+        - color
+      toolbar_mode: floating
+      container: assets
+      remove_empty_nodes: false
+      type: bard
+      display: Text
+  - handle: links
+    field: links.links
+  -
+    handle: slider
+    field:
+      type: grid
+      display: Slider
+      fields:
+        -
+          handle: media
+          field:
+            container: assets
+            max_files: 1
+            type: assets
+            display: Media
+        -
+          handle: title
+          field:
+            type: text
+            display: Title
+  -
+    handle: show_settings
+    field:
+      type: revealer
+      display: 'Show settings'
+  -
+    handle: settings
+    field:
+      type: group
+      display: Settings
+      if:
+        show_settings: 'equals true'
+      fields:
+        -
+          handle: pause_on_hover
+          field:
+            type: toggle
+            display: 'Pause slider on hover'
+        -
+          handle: slider_animation_speed
+          field:
+            min: 1
+            max: 10
+            type: range
+            display: 'Slider animation speed'

@@ -1,0 +1,16 @@
+{{ _icon_size= switch(
+    (settings.icon_size == 'sm') => 'h-xl',
+    (settings.icon_size == 'md') => 'h-xxl',
+    () => 'h-huge',
+) }}
+
+<article class="wrapper flex items-center gap-lg pt-{{ settings.pt }} pb-{{ settings.pb }}" data-contrast style="background-color: {{ settings.color }};" {{ visual_edit outline-inside="true" section-orderable="true" }}>
+    <div class="text-500 md:text-550 font-light prose-p:text-[color-mix(in_srgb,var(--text-color)_70%,transparent)] prose-strong:text-(--text-color) prose-strong:font-medium {{ settings.icon_position == 'left' ? 'order-2' : 'order-1' }}" {{ visual_edit field="text" inline_edit="true" }}>
+        {{ text }}
+    </div>
+    {{ if icon }}
+        <div class="hidden md:block relative after:absolute after:right-0 after:top-0 after:size-160 after:rounded-full after:bg-radial after:from-white/10 after:to-white/0 after:to-70% after:-translate-y-1/2 after:translate-x-1/3 {{ settings.icon_position == 'left' ? 'order-1' : 'order-2' }}">
+            {{ svg src="/assets/icons/{{ icon }}" class="{{ _icon_size }} w-auto shrink-0 opacity-50  animate-spin [animation-timeline:scroll(block_root)] [animation-range:0%_100%] [animation-duration:auto]" }}
+        </div>
+    {{ endif }}
+</article>

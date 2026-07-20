@@ -1,0 +1,38 @@
+title: 'Featured news'
+fields:
+  -
+    handle: sponsors
+    field:
+      type: replicator
+      display: Sponsorer
+      sets:
+        main:
+          display: Main
+          sets:
+            sponsor:
+              display: Sponsor
+              fields:
+                -
+                  handle: logo
+                  field:
+                    path: assets/sponsors/svg
+                    path_helper: public_path
+                    type: iconamic
+                    display: Logo
+                -
+                  handle: text
+                  field: common_fields.simple_text
+                  config:
+                    display: Text
+                -
+                  handle: url
+                  field:
+                    type: link
+                    display: Url
+                    width: 50
+                -
+                  handle: link_text
+                  field:
+                    type: text
+                    display: 'Link text'
+                    width: 50

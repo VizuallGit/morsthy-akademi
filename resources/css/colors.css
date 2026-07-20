@@ -1,0 +1,14 @@
+:root{
+    --primary-glare: #1F52FD;
+    --primary: #183DBD;
+    --primary-shade: #10287E;
+    --secondary-glare: #FFCB66;
+    --secondary: #FDB934;
+    --secondary-shade: #FDB933;
+    --dark-glare: #121E40;
+    --dark: #03123F;
+    --dark-shade: #010B2C;
+    --light-glare: #ECEFF9;
+    --light: #E1E4EF;
+    --light-shade: #D9DBE3;
+}

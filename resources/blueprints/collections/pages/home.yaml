@@ -1,0 +1,38 @@
+hide: true
+title: Home
+tabs:
+  page_sections:
+    display: 'Page sections'
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            handle: page_sections
+            field: page_sections.page_sections
+  seo:
+    display: Seo
+    sections:
+      -
+        fields:
+          -
+            import: meta
+            prefix: meta_
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

@@ -1,0 +1,55 @@
+title: Sponsor
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: hidden
+              required: false
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+          -
+            handle: logo
+            field:
+              container: assets
+              folder: sponsors
+              restrict: true
+              max_files: 1
+              type: assets
+              display: Logo
+          -
+            handle: link
+            field:
+              input_type: url
+              prepend: 'https://www.'
+              type: text
+              display: Link
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: taggable_field
+            field:
+              options:
+                - Hovedsponsor
+                - Gold
+                - Silver
+              type: taggable
+              display: 'Taggable Field'
+          -
+            handle: sponsor_group
+            field:
+              type: terms
+              taxonomies:
+                - sponsor_group
+              display: 'Sponsor group'
+              mode: select

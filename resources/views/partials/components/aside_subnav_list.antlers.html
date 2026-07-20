@@ -1,0 +1,14 @@
+{{ if items }}
+    <div class="light:bg-light-shade dark:bg-dark-shade p-600 space-y-500 border-t-5 border-t-primary-glare rounded-xs">
+        <h3 class="h4">{{ headline ? headline : 'Se også' }}</h3>
+        <nav aria-label="Sidebar navigation">
+            <ul class="text-xs border-t dark:border-t-black light:border-t-dark-shade/14">
+                {{ items }}
+                    <li class="py-08em border-t dark:border-t-white/14 not-last:border-b dark:border-b-black light:border-t-light-glare light:border-dark-shade/10 ">
+                        <a href="{{ url_prefix ? (url_prefix + '/' + slug) : url }}" class="line-clamp-2 {{ (url_prefix ? (url_prefix + '/' + slug) : url) == current_uri ?= 'font-semibold light:text-primary dark:text-[color-mix(in_oklch,var(--color-primary-glare),white_30%)]' }}">{{ title }}</a>
+                    </li>
+                {{ /items }}
+            </ul>
+        </nav>
+    </div>
+{{ /if }}

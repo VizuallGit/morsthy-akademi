@@ -1,0 +1,15 @@
+{{ category_group }}{{ cat_slug = slug }}{{ /category_group }}
+
+{{ if custom_emloyees_list == true }}
+    <ul class="auto-grid auto-grid-md gap-gutter">
+        {{ entries_list }}
+            {{ partial:components/employee_card }}
+        {{ /entries_list }}
+    </ul>
+{{ else }}
+    <ul class="auto-grid auto-grid-md gap-gutter">
+        {{ collection in="employees" :employee_category:contains="cat_slug" }}
+            {{ partial:components/employee_card }}
+        {{ /collection }}
+    </ul>
+{{ endif }}

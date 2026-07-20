@@ -1,0 +1,38 @@
+title: Links
+fields:
+  -
+    handle: links
+    field:
+      type: grid
+      display: Links
+      mode: stacked
+      fields:
+        -
+          handle: url
+          field:
+            type: link
+            display: Url
+            width: 50
+        -
+          handle: text
+          field:
+            type: text
+            display: Text
+            width: 50
+        -
+          handle: color
+          field: common_fields.color
+          config:
+            width: 33
+        -
+          handle: hover_color
+          field: common_fields.color
+          config:
+            display: 'Hover color'
+            width: 33
+        -
+          handle: outline
+          field:
+            type: toggle
+            display: Outline
+            width: 33

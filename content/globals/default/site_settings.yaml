@@ -1,0 +1,102 @@
+site_name: 'Mors-Thy Håndbold'
+phone: '+45 9615 4040'
+email: info@morsthy.dk
+address: 'H. C. Ørstedvej 15'
+zip: '7900 Nykøbing Mors'
+cvr: '27318665'
+socialmedia_links:
+  -
+    id: mlFXFgDlg88m6Km8ESta-
+    handle: morsthy
+    prefix: 'https://www.facebook.com/'
+    type: facebook
+    enabled: true
+  -
+    id: 7NYRjKoaqOGgkpqkDPdfU
+    prefix: 'https://www.instagram.com/'
+    type: instagram
+    enabled: true
+    handle: morsthy/
+  -
+    id: jLLgoNkGrGMcUOzvOal0l
+    prefix: 'https://www.linkedin.com/'
+    type: linkedin
+    enabled: true
+    handle: company/mors-thy-håndbold/
+  -
+    id: FsoXJQftqWVDIBEMColXr
+    handle: '@morsthyhaandbold'
+    prefix: 'https://www.tiktok.com/'
+    type: tiktok
+    enabled: true
+  -
+    id: k0m_nepelxecv0exQyEV6
+    handel: '@Mors-Thy'
+    prefix: 'https://www.youtube.com/'
+    type: youtube
+    enabled: true
+sponsor_list:
+  -
+    id: jrUQKHlH3SgVe25jGGswe
+    logo: thistedforsikring
+    size: medium
+  -
+    id: Fx1O01noAjxQNiLQIsFNd
+    size: medium
+  -
+    id: UDkfUV5znwOFOht0rtfQS
+    logo: thy-mors-energi
+    size: medium
+  -
+    id: UYGuaLLdqUKbGuupdItUT
+    logo: davidsen
+    size: medium
+  -
+    id: dMShy3DYavSbMz8lqf623
+    logo: craft
+    size: medium
+copyright: '© Mors-Thy Håndbold A/S. Alle rettigheder forbeholdes.'
+samarbejdspartner:
+  -
+    id: gnu3LWPitqMq26EOxAlh_
+    logo: samarbejdspartner/hf-mors.jpg
+    url: hfmors.dk/
+    prefix: 'http://'
+  -
+    id: 8ylJTeCEPLFtJek5KLrXq
+    logo: samarbejdspartner/tik.jpg
+    url: thisted-ik.dk/
+    prefix: 'http://'
+  -
+    id: YjFklM_O98Tgxo1ddYYcZ
+    logo: samarbejdspartner/mtha-logo.jpg
+    url: m-tha.dk/
+    prefix: 'http://'
+newsletter_section_headline:
+  -
+    type: heading
+    attrs:
+      level: 2
+    content:
+      -
+        type: text
+        text: 'TILMELD DIG VORES NYHEDSBREV'
+  -
+    type: paragraph
+    attrs:
+      class: null
+    content:
+      -
+        type: text
+        text: ' Og få alt det vigtigste fra klubben - direkte i din indbakke.'
+newsletter_benefits_list:
+  - 'Bliv en del af fælleskabet og få seneste nyt om kampe, spillere og begivenheder samt eksklusive fordele.'
+custom_script_header:
+  code: null
+  mode: javascript
+custom_script_footer:
+  code: null
+  mode: javascript
+custom_css:
+  code: null
+  mode: css

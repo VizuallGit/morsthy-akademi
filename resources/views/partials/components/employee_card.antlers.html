@@ -1,0 +1,25 @@
+<li class="flow-y flow-space-075em">
+    <div class="lqip aspect-square bg-current/5 rounded-xs overflow-clip w-full flex items-center justify-center" aria-label="Profil billede af {{ title }}" {{ if profile_image }}style="background-image: url('{{ glide:profile_image quality="10" fit="crop_focal" format="webp" width="50" height="50" }}'); background-size: cover; background-position: center;"{{ /if }}>
+        {{ if profile_image }}
+            {{ partial:components/image :imagePath="profile_image" class="w-full h-full object-cover" }}
+        {{ else }}
+            <p class="text-200 font-medium opacity-40" aria-hidden="true">Billede kommer</p>
+        {{ endif }}
+    </div>
+    <div class="space-y-1 flow-space-500">
+        <p class="h5">{{ title }}</p>
+        {{ if position }}
+            <p class="opacity-60 text-xs">{{ position }}</p>
+        {{ endif }}
+    </div>
+    {{ if email or phone }}
+        <ul class="flex flex-col items-start text-sm">
+            {{ if email }}
+                <li class="flex items-center gap-05em">{{ svg src="email" class="h-auto w-1em" aria-hidden="true" }}<a href="mailto:{{ email }}">{{ email }}</a></li>
+            {{ endif }}
+            {{ if phone }}
+                <li class="flex items-center gap-05em">{{ svg src="phone" class="h-auto w-1em" aria-hidden="true" }}<a href="tel:{{ phone }}">{{ phone }}</a></li>
+            {{ endif }}
+        </ul>
+    {{ endif }}
+</li>

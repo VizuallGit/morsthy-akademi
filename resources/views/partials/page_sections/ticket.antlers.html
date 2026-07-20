@@ -1,0 +1,22 @@
+<section id="id-{{ id }}" class="wrapper py-950" {{ visual_edit outline-inside="true" section-orderable="true" }}>
+    <div class="bg-dark-glare flex flex-wrap lg:flex-nowrap shadow-2xl shadow-black/50 relative z-10">
+        {{ list }}
+            <div class="relative px-700 py-700 flex items-center gap-600 md:w-1/2 grow not-last-of-type:border-b lg:border-b-0 md:not-last-of-type:border-r-2 not-last-of-type:border-dark-shade" {{ visual_edit orderable="true" }}>
+                {{ if icon_type == 'local' }}
+                    {{ svg src="/public/assets/icons/{{ ikon }}" class="h-750 w-auto max-w-800 opacity-70 shrink-0" }}
+                {{ elseif icon_type == 'iconify' }}
+                    {{ iconify:iconify class="h-750 w-auto max-w-800 opacity-70 shrink-0" }}
+                {{ endif }}
+                <div class="flex items-end gap-400 justify-between relative w-full">
+                    <div class="space-y-2">
+                        <p class="h5" {{ visual_edit field="title" inline_edit="true" }}>{{ title }}</p>
+                        <p class="opacity-70 text-xs leading-tight line-clamp-2" {{ visual_edit field="text" inline_edit="true" }}>{{ text }}</p>
+                    </div>
+                    {{ if link }}
+                        <a class="size-600 shrink-0 bg-secondary text-dark-shade rounded-sm flex items-center justify-center link-parent hover:bg-light-glare hover:text-dark-shade transition-colors duration-300" target="_blank" href="{{ link }}">{{ svg src="small-arrow" class="-rotate-90" }}</a>
+                    {{ endif }}
+                </div>
+            </div>
+        {{ /list }}
+    </div>
+</section>

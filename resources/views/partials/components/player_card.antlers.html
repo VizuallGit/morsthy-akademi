@@ -1,0 +1,30 @@
+ <li class="group relative flow-y">
+    <div class="aspect-square relative before:absolute before:inset-0 before:bg-light-glare before:rounded-t-sm before:overflow-clip" style="view-transition-name: player-image-{{ title | slugify }};">
+        {{ if (profile_images | count) > 1 }}
+            {{ profile_images limit="2" }}
+                {{ partial:components/image :imagePath="url" w="300" h="300" class="w-full h-full object-contain object-bottom rounded-b-sm z-10 mix-blend-multiply transition-opacity duration-200 ease-in-out absolute {{ first ? 'group-hover:opacity-0' : 'opacity-0 group-hover:opacity-100' }}" }}
+            {{ /profile_images }}
+        {{ else }}
+            {{ profile_images limit="1" }}
+                {{ partial:components/image :imagePath="url" w="300" h="300" class="w-full h-full object-contain object-bottom rounded-b-sm z-10 mix-blend-multiply absolute" }}
+            {{ /profile_images }}
+        {{ /if }}
+        <div class="absolute bottom-100 left-100 leading-flat z-20 flex gap-1 *:text-xxs *:py-05em *:px-08em font-heading font-bold *:rounded-sm">
+            <div class="bg-primary text-light-glare">Nr. {{ number }}</div>
+            {{ position }}
+                <div class="bg-light-glare">{{ value }}</div>
+            {{ /position }}
+        </div>
+    </div>
+    <h3 class="h5"><a class="link-parent" href="{{ url }}">{{ title }}</a></h3>
+    {{ if birthday or height }}
+    <ul class="text-xs flex items-center divide-x divide-dark-shade/10 text-current/60 flow-space-05em">
+        {{ if birthday }}
+            <li class="flex gap-[.5em] items-center pr-1em">{{ svg src="birthday" class="h-1em w-auto" }} <span>{{ birthday date iso_format="DD/MM-YYYY" }}</span></li>
+        {{ endif }}
+        {{ if height }}
+            <li class="flex gap-[.5em] items-center pl-1em">{{ svg src="height" class="h-1em w-auto" }} <span>{{ height }} cm</span></li>
+        {{ endif }}
+    </ul>
+    {{ endif }}
+</li>

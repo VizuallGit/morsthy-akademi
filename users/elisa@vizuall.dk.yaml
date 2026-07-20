@@ -1,0 +1,10 @@
+name: Elisa
+super: true
+id: b9359527-13d0-42ec-bdad-4bf88e6cca48
+password_hash: $2y$12$jmbyIQmq8LsffJwWNt5AiuLUYlKE6NLqZtEPxzZxG06A0SrqFvE1m
+preferences:
+  collections:
+    employees:
+      view: list
+    sponsor:
+      view: list

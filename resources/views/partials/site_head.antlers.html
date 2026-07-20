@@ -1,0 +1,142 @@
+<header x-data="{ showMenu: false }" x-effect="document.body.classList.toggle('overflow-hidden', showMenu)">
+    <div class="wrapper bg-secondary-glare light:bg-dark-glare light:text-light-glare text-dark-shade h-750 lg:h-700 flex items-center justify-end text-xxs">
+        <nav class="hidden lg:block px-600 border-r dark:border-white/40 light:border-white/10 h-full" aria-label="Top navigation">
+            <menu class="flex items-center h-full gap-2">
+                {{ nav:top_menu }}
+                    <li><a href="{{ url }}">{{ title }}</a></li>
+                {{ /nav:top_menu }}
+            </menu>
+        </nav>
+        <form action="/search" class="hidden sm:flex bg-linear-90 dark:from-black/8 dark:to-secondary-glare light:from-dark-shade/50 light:to-dark-glare border-l dark:border-black/15 light:border-black h-full items-center pl-200 gap-100">
+            <input class="focus:outline-0 dark:placeholder:text-dark-shade/70 light:placeholder:text-light-glare/70" type="text" name="q" placeholder="Søg her...">
+            <button class="size-500 dark:bg-dark light:bg-light-glare/90 text-light-glare light:text-dark-shade rounded-sm flex items-center justify-center cursor-pointer">{{ svg src="search" class="h-1/2" }}</button>
+        </form>
+    </div>
+    <div class="wrapper light:bg-light-glare flex items-center h-[clamp(4rem,10cqi,6.5rem)] border light:border-b-dark-shade/10 border-b-light-glare/10 border-dark-shade/10 justify-between border-b border-dark-shade/10 {{ is_homepage ? 'absolute w-full z-50' : '' }}  {{ media_top_banner ?= 'border-b-0' }}">
+        <a class="relative -translate-y-100 h-full before:pointer-events-none before:absolute before:left-[10.55%] before:top-100 before:w-[30%] before:aspect-square before:bg-linear-180 dark:before:from-dark-shade light:before:from-light-glare before:from-50% before:to-dark-shade/0 light:before:to-light-glare/0 before:to-58% before:rounded-full before:-translate-x-1/2 before:-translate-y-1/2" href="/" aria-label="Gå til forsiden på {{ settings:site_name }}">
+            {{ svg src="logo" class="h-full w-auto relative z-10 [&_.logo-icon]:text-light" aria-hidden="true" }}
+        </a>
+        <nav class="hidden lg:block" aria-label="Primær navigation">
+            <menu class="flex items-center gap-[1.5em] ">
+                {{ nav:collection:pages }}
+                    {{ if hide_in_main_nav != true }}
+                        <li class="relative group">
+                            {{ if highlighted_in_main_nav }}
+                                {{ partial:components/btn :text="title" class="text-xxs bg-secondary text-light-glare hover:bg-light-glare hover:text-dark-shade"  }}
+                            {{ else }}
+                                <a class="font-bold uppercase font-heading text-xs tracking-narrow relative z-60 hover:text-[color-mix(in_oklch,var(--color-secondary-glare),white_30%)] {{ is_current || is_parent ?= 'light:text-secondary dark:text-[color-mix(in_oklch,var(--color-secondary-glare),white_30%)]' }}" href="{{ url }}">{{ title }}</a>
+                            {{ endif }}
+                            {{ if id == '472568dc-720f-46a0-8679-5a0baa264ef2' }}
+                                <ul class="absolute z-50 min-w-max divide-y divide-dark-shade/10 top-700 shadow-2xl opacity-0 bg-light text-dark-shade py-400 px-600 pointer-events-none group-hover:opacity-100 translate-y-200 group-hover:translate-y-0 rounded-sm group-hover:pointer-events-auto transition-all duration-300 ease-in-out before:w-full before:h-700 before:bg-transparent before:absolute before:-top-700 before:left-0 after:absolute after:-top-1.5 after:size-100 after:bg-light after:rotate-45">
+                                    {{ taxonomy:sponsor_group sort="order" }}
+                                        {{ if slug != 'ghfgdh' }}
+                                        <li class="text-sm not-first:pt-05em not-last:pb-05em">
+                                            <a class="text-xs" href="/sponsor/{{ slug }}">{{ title }}</a>
+                                        </li>
+                                        {{ /if }}
+                                    {{ /taxonomy:sponsor_group }}
+                                </ul>
+                            {{ elseif children }}
+                                <ul class="absolute z-50 min-w-max divide-y divide-dark-shade/10 top-700 shadow-2xl opacity-0 bg-light text-dark-shade py-400 px-600 pointer-events-none group-hover:opacity-100 translate-y-200 group-hover:translate-y-0 rounded-sm group-hover:pointer-events-auto transition-all duration-300 ease-in-out before:w-full before:h-700 before:bg-transparent  before:absolute before:-top-700 before:left-0 after:absolute after:-top-1.5 after:size-100 after:bg-light after:rotate-45">
+                                    {{ children }}
+                                    <li class="text-sm not-first:pt-05em not-last:pb-05em">
+                                        <a class="text-xs {{ is_current ?= '' }}" href="{{ url }}">{{ title }}</a>
+                                    </li>
+                                    {{ /children }}
+                                </ul>
+                            {{ endif }}
+                        </li>
+                    {{ endif }}
+                {{ /nav:collection:pages }}
+            </menu>
+        </nav>
+        <button 
+            aria-label="Åben primar navigation"
+            type="button"   
+            @click="showMenu = true" 
+            aria-expanded="showMenu = 'true'"
+            aria-controls="main-nav" 
+            class="lg:hidden flex items-center font-semibold gap-2 uppercase cursor-pointer"
+        >
+            <span>Menu</span><span class="size-750 bg-primary-glare text-light-glare flex justify-center items-center rounded-sm">{{ svg src="menu" class="h-[1.4em] w-auto" aria-hidden="true" }}</span>
+        </button>
+    </div>
+    <div 
+        id="main-nav" 
+        class="fixed top-0 left-0 w-full h-full bg-dark-shade/70 z-[999] backdrop-blur-sm starting:open:*:opacity-0 starting:open:*:translate-x-1/2" 
+        :aria-expanded="showMenu ? 'true' : 'false'"
+        x-cloak 
+        :open="showMenu ? true : null"
+        x-show="showMenu"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+    >
+        <div class="fixed top-0 right-0 h-full w-full max-w-[30rem] bg-light text-dark-shade z-10 shadow-custom_medium  opacity-100 translate-x-0 delay-200 duration-300 ease-[cubic-bezier(0,0.55,0.45,1)] flex flex-col" x-on:click.outside="showMenu = false">
+            <div class="flex justify-between gap-gutter p-800">
+                {{ partial:components/socialmedia }}
+                <button 
+                    class="bg-primary-glare size-800 flex items-center justify-center text-light-glare cursor-pointer"
+                    aria-label="Luk primær navigation"
+                    type="button"   
+                    @click="showMenu = false" 
+                    aria-expanded="showMenu = 'false'"
+                    aria-controls="main-nav"
+                >
+                    {{ svg src="close" class="h-2/3 w-auto"  }}
+                </button>
+            </div>
+            <nav class="grow flex flex-col overflow-y-auto p-800 pt-0">
+                <menu class="space-y-1">
+                    {{ nav:collection:pages }}
+                        {{ if hide_in_main_nav != true }}
+                            <li class="relative group">
+                                {{ if highlighted_in_main_nav }}
+                                    {{ partial:components/btn :text="title" :url="url" class="text-sm lg:text-xxs bg-primary-glare text-light-glare w-full lg:w-auto mt-400 lg:mt-0"  }}
+                                {{ else }}
+                                    <a class="font-extrabold uppercase font-heading text-600 tracking-tight flex items-center justify-between {{ is_current || is_parent ?= '' }}" href="{{ url }}"><span>{{ title }}</span>{{ if children }} {{ svg src="small-arrow" class="h-2 w-auto" }}{{ endif }}</a>
+                                {{ endif }}
+                                {{ if children }}
+                                    <ul class="hidden group-hover:block pt-2 pb-400 space-y-1">
+                                        {{ children }}
+                                        <li class="">
+                                            <a class="text-sm {{ is_current ?= '' }}" href="{{ url }}">{{ title }}</a>
+                                        </li>
+                                        {{ /children }}
+                                    </ul>
+                                {{ endif }}
+                            </li>
+                        {{ endif }}
+                    {{ /nav:collection:pages }}
+                </menu>
+            </nav>
+            <div class="flex flex-col flow-y flow-space-1em bg-light-shade p-800">
+                <h3 class="h4">Tilmeld dig vores nyhedsbrev</h3>
+                <p class="text-sm opacity-70">Her vil du modtage inspiration, nyheder og eksklusive tilbud – kun for følgere af nyhedsbrevet.</p>
+                {{ form:create formset="newsletter" redirect="/nyhedsbrev-tak-side" class="flow-space-600" }}
+                    <div class="flex h-850">
+                        {{ fields }}{{ if handle == 'email' }}
+                        <input
+                            class="grow text-xs border border-dark-shade/20 rounded-l-xs border-r-0 px-1em focus:outline-none focus:border-primary"
+                            type="email"
+                            name="{{ handle }}"
+                            placeholder="{{ placeholder }}"
+                            required
+                        >
+                        {{ /if }}{{ /fields }}
+                        <button type="submit" class="shrink-0 bg-primary-glare text-light-glare text-xs font-bold font-heading uppercase px-600 rounded-r-xs cursor-pointer">Tilmeld</button>
+                        <input type="text" class="hidden" name="{{ honeypot ?? 'honeypot' }}">
+                    </div>
+                    {{ if errors }}
+                        {{ errors }}
+                            <p class="text-xs text-red-500">{{ value }}</p>
+                        {{ /errors }}
+                    {{ /if }}
+                {{ /form:create }}
+            </div>
+        </div>
+    </div>
+</header>

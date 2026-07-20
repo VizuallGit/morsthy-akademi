@@ -1,0 +1,27 @@
+{{ section:view_transition }}
+<style>
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+</style>
+{{ /section:view_transition }}
+
+
+
+<div class="wrapper bg-light text-dark-shade py-lg space-y-gutter" x-data="{ selectedPosition: 'alle'}">
+        <div class="flex flex-wrap gap-gutter justify-between">
+            <h1>{{ title }}</h1>
+            <div class="relative w-full max-w-[9rem]" x-data>
+                <select id="squad_type" class="w-full bg-light-glare text-dark text-sm rounded pl-[1em] pr-[calc(1em+.7em)] py-[.5em] appearance-none cursor-pointer focus:outline-1 focus:outline-dark/30" x-on:change="window.location = $event.target.value">
+                    {{ taxonomy in="squad_type" }}
+                        <option {{ current_uri == ('/truppen/' + slug) ?= 'selected' }} value="/truppen/{{ slug }}">{{ title }}</option>
+                    {{ /taxonomy }}
+                </select>
+                {{ svg src="small-arrow" class="w-[.7em] h-auto absolute right-[1em] top-1/2 -translate-y-1/2 pointer-events-none"  }}
+            </div>
+        </div>
+        <ul class="auto-grid auto-grid-lg gap-0.5 gap-y-gutter">
+        {{ entries  }}
+            {{ partial:components/player_card }}
+        {{ /entries }}
+    </ul>
+</div>

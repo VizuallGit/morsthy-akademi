@@ -1,0 +1,31 @@
+{{ partial:components/main_content_wrapper aside_position="left" }}
+    {{ slot:content }}
+        <h1>{{ title }}</h1>
+        {{ main_content }}
+            {{ partial src="sets/{type}" }}
+        {{ /main_content }}
+        {{ collection:sponsor :taxonomy:sponsor_group="slug" as="sponsors" }}
+            {{ if sponsors }}
+                <ul class="auto-grid auto-grid-md gap-gutter">
+                    {{ sponsors }}
+                        <li class="flex items-center justify-center bg-white p-100 rounded-sm">
+                            <a href="{{ link ? ('https://www.' + link) : '#' }}" target="_blank" rel="noopener" aria-label="{{ name ?? title }}" class="">
+                                {{ if logo }}
+                                    {{ glide :src="logo" height="70" }}
+                                        <img loading="lazy" src="{{ url }}" width="{{ width }}" height="{{ height }}" alt="{{ name ?? title }}" class="w-full h-auto">
+                                    {{ /glide }}
+                                {{ /if }}
+                            </a>
+                        </li>
+                    {{ /sponsors }}
+                </ul>
+            {{ else }}
+                <p>Der er ingen sponsorer tilknyttet denne gruppe.</p>
+            {{ /if }}
+        {{ /collection:sponsor }}
+    {{ /slot:content }}
+    {{ slot:aside }}
+        {{ partial:components/aside_subnav source="sponsor" headline="Vores Partnere" }}
+        {{# {{ partial:components/aside_form }} #}}
+    {{ /slot:aside }}
+{{ /partial:components/main_content_wrapper }}

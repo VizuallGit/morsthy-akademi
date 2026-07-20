@@ -1,0 +1,144 @@
+title: 'Site settings'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: site_name
+            field:
+              type: text
+              display: 'Site name'
+          -
+            handle: phone
+            field:
+              input_type: tel
+              type: text
+              display: Phone
+          -
+            handle: email
+            field:
+              input_type: email
+              type: text
+              display: Email
+          -
+            handle: address
+            field:
+              type: text
+              display: Address
+          -
+            handle: zip
+            field:
+              type: text
+              display: 'Post nummer'
+          -
+            handle: cvr
+            field:
+              type: text
+              display: Cvr
+          -
+            import: socialmedia_links
+          -
+            handle: sponsor_list
+            field:
+              type: grid
+              display: 'Sponsor list'
+              add_row: 'Tilføj logo'
+              fields:
+                -
+                  handle: logo
+                  field:
+                    path: assets/sponsors/svg
+                    path_helper: public_path
+                    type: iconamic
+                    display: Logo
+                -
+                  handle: size
+                  field:
+                    options:
+                      -
+                        key: small
+                        value: Small
+                      -
+                        key: medium
+                        value: Medium
+                      -
+                        key: large
+                        value: Large
+                    default: medium
+                    type: select
+                    display: Size
+          -
+            handle: copyright
+            field:
+              type: text
+              display: Copyright
+          -
+            handle: samarbejdspartner
+            field:
+              type: grid
+              display: Samarbejdspartner
+              fields:
+                -
+                  handle: logo
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: Logo
+                -
+                  handle: url
+                  field:
+                    input_type: url
+                    prepend: 'https://'
+                    type: text
+                    display: Url
+                -
+                  handle: prefix
+                  field:
+                    default: 'http://'
+                    type: hidden
+                    display: Prefix
+  newsletter:
+    display: Newsletter
+    sections:
+      -
+        display: 'New Section'
+        fields:
+          -
+            handle: newsletter_section_headline
+            field: common_fields.section_headline
+          -
+            handle: newsletter_benefits_list
+            field:
+              type: list
+              display: 'Benefits list'
+  custom_script:
+    display: 'Custom script'
+    sections:
+      -
+        fields:
+          -
+            handle: custom_script_header
+            field:
+              mode: javascript
+              type: code
+              display: 'Custom script header'
+          -
+            handle: custom_script_footer
+            field:
+              mode: javascript
+              type: code
+              display: 'Custom script footer'
+  custom_css:
+    display: 'Custom css'
+    sections:
+      -
+        fields:
+          -
+            handle: custom_css
+            field:
+              mode: css
+              type: code
+              display: 'Custom css'

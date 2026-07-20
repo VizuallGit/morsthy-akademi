@@ -1,0 +1,94 @@
+.our-history{
+
+
+    .carousel.tt::scroll-marker-group {
+        margin-block-start: 0;
+        translate: 0 calc(var(--size-900) + var(--size-600));
+    }
+
+    .carousel{
+        --button-size: var(--size-750);
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: calc(85cqi - 2px);
+        scroll-behavior: smooth;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-marker-group: after;
+        anchor-name: --our-history-carousel;
+
+         @container (width > 30em) {
+            grid-auto-columns: calc(50cqi - 2px);
+        }
+
+        @container (width > 48em) {
+            grid-auto-columns: calc(33.333cqi - 2px);
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &::scroll-marker-group {
+            display: flex;
+            gap: 4px;
+            margin-block-start: var(--gutter);
+        }
+
+        & > li::scroll-marker {
+            content: '';
+            display: block;
+            width: var(--size-850);
+            height: 5px;
+            border-radius: 1px;
+            background-color: color-mix(in oklch, var(--color-light-glare), transparent 80%);
+        }
+
+        & > li::scroll-marker:target-current {
+            background-color: var(--color-dark-shade);
+        }
+
+        @media (width > 48rem) {
+            &::scroll-button(*) {
+                width: var(--button-size);
+                aspect-ratio: 1/1;
+                border: 0;
+                font-family: var(--font-symbols);
+                font-size: calc(var(--button-size) / 3);
+                cursor: pointer;
+                border-radius: var(--radius-xs);
+                z-index: 99;
+                transition: all 300ms ease;
+                position: absolute;
+                position-anchor: --our-history-carousel;
+                background-color: var(--color-primary-glare);
+                color: var(--color-light-glare);
+                transition: all 0.3s ease-in-out;
+            }
+
+            &::scroll-button(*):hover {
+                background-color: var(--color-primary);
+                color: var(--color-light-glare);
+            }
+
+            &::scroll-button(*):disabled {
+                background-color: color-mix(in oklch, var(--color-dark-glare), #ffffff 5%);
+            }
+
+            &::scroll-button(left) {
+                content: '\e900' / 'Scroll left';
+                top: calc(anchor(top) - var(--size-lg));
+                left: calc(100% - (anchor(left) + (var(--button-size) * 2) + 4px));
+            }
+
+            &::scroll-button(right) {
+                content: '\e901' / 'Scroll right';
+                top: calc(anchor(top) - var(--size-lg));
+                right: calc(100% - anchor(left));
+            }
+        }
+
+
+    }
+
+}

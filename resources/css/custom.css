@@ -1,0 +1,61 @@
+.aside-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1em 1em;
+}
+
+.carousel {
+
+    @media (prefers-reduced-motion: no-preference) {
+        & {
+            scroll-behavior: smooth;
+        }
+
+    @container scroll-state(snapped: inline) {
+
+        & li{
+            pointer-events: auto !important;
+
+            & > * {
+            pointer-events: auto !important;
+            }
+        }
+    }
+
+    @container not scroll-state(snapped: inline) {
+
+    & li {
+
+        & .quote-wrapper{
+            translate: 0 -5rem;
+            opacity: 0%;
+            transition-delay: 0s;
+        }
+
+        & .btn {
+            background-color: var(--color-light-shade);
+        }
+
+
+        & .name{
+            display: block;
+            opacity: 100%;
+            block-size: auto;
+            block-size: calc-size(auto, size);
+            translate: 0 0;
+            transition-delay: 200ms;
+
+            @starting-style{
+                block-size: 0;
+                translate: 0 5rem;
+                opacity: 0%;
+            }
+
+        }
+    }
+}
+}
+
+}

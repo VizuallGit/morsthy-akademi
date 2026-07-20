@@ -1,0 +1,116 @@
+title: 'About seo text'
+fields:
+  -
+    handle: text
+    field:
+      buttons:
+        - h2
+        - bold
+        - italic
+        - removeformat
+        - anchor
+        - 'Large text'
+        - Title
+        - color
+      toolbar_mode: floating
+      container: assets
+      remove_empty_nodes: false
+      type: bard
+      display: Text
+  -
+    handle: show_icon
+    field:
+      type: toggle
+      display: 'Show icon'
+  -
+    handle: icon
+    field:
+      path: assets/icons
+      path_helper: public_path
+      type: iconamic
+      display: Icon
+      clearable: true
+      if:
+        show_icon: 'equals true'
+  -
+    handle: show_settings
+    field:
+      type: revealer
+      display: 'Show settings'
+  -
+    handle: settings
+    field:
+      type: group
+      display: Settings
+      if:
+        show_settings: 'equals true'
+      fields:
+        -
+          handle: pt
+          field: common_fields.spacing
+          config:
+            display: 'Spacing top'
+            width: 50
+        -
+          handle: pb
+          field: common_fields.spacing
+          config:
+            display: 'Spacing bottom'
+            width: 50
+        -
+          handle: color
+          field: common_fields.color
+          config:
+            width: 25
+        -
+          handle: icon_position
+          field:
+            options:
+              -
+                key: left
+                value: Left
+              -
+                key: right
+                value: Right
+            default: left
+            type: button_group
+            display: 'Icon position'
+            width: 25
+            if:
+              $parent.show_icon: true
+        -
+          handle: icon_animation
+          field:
+            options:
+              -
+                key: none
+                value: None
+              -
+                key: rotat
+                value: Rotat
+              -
+                key: fade-in
+                value: 'Fade in'
+            type: select
+            display: 'Icon animation'
+            width: 25
+            default: none
+            if:
+              $parent.show_icon: true
+        -
+          handle: icon_size
+          field:
+            options:
+              -
+                key: sm
+                value: Small
+              -
+                key: md
+                value: Medium
+              -
+                key: lg
+                value: Large
+            type: select
+            display: 'Icon size'
+            width: 25
+            default: md

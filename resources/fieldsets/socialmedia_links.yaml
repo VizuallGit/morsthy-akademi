@@ -1,0 +1,125 @@
+title: 'Socialmedia links'
+fields:
+  -
+    handle: socialmedia_links
+    field:
+      collapse: accordion
+      display: 'Socialmedia links'
+      type: replicator
+      always_save: false
+      sets:
+        main:
+          display: Main
+          sets:
+            facebook:
+              display: Facebook
+              icon: social-facebook
+              fields:
+                -
+                  handle: handle
+                  field:
+                    input_type: url
+                    prepend: 'https://www.facebook.com/'
+                    display: Handle
+                    type: text
+                -
+                  handle: prefix
+                  field:
+                    default: 'https://www.facebook.com/'
+                    type: hidden
+            instagram:
+              display: Instagram
+              icon: social-instagram
+              fields:
+                -
+                  handle: handle
+                  field:
+                    input_type: url
+                    prepend: 'https://www.instagram.com/'
+                    display: Handle
+                    type: text
+                -
+                  handle: prefix
+                  field:
+                    default: 'https://www.instagram.com/'
+                    type: hidden
+            linkedin:
+              display: Linkedin
+              icon: social-linkedin
+              fields:
+                -
+                  handle: handle
+                  field:
+                    input_type: url
+                    display: Handle
+                    type: text
+                    prepend: 'https://www.linkedin.com/'
+                -
+                  handle: prefix
+                  field:
+                    default: 'https://www.linkedin.com/'
+                    type: hidden
+            twitter:
+              display: Twitter
+              icon: social-twitter
+              fields:
+                -
+                  handle: handle
+                  field:
+                    input_type: url
+                    display: Handle
+                    type: text
+                    prepend: 'https://twitter.com/'
+                -
+                  handle: prefix
+                  field:
+                    default: 'https://twitter.com/'
+                    type: hidden
+            pinterest:
+              display: Pinterest
+              icon: social-pinterest
+              fields:
+                -
+                  handle: handle
+                  field:
+                    prepend: 'https://dk.pinterest.com/'
+                    display: Handle
+                    type: text
+                    always_save: false
+                -
+                  handle: prefix
+                  field:
+                    default: 'https://dk.pinterest.com/'
+                    display: Prefix
+                    type: hidden
+                    always_save: false
+            tiktok:
+              display: Tiktok
+              fields:
+                -
+                  handle: handle
+                  field:
+                    prepend: 'https://www.tiktok.com/'
+                    type: text
+                    display: Handle
+                -
+                  handle: prefix
+                  field:
+                    default: 'https://www.tiktok.com/'
+                    type: hidden
+                    display: Prefix
+            youtube:
+              display: Youtube
+              fields:
+                -
+                  handle: handel
+                  field:
+                    prepend: 'https://www.youtube.com/'
+                    type: text
+                    display: Handel
+                -
+                  handle: prefix
+                  field:
+                    default: 'https://www.youtube.com/'
+                    type: hidden
+                    display: Prefix

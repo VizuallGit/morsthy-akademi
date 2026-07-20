@@ -1,0 +1,93 @@
+title: News
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: headline
+            field:
+              type: text
+              display: Headline
+              instructions: 'Hvis den ikke er udfyldt bruger siden title i stedet.'
+          -
+            handle: teaser
+            field:
+              type: textarea
+              display: Teaser
+          -
+            handle: featured_image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: 'Featured image'
+          -
+            handle: main_content
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - horizontalrule
+                - 'Large text'
+                - Title
+              container: assets
+              remove_empty_nodes: trim
+              type: bard
+              display: 'Main content'
+  seo:
+    display: Seo
+    sections:
+      -
+        fields:
+          -
+            import: meta
+            prefix: meta_
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+              time_enabled: true
+          -
+            handle: label_date
+            field:
+              type: date
+              display: 'Label date'
+          -
+            handle: author
+            field:
+              collections:
+                - author
+              max_items: 1
+              type: entries
+              display: Author

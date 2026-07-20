@@ -1,0 +1,32 @@
+{{ _imageOffset = switch(
+    (color == '400') => 'md:h-[calc(100%-(var(--size-400)-var(--size-950)))]',
+    (settings.pb == '700') => 'md:h-[calc(100%-(var(--size-700)-var(--size-950)))]',
+    (settings.pb == '900') => 'md:h-[calc(100%-(var(--size-900)-var(--size-950)))]',
+    (settings.pb == 'lg') => 'md:h-[calc(100%-(var(--size-lg)-var(--size-950)))]',
+    (settings.pb == 'xl') => 'md:h-[calc(100%-(var(--size-xl)-var(--size-950)))]',
+    () => 'h-[calc(100%+var(--size-950))]',
+) }}
+
+{{ _hr = switch(
+    (settings.color == 'var(--light-glare)' or settings.color == 'var(--light)' or settings.color == 'var(--light-shade)') => 'prose-hr:border-y prose-hr:border-t-dark-shade/10 prose-hr:border-b-white',
+    (settings.color == 'var(--primary-glare)' or settings.color == 'var(--primary)' or settings.color == 'var(--primary-shade)') => 'prose-hr:border-y prose-hr:border-t-dark-shade/30 prose-hr:border-b-white/20',
+    (settings.color == 'var(--dark-glare)' or settings.color == 'var(--dark)' or settings.color == 'var(--dark-shade)') => 'prose-hr:border-y prose-hr:border-t-black prose-hr:border-b-white/12',
+    () => '',
+) }}
+
+
+<section class="{{ settings.image_to_edge == false ?= 'wrapper' }} grid md:grid-cols-2 gap-x-900 {{ if settings.spacing_type == 'outside' }} py-900 md:pt-{{ settings.pt }} md:pb-{{ settings.pb }}{{ endif }}" data-contrast style="background-color: {{ settings.color }};" {{ visual_edit outline-inside="true" section-orderable="true" }}>
+    <div class="flow-y {{ if settings.spacing_type == 'inside' }} py-900 md:pt-{{ settings.pt }} md:pb-{{ settings.pb }}{{ endif }} order-2 [&_p:not(.title,.text-large)]:text-current/70 prose-hr:my-600 {{ _hr }} {{ settings.flip_content == true ? 'md:pl-gutter' : 'md:order-1 md:pr-gutter' }} {{ settings.image_to_edge ? (settings.flip_content ? 'md:pr-container border-x-gutter md:border-l-0 border-transparent' : 'md:pl-container border-x-gutter md:border-r-0 border-transparent') : '' }}" {{ visual_edit field="text" inline_edit="true" }}>
+        {{ text }}
+        <div class="flow-space-700">
+            {{ links }}
+            {{ partial:components/btn }}
+            {{ /links }}
+        </div>
+    </div>
+    {{ if media }}
+    <div class="lqip relative min-h-[20rem] order-1 image-overlay {{ settings.flip_content == true ? '' : 'md:order-2' }} {{ settings.spacing_type == 'inside' ? '-translate-y-950 h-[calc(100%+var(--size-950))] {_imageOffset}' : 'h-full' }}" style="background-image: url('{{ glide:media quality="10" fit="crop_focal" format="webp" width="50" height="50" }}'); background-size: cover; background-position: center;" {{ visual_edit field="media" inline_edit="true" }}>
+        {{ partial:components/image :imagePath="media" w="700" h="700" class="absolute inset-0 w-full h-full object-cover" }}
+    </div>
+    {{ endif }}
+</section>

@@ -1,0 +1,41 @@
+hide: true
+title: 'Sponsor landingpage'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            import: main_content
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: color
+            field:
+              options:
+                -
+                  key: dark
+                  value: Dark
+                -
+                  key: light
+                  value: Light
+              default: dark
+              type: button_group
+              display: Color

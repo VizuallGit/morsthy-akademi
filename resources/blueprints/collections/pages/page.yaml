@@ -1,0 +1,64 @@
+title: Page
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            import: page_sections
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: hide_in_main_nav
+            field:
+              type: toggle
+              display: 'Hide in main nav'
+          -
+            handle: color
+            field:
+              options:
+                -
+                  key: dark
+                  value: Dark
+                -
+                  key: light
+                  value: Light
+              default: dark
+              type: button_group
+              display: Color
+          -
+            handle: show_media_top_banner
+            field:
+              type: toggle
+              display: 'Show media top banner'
+          -
+            handle: media_top_banner
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: 'Media top banner'
+              if:
+                show_media_top_banner: 'equals true'
+  new_tab:
+    display: 'New Tab'
+    sections:
+      -
+        display: 'New Section'

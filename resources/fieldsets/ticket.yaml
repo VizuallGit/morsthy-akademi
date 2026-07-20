@@ -1,0 +1,78 @@
+title: Ticket
+fields:
+  -
+    handle: list
+    field:
+      max_rows: 3
+      min_rows: 1
+      type: grid
+      display: List
+      fields:
+        -
+          handle: icon_type
+          field:
+            options:
+              - key: local
+                value: Local
+              - key: iconify
+                value: Iconify
+            default: local
+            type: button_group
+            display: 'Icon type'
+        -
+          handle: ikon
+          field:
+            path: assets/icons
+            path_helper: public_path
+            type: iconamic
+            display: Ikon
+            if:
+              icon_type: 'equals local'
+            clearable: true
+        -
+          handle: iconify
+          field:
+            store_as: svg_data
+            type: iconify
+            display: Iconify
+            if:
+              icon_type: 'equals iconify'
+        -
+          handle: title
+          field:
+            type: text
+            display: Title
+        -
+          handle: text
+          field:
+            type: text
+            display: Text
+        -
+          handle: link
+          field:
+            type: link
+            display: Link
+        -
+          handle: _visual_id
+          field:
+            type: auto_uuid
+            visibility: hidden
+            replicator_preview: false
+  -
+    handle: cta
+    field:
+      type: group
+      display: CTA
+      fields:
+        -
+          handle: text
+          field:
+            type: text
+            display: Text
+        -
+          handle: link
+          field:
+            collections:
+              - pages
+            type: link
+            display: Link

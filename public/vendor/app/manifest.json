@@ -1,0 +1,11 @@
+{
+  "resources/css/cp.css": {
+    "file": "assets/cp-5Wzraqxd.css",
+    "src": "resources/css/cp.css",
+    "isEntry": true,
+    "name": "cp",
+    "names": [
+      "cp.css"
+    ]
+  }
+}

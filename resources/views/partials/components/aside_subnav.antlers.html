@@ -1,0 +1,13 @@
+{{ if source == 'collection' }}
+    {{ collection:news as="items" :uri:isnt="current_uri" limit="10" sort="desc" }}
+        {{ partial:components/aside_subnav_list :items="items" }}
+    {{ /collection:news }}
+{{ elseif source == 'sponsor' }}
+    {{ taxonomy from="sponsor_group" as="items" sort="order" }}
+        {{ partial:components/aside_subnav_list :items="items" url_prefix="/sponsor" }}
+    {{ /taxonomy }}
+{{ else }}
+    {{ nav from="/{segment_1}" max_depth="2" as="items" }}
+        {{ partial:components/aside_subnav_list :items="items" }}
+    {{ /nav }}
+{{ /if }}

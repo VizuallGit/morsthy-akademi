@@ -1,0 +1,19 @@
+<a id="id-{{ id }}" class="btn {{ class }}" target="{{ target_blank == 'true' ? '_blank' : '_self' }}" href="{{ url }}" {{ unless outline }}data-contrast-hover{{ /unless }} {{ visual_edit field="text" inline_edit="true" }}>{{ text or 'Læs mere' }}</a>
+
+{{ style_push }}
+    <style>
+        #id-{{ id }}{
+            {{ outline ? 'color' : 'background-color' }}: {{ color }};
+            {{ if outline }}
+            box-shadow: inset 0 0 0 1px {{ color }};
+            {{ /if }}
+            
+            &:hover{
+                background-color: {{ hover_color }};
+                {{ if outline }}
+                color: var(--color-dark-shade);
+                {{ /if }}
+            }
+        }
+    </style>
+{{ /style_push }}

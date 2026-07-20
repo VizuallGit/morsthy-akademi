@@ -1,0 +1,187 @@
+title: Player
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: 'Spiller info'
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Name
+          -
+            handle: position
+            field:
+              dictionary:
+                type: file
+                filename: positions.json
+              max_items: 1
+              type: dictionary
+              display: Position
+          -
+            handle: profile_images
+            field:
+              container: assets
+              folder: spillere
+              dynamic: slug
+              type: assets
+              display: 'Profile Images'
+          -
+            handle: number
+            field:
+              input_type: number
+              type: text
+              display: Number
+              width: 25
+          -
+            handle: birthday
+            field:
+              input_type: date
+              type: text
+              display: Birthday
+              width: 25
+          -
+            handle: height
+            field:
+              input_type: number
+              type: text
+              display: Height
+              width: 25
+          -
+            handle: weight
+            field:
+              input_type: number
+              type: text
+              display: Weight
+              width: 25
+          -
+            handle: nationality
+            field:
+              options:
+                - Dansk
+                - Tysk
+                - Svensk
+              type: taggable
+              display: Nationalitet
+              width: 50
+          -
+            handle: in_club_since
+            field:
+              input_type: date
+              type: text
+              display: 'I klubben siden'
+              width: 50
+          -
+            handle: citat
+            field:
+              type: textarea
+              display: Citat
+      -
+        fields:
+          -
+            handle: biografi
+            field: common_fields.simple_text
+            config:
+              display: Biografi
+      -
+        fields:
+          -
+            handle: stats
+            field:
+              add_row: 'Tilføj stats'
+              type: grid
+              display: Statistikker
+              fields:
+                -
+                  handle: stats_type
+                  field:
+                    options:
+                      -
+                        key: goals
+                        value: Mål
+                      -
+                        key: Saves
+                        value: Redninger
+                      -
+                        key: assists
+                        value: Assists
+                      -
+                        key: shooting-percentage
+                        value: Skudprocent
+                      -
+                        key: 'Penalty throw'
+                        value: Straffekast
+                      -
+                        key: blockages
+                        value: Blokeringer
+                      -
+                        key: tackles
+                        value: Tacklinger
+                      -
+                        key: penalty-min
+                        value: 'Penalty minutes'
+                    type: select
+                    display: 'Stats type'
+                -
+                  handle: number
+                  field:
+                    input_type: number
+                    type: text
+                    display: Number
+      -
+        fields:
+          -
+            handle: earlier_clubs
+            field:
+              options:
+                - 'Kolding if'
+              type: taggable
+              display: 'Earlier clubs'
+      -
+        fields:
+          -
+            handle: player_sponsor
+            field:
+              collections:
+                - sponsor
+              type: entries
+              display: 'Player sponsor'
+      -
+        fields:
+          -
+            handle: socialmedia_links
+            field: socialmedia_links.socialmedia_links
+  seo:
+    display: Seo
+    sections:
+      -
+        fields:
+          -
+            import: meta
+            prefix: meta_
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: squad_type
+            field:
+              type: terms
+              taxonomies:
+                - squad_type
+              display: 'Squad type'
+              mode: select
+              validate:
+                - required

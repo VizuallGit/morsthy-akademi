@@ -1,0 +1,99 @@
+
+
+<article class="player grid grid-cols-[.9fr_1fr] gap-x-lg py-900 bg-light wrapper items-start">
+    <div class="bg-light-glare rounded-sm overflow-clip relative sticky top-900">
+        <div class="absolute top-400 left-400 z-10 flex flex-wrap gap-1.5 ">
+            {{# <a class="btn bg-light-glare/20 border border-dark-shade rounded-xs backdrop-blur-[4px] hover:bg-dark-shade hover:text-light-glare transition-colors duration-300" href="/truppen/">Tilbage til spiller</a> #}}
+            <button class="size-750 font-symbols bg-light-glare/20 border border-dark-shade rounded-xs backdrop-blur-[4px] flex items-center justify-center cursor-pointer hover:bg-dark-shade hover:text-light-glare transition-colors duration-300" data-carousel-prev aria-label="Forrige billede">&#xe900;</button>
+            <button class="size-750 font-symbols bg-light-glare/20 border border-dark-shade rounded-xs backdrop-blur-[4px] flex items-center justify-center cursor-pointer hover:bg-dark-shade hover:text-light-glare transition-colors duration-300 scale-x-[-1]" data-carousel-next aria-label="Næste billede">&#xe900;</button>
+        </div>
+ <div class="carousel" data-gallery data-gallery-backdrop="light" style="view-transition-name: player-image-{{ title | slugify }};">
+        {{ profile_images sort="url:asc"}}
+            <div class="aspect-3/4 cursor-zoom-in" data-src="{{ url }}">
+                {{ partial:components/image :imagePath="url" class="mix-blend-multiply" }}
+            </div>
+        {{ /profile_images }}
+        </div>
+    </div>
+    <div class="*:not-first:pt-gutter *:not-last:pb-gutter *:not-last:border-b *:border-b-dark-shade/10  *:not-first:border-t *:border-t-light-glare">
+        <header class="flow-y  ">
+             <div class="leading-flat z-20 flex gap-2 *:text-sm *:py-05em *:px-08em font-heading font-bold *:rounded-sm">
+                <div class="bg-primary text-light-glare">Nr. {{ number }}</div>
+                    <div class="bg-light-glare">{{ position.value }}</div>
+                {{ squad_type }}
+                    <a class="bg-light-glare" href="{{ url }}">{{ title }}</a>
+                {{ /squad_type }}
+            </div>
+            <h1 class="text-700 flow-space-100">{{ title }}</h1>
+        </header>
+        {{ if stats }}
+            {{ partial:components/player_info_box title="Statistikker" }}
+                <ul class="flex flex-wrap gap-1.5 text-xs font-medium">
+                    {{ stats }}
+                        <li class="bg-light-shade py-05em px-1em rounded-sm"><span>{{ stats_type.label }} {{ number }}</span></li>
+                    {{ /stats }}
+                </ul>
+            {{ /partial:components/player_info_box }}
+        {{ endif }}
+        {{ if biografi }}
+            {{ partial:components/player_info_box title="Spiller biografi" }}
+                {{ biografi }}
+            {{ /partial:components/player_info_box }}
+        {{ endif }}
+        {{ if birthday || height || weight }}
+            {{ partial:components/player_info_box title="CV" }}
+                <ul>
+                    <li><span>Fødselsdato: </span><span>{{ birthday }}</span></li>
+                    <li><span>Højde: </span><span>{{ height }}</span></li>
+                    <li><span>Vægt: </span><span>{{ weight }}</span></li>
+                </ul>
+            {{ /partial:components/player_info_box }}
+        {{ endif }}
+        {{ if socialmedia_links }}
+            {{ partial:components/player_info_box title="Følg spiller på socialemedia" }}
+                <ul class="flex flex-wrap gap-1.5">
+                    {{ socialmedia_links }}
+                        <li><a class="capitalize block border border-dark-shade/10 text-xs py-[.5em] px-1em rounded-sm" href="{{ prefix }}{{ handle }}">{{ type }}</a></li>
+                    {{ /socialmedia_links }}
+                </ul>
+            {{ /partial:components/player_info_box }}
+        {{ endif }}
+        {{ if player_sponsor }}
+            {{ partial:components/player_info_box title="Spiller sponsor" }}
+                <ul class="flex flex-wrap gap-gutter">
+                    {{ player_sponsor }}
+                        <li class="border border-dark-shade/10 p-200">
+                            {{ if (logo| ends_with('.svg')) }}
+                                {{ svg :src="logo" class="h-800 text-dark-shade opacity-90 w-auto" }}
+                            {{ else }}
+                                {{ glide :src="logo" width="h100" }}
+                                    <img loading="lazy" src="{{ url }}" width="{{ width }}" height="{{ height }}" alt="{{ name ?? title }}" class="h-800 w-auto mix-blend-multiply opacity-90">
+                                {{ /glide }}
+                            {{ endif }}
+                        </li>
+                    {{ /player_sponsor  }}
+                </ul>
+            {{ /partial:components/player_info_box }}
+        {{ endif }}
+        {{ current_id = id }}
+        <div>
+            {{ collection:previous in="players" limit="1" }}
+                {{ if id != current_id }}
+                    <a class="btn" data-style="dark-outline" href="{{ url }}">← {{ title }}</a>
+                {{ /if }}
+            {{ /collection:previous }}
+            {{ collection:next in="players" limit="1" }}
+                {{ if id != current_id }}
+                    <a class="btn" data-style="dark-outline" href="{{ url }}">{{ title }} →</a>
+                {{ /if }}
+            {{ /collection:next }}
+        </div>
+    </div>
+</article>
+
+{{ style_push }}
+    <style>
+        @view-transition { navigation: auto; }
+        ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+    </style>
+{{ /style_push }}

@@ -1,0 +1,9 @@
+[
+    { "label": "Playmaker", "value": "Playmaker" },
+    { "label": "Stregspiller", "value": "Stregspiller" },
+    { "label": "Venstre back", "value": "Venstre back" },
+    { "label": "Højre back", "value": "Højre back" },
+    { "label": "Venstre fløj", "value": "Venstre fløj" },
+    { "label": "Højre fløj", "value": "Højre fløj" },
+    { "label": "Målvogter", "value": "Målvogter" }
+]

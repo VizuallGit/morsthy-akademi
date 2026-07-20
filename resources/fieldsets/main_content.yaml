@@ -1,0 +1,120 @@
+title: 'Main content'
+fields:
+  -
+    handle: main_content
+    field:
+      buttons:
+        - h1
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - image
+        - table
+        - horizontalrule
+        - 'Large text'
+        - Title
+      container: assets
+      remove_empty_nodes: false
+      type: bard
+      display: 'Main content'
+      sets:
+        employee_list:
+          display: 'Employee list'
+          icon: users
+          sets:
+            employee_list:
+              display: 'Employee list'
+              fields:
+                -
+                  handle: custom_emloyees_list
+                  field:
+                    type: toggle
+                    display: 'Custom emloyees list'
+                -
+                  handle: category_group
+                  field:
+                    taxonomies:
+                      - employee_category
+                    max_items: 1
+                    type: terms
+                    display: 'Category group'
+                    unless:
+                      custom_emloyees_list: 'equals true'
+                -
+                  handle: entries_list
+                  field:
+                    collections:
+                      - employees
+                    type: entries
+                    display: 'Medarbejder liste'
+                    if:
+                      custom_emloyees_list: 'equals true'
+            image:
+              display: Image
+              fields:
+                -
+                  import: advanced_image
+            gallery:
+              display: Gallery
+              fields:
+                -
+                  handle: list
+                  field:
+                    type: grid
+                    display: List
+                    fields:
+                      -
+                        handle: image
+                        field:
+                          container: assets
+                          max_files: 1
+                          type: assets
+                          display: Image
+                      -
+                        handle: title
+                        field:
+                          type: text
+                          display: Title
+  -
+    handle: hide_sidebar
+    field:
+      type: toggle
+      display: 'Hide sidebar'
+  -
+    handle: hide_navigation_box
+    field:
+      type: toggle
+      display: 'Hide navigation box'
+      unless:
+        hide_sidebar: 'equals true'
+  -
+    handle: hide_form_box
+    field:
+      type: toggle
+      display: 'Hide form box'
+      unless:
+        hide_sidebar: 'equals true'
+  -
+    handle: main_content_width
+    field:
+      options:
+        -
+          key: max-w-full
+          value: Full
+        -
+          key: 'max-w-[85ch]'
+          value: Narrow
+        -
+          key: 'max-w-[65ch]'
+          value: 'Ultra narrow'
+      default: 'max-w-[85ch]'
+      type: select
+      display: 'Main content Width'
+      if:
+        hide_sidebar: 'equals true'

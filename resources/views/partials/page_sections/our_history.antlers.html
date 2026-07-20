@@ -1,0 +1,19 @@
+<section class="our-history wrapper bg-dark space-y-800 relative z-10 {{ last ? 'pt-lg' : 'py-lg' }}">
+    {{ partial:components/section_heading class="prose-p:max-w-[55ch]!" }}
+    <div class="@container">
+        <div class="full-bleed">
+            <div class="pl-container border-l-gutter border-transparent">
+                <ul class="carousel {{ last ? '-mb-900 tt' : '' }}">
+                    {{ list }}
+                        <li class="p-gutter flow-y prose-p:text-xs prose-p:opacity-70 first:rounded-l-sm {{ switch between="bg-dark-shade | bg-dark-glare" }} {{ highlighted == true ?= 'bg-[#C9A84C]! text-dark-shade!' }}">
+                            <b class="h1 text-primary-glare {{ highlighted == true ?= 'text-dark-shade!' }}">{{ year }}</b>
+                            <h4>{{ headline }}</h4>
+                            {{ text }}
+                        </li>
+                    {{ /list }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+

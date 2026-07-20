@@ -1,0 +1,74 @@
+{{ partial:components/main_content_wrapper }}
+    {{ slot:content }}
+        <div class="flow-y page-content">
+            <header class="flow-y">
+                <div class="leading-flat z-20 flex gap-2 *:text-xxs *:py-05em *:px-08em font-heading font-bold *:rounded-sm">
+                    <span class="bg-primary text-light-glare first-letter:uppercase">{{ if label_date }}{{ label_date iso_format="DD/MM-YYYY" }}{{ else }}{{ date iso_format="DD/MM-YYYY" }}{{ /if }}</span>
+                    {{# <span class="bg-light-glare text-dark-shade">Læsetid {{ main_content | read_time }} min</span> #}}
+                    {{ if author }} 
+                        <span class="bg-light-glare text-dark-shade">af: {{ author.name }}</span>
+                    {{ endif }}
+                </div>
+                <h1>{{ headline ? headline : title }}</h1>
+                {{ if featured_image }}
+                <figure class="image-overlay rounded-sm overflow-clip" style="view-transition-name: news-image-{{ title | slugify }};">
+                    {{ partial:components/image :imagePath="featured_image" w="900" class="my-gutter! w-full" }}
+                </figure>
+                {{ else }}
+                    <hr>
+                {{ endif }}
+            </header>
+            {{ main_content }}
+
+            <div class="border-t border-current/15 pt-gutter mt-gutter flex flex-wrap items-center gap-2" x-data>
+                <span class="font-heading font-bold text-sm mr-1">Del:</span>
+                <button
+                    x-show="'share' in navigator"
+                    x-cloak
+                    @click="navigator.share({ title: '{{ headline ? headline : title }}', url: '{{ permalink }}' })"
+                    class="share-btn"
+                >Del artikel</button>
+                <a x-show="!('share' in navigator)"
+                   x-cloak
+                   href="https://www.facebook.com/sharer/sharer.php?u={{ permalink | urlencode }}"
+                   target="_blank" rel="noopener"
+                   class="share-btn">Facebook</a>
+                <a x-show="!('share' in navigator)"
+                   x-cloak
+                   href="https://www.linkedin.com/sharing/share-offsite/?url={{ permalink | urlencode }}"
+                   target="_blank" rel="noopener"
+                   class="share-btn">LinkedIn</a>
+            </div>
+        </div>
+    {{ /slot:content }}
+    {{ slot:aside }}
+        {{ partial:components/aside_subnav source="collection" }}
+        {{ partial:components/aside_form }}
+    {{ /slot:aside }}
+{{ /partial:components/main_content_wrapper }}
+
+
+{{ style_push }}
+    <style>
+        @view-transition { navigation: auto; }
+        ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+
+        .share-btn {
+            font-size: var(--text-xxs);
+            padding-block: var(--spacing-05em);
+            padding-inline: var(--spacing-08em);
+            font-family: var(--font-heading);
+            font-weight: bold;
+            border-radius: var(--radius-xs);
+            cursor: pointer;
+        }
+        button.share-btn {
+            background-color: var(--color-primary);
+            color: var(--color-light-glare);
+        }
+        a.share-btn {
+            background-color: var(--color-light-glare);
+            color: var(--color-dark-shade);
+        }
+    </style>
+{{ /style_push }}

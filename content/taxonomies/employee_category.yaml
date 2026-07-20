@@ -1,0 +1,8 @@
+title: 'Medarbejderkategori'
+route: false
+preview_targets:
+  -
+    label: Term
+    url: '{permalink}'
+    refresh: true
+layout: layout

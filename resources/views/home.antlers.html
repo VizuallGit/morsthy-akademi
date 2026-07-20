@@ -1,0 +1,5 @@
+{{ if page_sections }}
+    {{ page_sections }}
+        {{ partial src="page_sections/{{ type }}" id="{{ id }}" typeClass="{type | slugify}" prev_type="{{ prev:type }}" next_type="{{ next:type }}" }}
+    {{ /page_sections }}
+{{ endif }}

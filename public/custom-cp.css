@@ -1,0 +1,8 @@
+
+img:not(.white-label-logo)[alt="Vizuall"] {
+    max-height: 1.2rem;
+}
+
+.white-label-logo {
+    max-height: 8rem;
+}

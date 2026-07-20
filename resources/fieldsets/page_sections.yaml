@@ -1,0 +1,81 @@
+title: 'Page sections'
+fields:
+  -
+    handle: page_sections
+    field:
+      type: replicator
+      display: 'Page sections'
+      collapse: accordion
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            intro:
+              display: Intro
+              image: screenshot-2026-04-12-at-23.02.54.png
+              fields:
+                -
+                  import: intro
+            main_content:
+              display: 'Main content'
+              image: screenshot-2026-04-12-at-23.07.35.png
+              fields:
+                -
+                  import: main_content
+            ticket:
+              display: Ticket
+              image: screenshot-2026-04-12-at-23.03.42.png
+              fields:
+                -
+                  import: ticket
+            media_textbox:
+              display: 'Media textbox'
+              image: screenshot-2026-04-12-at-23.05.05.png
+              fields:
+                -
+                  import: media_textbox
+            about_seo_text:
+              display: 'About seo text'
+              image: screenshot-2026-04-12-at-23.04.23.png
+              fields:
+                -
+                  import: about_seo_text
+            featured_players:
+              display: 'Featured players'
+              image: screenshot-2026-04-12-at-23.05.18.png
+              fields:
+                -
+                  import: featured_players
+            featured_news:
+              display: 'Featured news'
+              image: screenshot-2026-04-12-at-23.05.35.png
+              fields:
+                -
+                  import: featured_news
+            our_history:
+              display: 'Our history'
+              image: screenshot-2026-04-12-at-23.05.52.png
+              fields:
+                -
+                  import: our_history
+            global_section:
+              display: 'Global section'
+              hide: true
+              fields:
+                -
+                  handle: global_section
+                  field:
+                    collections:
+                      - saved_sections
+                    max_items: 1
+                    type: entries
+                    display: 'Global section'
+                    localizable: false
+            custom_code:
+              display: 'Custom code'
+              fields:
+                -
+                  handle: custom_code
+                  field:
+                    type: code
+                    display: 'Custom code'

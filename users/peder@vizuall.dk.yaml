@@ -1,0 +1,22 @@
+name: Peder
+super: true
+id: bc96bffe-1ebf-4888-b58f-33bdd99b0784
+password_hash: $2y$12$RtG1auDhln.P/HcfOV/T0OgxTnh/.2joIfWBikdRk1GKiDiD87bPy
+preferences:
+  collections:
+    sponsor:
+      view: list
+    news:
+      view: list
+      per_page: 50
+    pages:
+      view: tree
+    employees:
+      view: list
+    players:
+      view: list
+    author:
+      view: list
+  assets:
+    assets:
+      mode: grid

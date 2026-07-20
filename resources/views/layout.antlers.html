@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex, nofollow">
+        {{ partial:meta_info }}
+        {{ if site_settings.custom_script_header }}
+            <script>
+                {{ site_settings.custom_script_header }}
+            </script>
+        {{ endif }}
+        {{ vite src="resources/css/site.css|resources/js/site.js" }}
+        {{ yield:view_transition }}
+        {{ yield_minified section="style" }}
+        {{ if site_settings.custom_css }}
+            <style>
+                {{ site_settings.custom_css }}
+            </style>
+        {{ endif }}
+        <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+        <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+        <link rel="preload" href="https://use.typekit.net/omv5xgk.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://use.typekit.net/omv5xgk.css"></noscript>
+    </head>
+    <body class="{{ is_homepage ? 'dark:bg-dark-shade' : 'dark:bg-dark-glare' }}  dark:text-light-glare light:bg-light font-base leading-normal overflow-x-clip" data-theme="{{ uri | contains('/truppen') or uri | contains('/sponsor') or color == 'light' ? 'light' : 'dark' }}">
+        {{ partial:site_head }}
+        <main class="">
+            {{ template_content }}
+            {{ partial:site_newsletter }}
+        </main>
+        {{ partial:site_foot }}
+        {{ if site_settings.custom_script_footer }}
+            <script>
+                {{ site_settings.custom_script_footer }}
+            </script>
+        {{ endif }}
+    </body>
+</html>
+

@@ -1,0 +1,116 @@
+1784584162a:1:{s:4:"data";a:26:{i:0;a:4:{s:7:"version";s:5:"6.2.5";s:4:"date";s:10:"2026-07-14";s:9:"changelog";s:192:"- Update audience pull to max 500 [@ryanmitchell](https://github.com/ryanmitchell) (#174)
+
+## 🧰 Maintenance
+
+- Update GitHub Action Versions [@edalzell](https://github.com/edalzell) (#171)
+";s:8:"security";b:0;}i:1;a:4:{s:7:"version";s:5:"6.2.4";s:4:"date";s:10:"2026-05-24";s:9:"changelog";s:514:"## 🐛 Fixed
+
+- Fix fieldtype rendering on configure form screen [@mikemartin](https://github.com/mikemartin) (#169)
+
+## 🧰 Maintenance
+
+- Update GitHub Action Versions [@edalzell](https://github.com/edalzell) (#167)
+- Fix GH release drafter [@edalzell](https://github.com/edalzell) (#170)
+- Bump shivammathur/setup-php from 2.37.0 to 2.37.1 in /.github/workflows [@[dependabot[bot]](https://github.com/apps/dependabot)](https://github.com/[dependabot[bot]](https://github.com/apps/dependabot)) (#168)
+";s:8:"security";b:0;}i:2;a:4:{s:7:"version";s:5:"6.2.3";s:4:"date";s:10:"2026-04-14";s:9:"changelog";s:117:"## 🐛 Fixed
+
+- Fix `mailchimp_audience` fieldtype issue [@ryanmitchell](https://github.com/ryanmitchell) (#166)
+";s:8:"security";b:0;}i:3;a:4:{s:7:"version";s:5:"6.2.2";s:4:"date";s:10:"2026-04-07";s:9:"changelog";s:226:"## 🐛 Fixed
+
+- Fix "Call to a member function getName() on array" [@ryanmitchell](https://github.com/ryanmitchell) (#164)
+
+## 🧰 Maintenance
+
+- Update GitHub Action Versions [@edalzell](https://github.com/edalzell) (#163)
+";s:8:"security";b:0;}i:4;a:4:{s:7:"version";s:5:"6.2.1";s:4:"date";s:10:"2026-03-24";s:9:"changelog";s:124:"## 🐛 Fixed
+
+- Issue getting Mailchimp audience data in the CP [@ryanmitchell](https://github.com/ryanmitchell) (#162)
+";s:8:"security";b:0;}i:5;a:4:{s:7:"version";s:5:"6.2.0";s:4:"date";s:10:"2026-03-19";s:9:"changelog";s:94:"## 🚀 New
+
+- Supports Laravel 13 [@duncanmcclean](https://github.com/duncanmcclean) (#159)";s:8:"security";b:0;}i:6;a:4:{s:7:"version";s:5:"6.1.1";s:4:"date";s:10:"2026-03-11";s:9:"changelog";s:94:"## 🐛 Fixed
+
+- Fix newsletter configuration [@edalzell](https://github.com/edalzell) (#158)
+";s:8:"security";b:0;}i:7;a:4:{s:7:"version";s:5:"6.1.0";s:4:"date";s:10:"2026-02-06";s:9:"changelog";s:321:"## 🚀 New
+
+- Update field widths [@ryanmitchell](https://github.com/ryanmitchell) (#155)
+
+## 🐛 Fixed
+
+- Handle fallback when GDPR field is missing [@ryanmitchell](https://github.com/ryanmitchell) (#156)
+
+## 🧰 Maintenance
+
+- Update GitHub Action Versions [@edalzell](https://github.com/edalzell) (#153)
+";s:8:"security";b:0;}i:8;a:4:{s:7:"version";s:5:"6.0.3";s:4:"date";s:10:"2026-01-28";s:9:"changelog";s:387:"## 🐛 Fixed
+
+- Statamic 6 support [@ryanmitchell](https://github.com/ryanmitchell) (#147)
+- Drops support for Statamic 5
+- Update dependencies for only Laravel 12 support [@edalzell](https://github.com/edalzell) (#149)
+- Always upload assets to release [@edalzell](https://github.com/edalzell) (#148)
+- Fix asset build in release [@edalzell](https://github.com/edalzell) (#151)
+";s:8:"security";b:0;}i:9;a:4:{s:7:"version";s:5:"5.3.2";s:4:"date";s:10:"2025-07-02";s:9:"changelog";s:89:"## 🐛 Fixed
+
+- Fix bad array reference [@edalzell](https://github.com/edalzell) (#146)
+";s:8:"security";b:0;}i:10;a:4:{s:7:"version";s:5:"5.3.1";s:4:"date";s:10:"2025-05-06";s:9:"changelog";s:217:"## 🐛 Fixed
+
+- Add placeholders to v-select in custom fieldtypes [@lwekuiper](https://github.com/lwekuiper) (#143)
+
+## 🧰 Maintenance
+
+- Fix action permissions [@edalzell](https://github.com/edalzell) (#144)";s:8:"security";b:0;}i:11;a:4:{s:7:"version";s:5:"5.3.0";s:4:"date";s:10:"2025-04-01";s:9:"changelog";s:310:"## 🚀 New
+
+- Laravel 12 [@robdekort](https://github.com/robdekort) (#139)
+
+## 🧰 Maintenance
+
+- Lint [@edalzell](https://github.com/edalzell) (#142)
+- Fix GH action permissions [@edalzell](https://github.com/edalzell) (#141)
+- Update GitHub actions [@edalzell](https://github.com/edalzell) (#140)
+";s:8:"security";b:0;}i:12;a:4:{s:7:"version";s:5:"5.2.2";s:4:"date";s:10:"2024-10-09";s:9:"changelog";s:206:"## 🚀 Fix
+
+- Simplify service provider, rely on autoloading [@ryanmitchell](https://github.com/ryanmitchell) (#135)
+- Fix translation loading (https://github.com/statamic-rad-pack/mailchimp/issues/134)";s:8:"security";b:0;}i:13;a:4:{s:7:"version";s:5:"5.2.1";s:4:"date";s:10:"2024-09-19";s:9:"changelog";s:123:"## 🐛 Fixed
+
+- Handle mailchimp audience not returning a list id [@ryanmitchell](https://github.com/ryanmitchell) (#133)
+";s:8:"security";b:0;}i:14;a:4:{s:7:"version";s:3:"5.2";s:4:"date";s:10:"2024-09-05";s:9:"changelog";s:87:"## 🚀 New
+
+- Support dark mode [@robdekort ](https://github.com/robdekort) (#130)
+";s:8:"security";b:0;}i:15;a:4:{s:7:"version";s:5:"5.1.3";s:4:"date";s:10:"2024-09-04";s:9:"changelog";s:112:"## 🐛 Fixed
+
+- Pass form handle to subscribe function [@ryanmitchell](https://github.com/ryanmitchell) (#129)
+";s:8:"security";b:0;}i:16;a:4:{s:7:"version";s:5:"5.1.2";s:4:"date";s:10:"2024-09-02";s:9:"changelog";s:122:"## 🐛 Fixed
+
+- Handle fromSubmission potentially returning null [@ryanmitchell](https://github.com/ryanmitchell) (#127)
+";s:8:"security";b:0;}i:17;a:4:{s:7:"version";s:5:"5.1.1";s:4:"date";s:10:"2024-08-23";s:9:"changelog";s:93:"## 🐛 Fixed
+
+- Fix migration error [@ryanmitchell](https://github.com/ryanmitchell) (#125)
+";s:8:"security";b:0;}i:18;a:4:{s:7:"version";s:5:"5.1.0";s:4:"date";s:10:"2024-08-22";s:9:"changelog";s:137:"## 🚀 New
+
+- Move form settings to form editing view, don't store in config [@ryanmitchell](https://github.com/ryanmitchell) (#124)
+";s:8:"security";b:0;}i:19;a:4:{s:7:"version";s:5:"5.0.1";s:4:"date";s:10:"2024-05-09";s:9:"changelog";s:86:"## 🧰 Maintenance
+
+- Fix formatting [@edalzell](https://github.com/edalzell) (#119)
+";s:8:"security";b:0;}i:20;a:4:{s:7:"version";s:5:"5.0.0";s:4:"date";s:10:"2024-05-09";s:9:"changelog";s:77:"- Statamic 5 support [@ryanmitchell](https://github.com/ryanmitchell) (#118)
+";s:8:"security";b:0;}i:21;a:4:{s:7:"version";s:5:"4.1.2";s:4:"date";s:10:"2024-03-11";s:9:"changelog";s:467:"- Community Health Files [@duncanmcclean](https://github.com/duncanmcclean) (#114)
+- Clarify the vendor config publish step is required [@godismyjudge95](https://github.com/godismyjudge95) (#113)
+- Don't a use console alias in README [@robdekort](https://github.com/robdekort) (#110)
+
+## 🐛 Fixed
+
+- Remove the default form config [@ryanmitchell](https://github.com/ryanmitchell) (#112)
+- Auto-publish config [@edalzell](https://github.com/edalzell) (#116)
+";s:8:"security";b:0;}i:22;a:4:{s:7:"version";s:5:"4.1.1";s:4:"date";s:10:"2023-07-26";s:9:"changelog";s:109:"## 🐛 Fixed
+
+- Add append-to-body to custom fields [@ryanmitchell](https://github.com/ryanmitchell) (#109)
+";s:8:"security";b:0;}i:23;a:4:{s:7:"version";s:5:"4.1.0";s:4:"date";s:10:"2023-07-18";s:9:"changelog";s:238:"## 🚀 New
+
+- Update config to use tabs [@ryanmitchell](https://github.com/ryanmitchell) (#106)
+
+## 🐛 Fixed
+
+- Remove Spatie\\Newsletter dependency and fix marketing permissions [@ryanmitchell](https://github.com/ryanmitchell) (#107)
+";s:8:"security";b:0;}i:24;a:4:{s:7:"version";s:5:"4.0.1";s:4:"date";s:10:"2023-07-12";s:9:"changelog";s:90:"## 🐛 Fixed
+
+- Fix license and versions [@edalzell](https://github.com/edalzell) (#103)
+";s:8:"security";b:0;}i:25;a:4:{s:7:"version";s:5:"4.0.0";s:4:"date";s:10:"2023-07-12";s:9:"changelog";s:87:"- Moving addon to Statamic's Rad Pack [@edalzell](https://github.com/edalzell) (#102)
+";s:8:"security";b:0;}}}

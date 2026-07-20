@@ -1,0 +1,51 @@
+{{ color = 'light' }}
+<section class="max-w-3xl px-gutter mx-auto space-y-300 py-lg">
+    <h1>Resuls for {{ get:q }}</h1>
+    <form action="/search" class="flex h-800">
+        <input class="w-full border border-dark-shade px-1em" type="search" name="q" value="{{ get:q }}" autofocus>
+        <button class="px-[2em] bg-dark font-bold text-200 text-light-glare h-full rounded-r-[3px]">Søg</button>
+    </form>
+    {{ search:results paginate="3" as="results" }}
+    <p>
+        {{ paginate }}
+            Din søgning efter '{{ get:q }}' gav {{ total_items }} resultater. Viser side {{ current_page }} af {{ total_pages }}. 
+        {{ /paginate }}
+    </p>
+
+        {{ if results }}
+        <ul class="space-y-300">
+            {{ results  }}
+                    <li class="space-y-1">
+                        <span class="h5 space-x-1"><span>{{ count }}.</span><a href="{{ url }}">{{ title }}</a></span>
+                            {{ if main_content or biografi }}
+                                <p class="opacity-70">
+                                    {{ if main_content }}
+                                        {{ main_content | raw | bard_text | safe_truncate:160 }}
+                                    {{ elseif biografi }}
+                                        {{ biografi | raw | bard_text | safe_truncate:160 }}
+                                {{ endif }}
+                                </p>
+                            {{ endif }}
+                    </li>
+            {{ /results }}
+        </ul>
+        {{ paginate }}
+            {{ if total_pages > "1" }}
+                <div class="flex items-center gap-100 text-xs font-semibold">
+                    {{ if prev_page }}
+                        <a href="{{ prev_page }}">Forrige</a>
+                    {{ /if }}
+                    <div class="flex items-center gap-2">
+                        {{ links:all }}
+                            <a class="w-[2.2em] h-[2.2em] grid place-items-center border border-light rounded-md bg-white/40 {{ if page == current_page }} text-light-glare !bg-primary !border-primary {{ /if }}" href="{{ url }}">{{ count }}</a>
+                        {{ /links:all }}
+                    </div>
+                    {{ if next_page }}
+                        <a href="{{ next_page }}">Næste</a>
+                    {{ /if }}
+                </div>
+            {{ /if }}
+        {{ /paginate }}
+        {{ /if }}
+    {{ /search:results }}
+</section>

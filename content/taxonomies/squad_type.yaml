@@ -1,0 +1,8 @@
+title: Holdtype
+preview_targets:
+  -
+    label: Term
+    url: '{permalink}'
+    refresh: true
+template: players/squad_type/show
+layout: layout

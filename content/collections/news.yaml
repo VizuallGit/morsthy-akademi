@@ -1,0 +1,15 @@
+title: Nyheder
+icon: collections
+template: news/show
+layout: layout
+mount: 64d699b8-3be8-4209-8836-2f9ce93a4a3d
+revisions: true
+route: '/{mount}/{slug}/'
+date: true
+sort_dir: asc
+default_status: draft
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: false

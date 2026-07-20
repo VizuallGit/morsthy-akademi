@@ -1,0 +1,168 @@
+<section class="intro overflow-clip relative bg-dark text-light-glare flex flex-col justify-end min-h-[clamp(25rem,80cqmin,60rem)] before:absolute before:inset-0 before:z-10 before:bg-linear-180 before:from-dark-shade before:via-dark-shade/30 md:before:via-dark-shade/0 before:via-30% before:to-dark-shade" data-pause-on-hover="{{ settings.pause_on_hover }}" data-slider-speed="{{ settings.slider_animation_speed }}" {{ visual_edit outline-inside="true" section-orderable="true" }}>
+    <div class="relative wrapper z-20 grid md:grid-cols-[1fr_.85fr] gap-y-800 items-end pb-gutter pt-xl">
+        <div class="relative z-10 flow-y flow-space-100 pt-xl">
+            <div class="flow-y" {{ visual_edit field="text" inline_edit="true" }}>{{ text }}</div>
+            <div class="flex gap-100 flow-space-700">
+                {{ links }}
+                    {{ partial:components/btn }}
+                {{ /links }}
+            </div>
+        </div>
+        <div class="slider-nav relative pb-100">
+            {{ slider }}
+                <button  class="flex items-center mb-1 gap-05em not-last-of-type:border-r not-first-of-type:border-l border-l-light-glare/15 border-r-black not-first-of-type:pl-08em not-last-of-type:pr-08em leading-none"><span class="text-secondary">0{{ count }}</span><span class="slider-nav__title" {{ visual_edit field="title" inline_edit="true" }}>{{ title }}</span></button>
+            {{ /slider }}
+            <div class="slider-nav__indicator absolute bottom-0 h-0.5 w-full bg-light-glare/20"></div>
+        </div>
+    </div>
+    <div class="slider absolute">
+        {{ slider }}
+            <div class="slide-item h-[clamp(30rem,80cqmin,80rem)]">
+                <figure class="parallax-item">
+                    {{ partial:components/picture ratio="12" :imagePath="media" w="1600" h="1000" class="w-full h-full object-cover" :loading="first ? 'eager' : 'lazy'" :fetchpriority="first ? 'high' : 'auto'" }}
+                </figure>
+            </div>
+        {{ /slider }}
+    </div>
+</section>
+
+
+{{ style_push }}
+<style>
+    .intro {
+        .slider {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: 100vw;
+            scroll-behavior: smooth;
+            overflow-x: auto;
+            scrollbar-width: none;
+            scroll-snap-type: x mandatory;
+            height: 100%;
+            width: 100%;
+
+            > div {
+                width: 100vw;
+                height: 100%;
+                scroll-snap-align: center;
+            }
+        }
+
+    .slider-nav {
+        display: flex;
+        z-index: 10;
+        position: relative;
+        font-family: var(--font-heading);
+        font-size: var(--size-xxs);
+
+        button {
+            background: none;
+            cursor: pointer;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: var(--tracking-narrow);
+            color: color-mix(in oklch, currentColor, transparent 30%);
+
+            &.is-active {
+                flex-grow: 1;
+                /* Keep the button itself from eating clicks (it is already the
+                   active slide), but let the title receive them so inline edit
+                   in Live Preview still works. */
+                pointer-events: none;
+                color: currentColor;
+
+                .slider-nav__title {
+                    pointer-events: auto;
+                    cursor: text;
+                }
+            }
+
+            .slider-nav__title {
+                display: none;
+            }
+
+            &.is-active .slider-nav__title {
+                display: inline;
+            }
+        }
+
+        .slider-nav__indicator {
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                width: 0%;
+                background: var(--color-light-glare);
+            }
+
+            &.is-animating::after {
+                animation: slider-progress var(--slider-interval, 5s) ease-in-out forwards;
+            }
+
+            &.is-paused::after {
+                animation-play-state: paused;
+            }
+        }
+    }
+}
+
+@keyframes slider-progress {
+    from { width: 0%; }
+    to   { width: 100%; }
+}
+
+@keyframes squeeze {
+  entry 0%   { clip-path: inset(0% 100% 0% 0%); }
+  entry 100% { clip-path: inset(0% 0%   0% 0%); }
+  exit  0%   { clip-path: inset(0% 0%   0% 0%); }
+  exit  100% { clip-path: inset(0% 0%   0% 100%); }
+}
+
+@keyframes stay-centered {
+  entry 0%   { translate: -50%; }
+  entry 100% { translate: 0%;   }
+  exit  0%   { translate: 0%;   }
+  exit  100% { translate: 50%;  }
+}
+
+.slide-item {
+  scroll-snap-stop: always;
+  flex-shrink: 0;
+  inline-size: 100%;
+  overflow: clip;
+  height: clamp(30rem, 80cqi, 60rem);
+}
+
+.parallax-item {
+  display: grid;
+  place-items: end start;
+  height: 100%;
+  margin: 0;
+
+  animation: squeeze linear both;
+  animation-timeline: view(inline);
+
+  > * { grid-area: 1/1; }
+
+  > img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+
+    animation: stay-centered linear both;
+    animation-timeline: view(inline);
+  }
+
+  > figcaption {
+    padding: 30px;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: white;
+    position: sticky;
+    left: 0;
+    z-index: 2;
+  }
+}
+
+</style>
+{{ /style_push }}

@@ -1,0 +1,41 @@
+name: Admin
+super: false
+roles:
+  - content_editor
+id: d00c789f-53fb-4450-a58d-3a27e8ed35bc
+password_hash: $2y$12$asN1vLKNVAqbWasljpoYVeyT/EKgnuoRzaTGmLhtnoX2V.Z9k/JJ6
+preferences:
+  collections:
+    pages:
+      view: tree
+      after_save: continue_editing
+    sponsor:
+      view: list
+      columns:
+        - title
+        - status
+        - sponsor_group
+    players:
+      view: list
+      columns:
+        - title
+        - squad_type
+        - slug
+        - status
+      after_save: continue_editing
+    news:
+      view: list
+    employees:
+      view: list
+      columns:
+        - title
+        - status
+        - category
+  assets:
+    assets:
+      mode: grid
+    editor_checkerboard_mode: dark
+  theme: null
+  locale: da
+  color_mode: light
+  formatting_locale: da

@@ -1,0 +1,50 @@
+{{ section:view_transition }}
+<style>
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+</style>
+{{ /section:view_transition }}
+
+{{# after:absolute after:h-(--dynamic-height) after:w-[calc(100%+(var(--gutter)*2))] after:bottom-0 after:-left-gutter after:bg-dark #}}
+<section data-featured-news class="wrapper space-y-900 bg-primary-shade pt-lg pb-lg relative">
+    <div class="grid md:grid-cols-2">
+        {{ sponsors }}
+            <div class="{{ if first }}border-b border-light-glare/10 pb-gutter md:border-b-0 md:border-r md:pb-0 md:pr-900{{ else }}border-t border-dark-shade/50 pt-gutter md:border-t-0 md:border-l md:pt-0 md:pl-900{{ /if }} flow-y flow-space-1-5em prose-p:opacity-70">
+                {{ if logo }}
+                    {{ svg src="/public/assets/sponsors/svg/{{ logo }}" class="h-900 w-auto" }}
+                {{ endif }}
+                {{ text }}
+                <a class="h5 text-xs mt-500 flex items-center gap-1em group" target="_blank" href="{{ url }}"><span class="underline underline-offset-4">{{ link_text }}</span><span class="size-2em flex justify-center items-center rounded-sm relative overflow-hidden text-dark-shade bg-light-glare">{{ svg src="small-arrow" class=" absolute -rotate-90 translate-x-[-200%] group-hover:translate-x-[0%] duration-300 ease-in-out" }} {{ svg src="small-arrow" class="absolute -rotate-90 group-hover:translate-x-[200%] duration-300 ease-in-out" }}</span></a>
+            </div>
+        {{ /sponsors }}
+    </div>
+    <ul class="md:grid md:grid-cols-2 relative z-10">
+        {{ collection from="news" limit="3" sort="date:desc" }}
+            <li class="relative overflow-clip @container {{ switch between="bg-light-glare text-dark-shade grid grid-cols-[1fr_.8fr] rounded-tl-sm | bg-primary-glare grid grid-cols-[1fr_.8fr] rounded-tr-sm | bg-light text-dark-shade col-span-2 [&_.image-overlay]:hidden rounded-b-sm" }}">
+                <div class="content p-800 md:p-gutter flow-y flow-space-500 @max-lg:col-span-2 relative z-10 flex flex-col items-start">
+                    <div class="flex gap-1.5 *:text-[12px] font-medium *:py-03em *:px-08em *:rounded-sm">
+                        <time class="bg-primary-shade text-light-glare">{{ if label_date }}{{ label_date iso_format="DD/MM-YYYY" }}{{ else }}{{ date iso_format="DD/MM-YYYY" }}{{ /if }}</time>
+                        {{ if author }} 
+                            <span class="{{ switch between="bg-dark text-light-glare | bg-light-glare text-dark-shade | bg-dark text-light-glare" }}">af: {{ author.name }}</span>
+                        {{ endif }}
+                    </div>
+                    <h3 class="h4">{{ title }}</h3>
+                    <p class="text-xs max-w-[75ch] line-clamp-6 @2xl:line-clamp-3 opacity-80 grow flow-space-075em">{{ main_content | strip_tags | safe_truncate:250 | raw }}...</p>
+                    <div class="flex flex-wrap gap-100 justify-between items-center flow-space-600 w-full">
+                        <a class="h5 text-xs flex items-center gap-1em group" href="{{ url }}" data-news-link><span class="underline underline-offset-4">Læs mere her <span class="sr-only">om {{ title }}</span></span><span class="size-2em flex justify-center items-center rounded-sm relative overflow-hidden {{ switch between="text-light-glare bg-primary-glare | text-dark-shade bg-light-glare | text-light-glare bg-primary-glare" }}">{{ svg src="small-arrow" class=" absolute -rotate-90 translate-x-[-200%] group-hover:translate-x-[0%] duration-300 ease-in-out" }} {{ svg src="small-arrow" class="absolute -rotate-90 group-hover:translate-x-[200%] duration-300 ease-in-out" }}</span></a>
+                        {{ if last }}
+                            {{ partial:components/btn text="se alle nyheder" url="/nyhedsoversigt/" outline="true" color="var(--color-dark)" class="@max-4xl:hidden text-xxs hover:bg-dark-shade hover:text-light-glare!" }}
+                        {{ endif }}
+                    </div>
+                </div>
+                <div class="lqip image-overlay h-full @max-lg:hidden overflow-clip" style="view-transition-name: news-image-{{ title | slugify }}; background-image: url('{{ glide:featured_image quality="5" fit="crop_focal" format="webp" width="20" height="20" }}'); background-size: cover; background-position: center;">
+                    {{ partial:components/image :imagePath="featured_image" w="300" h="300" class="absolute w-full h-full object-cover transition-transform duration-1000 ease-[cubic-bezier(0,0.55,0.45,1)]" }}
+                </div>
+                {{ if last }}
+                    {{ svg src="logo-icon" class="opacity-10 absolute -right-700 -bottom-900 h-full w-auto rotate-25 @max-4xl:hidden" }}
+                {{ /if }}
+            </li>
+        {{ /collection }}
+    </ul>
+</section>
+

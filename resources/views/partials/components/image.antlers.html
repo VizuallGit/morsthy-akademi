@@ -1,0 +1,20 @@
+<img
+    {{ if id }}
+        id="{{ id }}"
+    {{ endif }}
+    class="max-w-full lqip-img {{ class }}"
+    {{ if style_tag }}
+        style="{{ style_tag }}"
+    {{ endif }}
+    loading="{{ loading ? loading : 'lazy' }}"
+    {{ if fetchpriority }}fetchpriority="{{ fetchpriority }}"{{ /if }}
+    width="{{ w or '500' }}"
+    height="{{ h or '500' }}"
+    sizes="{{ sizes or '100vw' }}"
+    srcset="{{ glide:imagePath width="{{ w | divide:2 or '250' }}" height="{{ h | divide:2 or '250' }}" quality="{{ q or '70' }}" fit="crop_focal" format="{{ format or 'webp' }}" }} {{ w | divide:2 or '250' }}w,
+            {{ glide:imagePath width="{{ w or '500' }}" height="{{ h or '500' }}" quality="{{ q or '70' }}" fit="crop_focal" format="{{ format or 'webp' }}" }} {{ w or '500' }}w,
+            {{ glide:imagePath width="{{ w or '500' }}" height="{{ h or '500' }}" quality="{{ q or '60' }}" fit="crop_focal" format="{{ format or 'webp' }}" dpr="2" }} {{ w | multiply:2 or '1000' }}w"
+    src="{{ glide:imagePath width="{{ w or '500' }}" height="{{ h or '500' }}" quality="{{ q or '70' }}" fit="crop_focal" format="{{ format or 'webp' }}" }}"
+    alt="{{ imagePath:alt }}"
+    onload="this.classList.add('lqip-loaded')"
+>

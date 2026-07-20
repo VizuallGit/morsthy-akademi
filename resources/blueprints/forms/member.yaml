@@ -1,0 +1,33 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              placeholder: 'Indtast dit navn'
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+              validate:
+                - required
+              placeholder: 'Indtast din email'
+          -
+            handle: member_type
+            field:
+              options:
+                -
+                  key: virksomhed
+                  value: 'Virksomhed - kr. 23.000,-'
+                -
+                  key: dobbelt-medlemskab
+                  value: 'Dobbelt medlemskab - kr. 37.000,-'
+              placeholder: 'Vælg virksomheds type'
+              type: select
+              display: 'Medlems type'
