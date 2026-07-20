@@ -7,3 +7,11 @@ routes.php
 routes.scanned.php
 schedule-*
 services.json
+cache/*
+!cache/.gitignore
+sessions/*
+!sessions/.gitignore
+testing/*
+!testing/.gitignore
+views/*
+!views/.gitignore
