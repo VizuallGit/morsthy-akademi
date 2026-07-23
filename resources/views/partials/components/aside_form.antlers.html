@@ -1,7 +1,7 @@
 <div class="aside-form bg-primary-glare text-light-glare p-600 rounded-xs flow-y">
-    <h3 class="h5">Bliv en del af fællesskabet</h3>
-    <p class="text-xs opacity-70">Oplev passionen, sammenholdet og stemningen helt tæt på – meld dig ind i Mors-Thy Håndbold og vær med hele vejen.</p>
-    {{ form:create in="member" class="grid grid-cols-12 gap-200" redirect="" }}
+    <h3 class="h5">Kontakt os*</h3>
+    <p class="text-xs opacity-70">Har du spørgsmål til akademiet? Skriv til os, så vender vi tilbage hurtigst muligt.*</p>
+    {{ form:create in="contact" class="grid grid-cols-12 gap-200" redirect="" }}
         {{ if (form:errors) }}
             <p>Der var desværre noget der gik forkert:</p>
             <ul>
@@ -11,7 +11,7 @@
             </ul>
         {{ /if }}
         {{ fields }}
-            <div class="col-span-12 [&_input[type=text],input[type=email],select]:rounded-xs [&_input[type=text],input[type=email],select]:border [&_input[type=text],input[type=email],select]:border-light-glare/20 [&_input[type=text],input[type=email],select]:px-1em [&_input[type=text],input[type=email],select]:py-08em text-xs [&_select:has(option:first-child:checked)]:opacity-70 [&_select]:appearance-none [&_select]:pr-10 {{ width == '25' ?= 'md:col-span-3' }}{{ width == '33' ?= 'md:col-span-4' }}{{ width == '50' ?= 'md:col-span-6' }}{{ width == '66' ?= 'md:col-span-8' }}{{ width == '75' ?= 'md:col-span-9' }}{{ width == '100' ?= 'md:col-span-12' }}">
+            <div class="col-span-12 [&_input[type=text],input[type=email],select,textarea]:rounded-xs [&_input[type=text],input[type=email],select,textarea]:border [&_input[type=text],input[type=email],select,textarea]:border-light-glare/20 [&_input[type=text],input[type=email],select,textarea]:px-1em [&_input[type=text],input[type=email],select,textarea]:py-08em text-xs [&_select:has(option:first-child:checked)]:opacity-70 [&_select]:appearance-none [&_select]:pr-10 [&_textarea]:min-h-[6rem] [&_textarea]:resize-y {{ width == '25' ?= 'md:col-span-3' }}{{ width == '33' ?= 'md:col-span-4' }}{{ width == '50' ?= 'md:col-span-6' }}{{ width == '66' ?= 'md:col-span-8' }}{{ width == '75' ?= 'md:col-span-9' }}{{ width == '100' ?= 'md:col-span-12' }}">
                 <label class="leading-none flex flex-col space-y-2">
                     <span class=" font-heading font-bold">
                         {{ display }} 
@@ -27,8 +27,8 @@
             </div>
         {{ /fields }}
         <div class="col-span-12">
-            <button class="btn bg-dark text-light-glare w-full" type="submit">Ansøg om medlemskab</button>
+            <button class="btn bg-dark text-light-glare w-full" type="submit">Kontakt os</button>
         </div>
-        <input type="text" name="adresse" class="hidden" />
+        <input type="text" name="adresse" class="hidden" tabindex="-1" autocomplete="off" />
     {{ /form:create }}
 </div>

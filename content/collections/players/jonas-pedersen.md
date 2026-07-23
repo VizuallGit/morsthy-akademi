@@ -5,7 +5,7 @@ title: 'Jonas Pedersen'
 profile_images:
   - spillere/jonas-pedersen/jonas-pedersen.png
 squad_type:
-  - talenttruppen
+  - '2009'
 nationality:
   - Dansk
 ---

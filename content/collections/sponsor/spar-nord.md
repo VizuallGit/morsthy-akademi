@@ -1,12 +1,9 @@
 ---
-id: b2c3d4e5-FE8C7F21-31EE-4590-839D-3D11A356B686
+id: e0005001-0001-0001-0001-000000000036
 blueprint: sponsor
-title: Spar Nord
-name: Spar Nord
+title: 'Spar Nord'
+name: 'Spar Nord'
 link: sparnord.dk
-logo: sponsors/spar-nord-logo-sort.jpg
-sponsor_group:
-  - soelvsponsor
-updated_by: d00c789f-53fb-4450-a58d-3a27e8ed35bc
-updated_at: 1744185600
+logo: sponsors/mtha/spar-nord.jpg
+updated_at: 1784816642
 ---

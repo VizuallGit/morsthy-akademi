@@ -1,0 +1,26 @@
+{{ partial:components/main_content_wrapper  }}
+    {{ slot:content }}
+        {{ main_content }}
+            {{ partial src="sets/{type}" }}
+        {{ /main_content }}
+        <div class="mt-gutter">
+            <ul class="flex flex-wrap gap-400">
+                {{ collection:samarbejdspartner sort="title" }}
+                    <li class="shrink-0 bg-white rounded-sm p-gutter">
+                        {{ if link }}
+                            <a href="https://{{ link }}" target="_blank" rel="noopener noreferrer" aria-label="{{ name }}">
+                                {{ glide :src="logo" height="72" }}
+                                    <img class="h-700 w-auto max-w-[10rem] object-contain" src="{{ url }}" width="{{ width }}" height="{{ height }}" alt="{{ name }}">
+                                {{ /glide }}
+                            </a>
+                        {{ else }}
+                            {{ glide :src="logo" height="72" }}
+                                <img class="h-700 w-auto max-w-[10rem] object-contain" src="{{ url }}" width="{{ width }}" height="{{ height }}" alt="{{ name }}">
+                            {{ /glide }}
+                        {{ /if }}
+                    </li>
+                {{ /collection:samarbejdspartner }}
+            </ul>
+        </div>
+    {{ /slot:content }}
+{{ /partial:components/main_content_wrapper }}

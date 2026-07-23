@@ -12,9 +12,13 @@
         <div class="overflow-hidden relative grow [&::before,&::after]:absolute [&::before,&::after]:top-0 [&::before,&::after]:h-full [&::before,&::after]:w-lg [&::before,&::after]:z-10 [&::before,&::after]:bg-linear-90 [&::before,&::after]:from-dark-shade [&::before,&::after]:to-dark-shade/0 before:left-0 after:right-0 after:scale-[-1]">
             <ul id="marquee-logos" class="site-foot__logos flex items-center gap-x-950 w-max [animation:marquee_40s_linear_infinite]">
                 {{ site_settings.sponsor_list }}
-                    <li class="shrink-0">
-                        {{ svg src="/public/assets/sponsors/svg/{{ logo }}" class="{{ _size }} w-auto fill-current/60 *:fill-current/60" }}
-                    </li>
+                    {{ if logo }}
+                        <li class="shrink-0">
+                            {{ glide :src="logo" height="48" }}
+                                <img class="{{ m_size }} w-auto opacity-60" src="{{ url }}" width="{{ width }}" height="{{ height }}" alt="">
+                            {{ /glide }}
+                        </li>
+                    {{ /if }}
                 {{ /site_settings.sponsor_list }}
             </ul>
         </div>
@@ -25,7 +29,7 @@
             <p>{{ site_settings.address }}<br>{{ site_settings.zip }}<br>Cvr: {{ site_settings.cvr }}</p>
             <ul>
                 <li><span>Tlf: </span><a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a></li>
-                <li><span>email: </span><a href="tel:{{ site_settings.email }}">{{ site_settings.email }}</a></li>
+                <li><span>email: </span><a href="mailto:{{ site_settings.email }}">{{ site_settings.email }}</a></li>
             </ul>
             {{ partial:components/socialmedia dark="true" }}
         </div>
@@ -42,10 +46,14 @@
             </nav>
         </div>
         <div class="flow-y flow-space-400 pt-gutter md:pt-none border-t md:border-t-0 border-t-white/10 relative z-10 sm:col-span-2 md:col-span-1 md:pl-gutter lg:pl-lg md:border-l md:border-l-white/10">
-            <p class="title">Billetter</p>
+            <p class="title">Tilmeld akademiet*</p>
             <div class="flex flex-row md:flex-col gap-100 items-center md:items-start">
-                <p class="max-w-[25ch]">Du kan købe billetter her på linket nedenfor.</p>
-                {{ partial:components/btn text="Køb billet her" url="https://shop.morsthy.dk/" target_blank="true" class="bg-primary-glare hover:bg-light-glare hover:text-dark-shade" }}
+                <p class="max-w-[25ch]">Ansøg om optagelse via formularen – vi vender tilbage hurtigst muligt.*</p>
+                <button
+                    type="button"
+                    class="btn cursor-pointer bg-primary-glare hover:bg-light-glare hover:text-dark-shade"
+                    onclick="document.getElementById('ansogning-dialog')?.showModal()"
+                >Tilmeld dig her*</button>
             </div>
         </div>
         {{ svg src="logo-icon" class="hidden xl:block absolute -right-(--container-padding) -bottom-800 text-dark-glare h-[90%] w-auto translate-x-1/4 rotate-20 border-0!" }}

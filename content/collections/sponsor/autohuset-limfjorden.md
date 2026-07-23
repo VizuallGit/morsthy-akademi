@@ -1,12 +1,9 @@
 ---
-id: e0003001-0001-0001-0001-000000000004
+id: e0005001-0001-0001-0001-000000000004
 blueprint: sponsor
-title: Autohuset Limfjorden
-name: Autohuset Limfjorden
-link: dinbilpartner.dk
-logo: sponsors/autohuset-limfjorden.jpg
-sponsor_group:
-  - bronzesponsor
-updated_by: d00c789f-53fb-4450-a58d-3a27e8ed35bc
-updated_at: 1744185600
+title: 'Autohuset Limfjorden'
+name: 'Autohuset Limfjorden'
+link: dinbilpartner.dk/vaerksteder/din-bilpartner-autohuset-limfjorden
+logo: sponsors/mtha/autohuset-limfjorden.png
+updated_at: 1784816642
 ---

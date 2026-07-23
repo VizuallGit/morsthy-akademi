@@ -1,12 +1,9 @@
 ---
-id: b2c3d4e5-36B1E702-A2D0-42A4-90FE-0E8B4DCC6DE7
+id: e0005001-0001-0001-0001-000000000024
 blueprint: sponsor
-title: Keld's Køreskole
-name: Keld's Køreskole
+title: 'Kelds Køreskole'
+name: 'Kelds Køreskole'
 link: keldk.dk
-logo: sponsors/kelds_koereskole.jpg
-sponsor_group:
-  - soelvsponsor
-updated_by: d00c789f-53fb-4450-a58d-3a27e8ed35bc
-updated_at: 1744185600
+logo: sponsors/mtha/kelds-koereskole.png
+updated_at: 1784816642
 ---

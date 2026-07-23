@@ -28,6 +28,15 @@ body {
 
 [x-cloak] { display: none !important; }
 
+/* Lister i kontrast-sektioner følger baggrundens tekstfarve */
+[data-contrast] :is(ul, ol):not([class]) {
+  color: color-mix(in srgb, var(--text-color, currentColor) 70%, transparent);
+}
+
+[data-contrast] :is(ul, ol):not([class]) ::marker {
+  color: var(--text-color, currentColor);
+}
+
 [data-featured-news] li:has([data-news-link]:hover) .image-overlay img {
     transform: scale(1.1);
 }

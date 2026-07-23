@@ -21,6 +21,7 @@
 
 @import "./blocks/our-history" layer(base);
 @import "./blocks/newsletter" layer(base);
+@import "./blocks/ansogning-dialog" layer(base);
 @import "./blocks/player" layer(base);
 
 @import "./custom" layer(base);

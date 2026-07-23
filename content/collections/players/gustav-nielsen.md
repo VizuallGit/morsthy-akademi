@@ -5,7 +5,7 @@ title: 'Gustav Nielsen'
 profile_images:
   - spillere/gustav-nielsen/gustav-nielsen.png
 squad_type:
-  - talenttruppen
+  - '2007'
 nationality:
   - Dansk
 ---

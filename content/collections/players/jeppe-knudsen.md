@@ -5,7 +5,7 @@ title: 'Jeppe Knudsen'
 profile_images:
   - spillere/jeppe-knudsen/jeppe-knudsen.png
 squad_type:
-  - talenttruppen
+  - '2008'
 nationality:
   - Dansk
 ---

@@ -5,7 +5,7 @@ title: 'Hjalte Trangbæk Jørgensen'
 profile_images:
   - spillere/hjalte-trangbaek-joergensen/hjalte-trangbaek-joergensen.png
 squad_type:
-  - talenttruppen
+  - '2007'
 nationality:
   - Dansk
 ---

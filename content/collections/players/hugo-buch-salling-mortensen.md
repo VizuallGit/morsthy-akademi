@@ -5,7 +5,7 @@ title: 'Hugo Buch Salling Mortensen'
 profile_images:
   - spillere/hugo-buch-salling-mortensen/hugo-buch-salling-mortensen.png
 squad_type:
-  - talenttruppen
+  - '2009'
 nationality:
   - Dansk
 ---

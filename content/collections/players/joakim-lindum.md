@@ -5,7 +5,7 @@ title: 'Joakim Lindum'
 profile_images:
   - spillere/joakim-lindum/joakim-lindum.png
 squad_type:
-  - talenttruppen
+  - '2008'
 nationality:
   - Dansk
 ---

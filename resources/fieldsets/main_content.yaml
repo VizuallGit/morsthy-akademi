@@ -19,14 +19,17 @@ fields:
         - horizontalrule
         - 'Large text'
         - Title
+        - code
+        - codeblock
       container: assets
-      remove_empty_nodes: false
+      remove_empty_nodes: trim
       type: bard
       display: 'Main content'
+      collapse: accordion
       sets:
-        employee_list:
-          display: 'Employee list'
-          icon: users
+        main:
+          display: Main
+          icon: media-image-picture-gallery
           sets:
             employee_list:
               display: 'Employee list'
@@ -58,8 +61,7 @@ fields:
             image:
               display: Image
               fields:
-                -
-                  import: advanced_image
+                - import: advanced_image
             gallery:
               display: Gallery
               fields:
@@ -81,6 +83,43 @@ fields:
                         field:
                           type: text
                           display: Title
+            inline_video:
+              display: 'Inline video'
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: video_image
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: 'Video image'
+                -
+                  handle: video
+                  field:
+                    container: assets
+                    max_files: 1
+                    type: assets
+                    display: Video
+                -
+                  handle: youtube_link
+                  field:
+                    type: text
+                    display: 'YouTube ID'
+                    instruct: 'Valgfrit – kun video-ID, hvis der ikke uploades en videofil.'
+            embed_custom_code:
+              display: 'Custom HTML / iframe'
+              fields:
+                -
+                  handle: embed_custom_code
+                  field:
+                    type: code
+                    display: HTML
+                    instruct: 'Indsæt HTML her – fx en iframe. Code Block i værktøjslinjen viser kun kode som tekst.'
   -
     handle: hide_sidebar
     field:
@@ -104,14 +143,11 @@ fields:
     handle: main_content_width
     field:
       options:
-        -
-          key: max-w-full
+        - key: max-w-full
           value: Full
-        -
-          key: 'max-w-[85ch]'
+        - key: 'max-w-[85ch]'
           value: Narrow
-        -
-          key: 'max-w-[65ch]'
+        - key: 'max-w-[65ch]'
           value: 'Ultra narrow'
       default: 'max-w-[85ch]'
       type: select

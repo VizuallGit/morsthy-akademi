@@ -10,21 +10,14 @@
             {{ /profile_images }}
         {{ /if }}
         <div class="absolute bottom-100 left-100 leading-flat z-20 flex gap-1 *:text-xxs *:py-05em *:px-08em font-heading font-bold *:rounded-sm">
-            <div class="bg-primary text-light-glare">Nr. {{ number }}</div>
-            {{ position }}
-                <div class="bg-light-glare">{{ value }}</div>
-            {{ /position }}
+            {{ if number }}<div class="bg-primary text-light-glare">Nr. {{ number }}</div>{{ endif }}
+            {{ if position }}
+                {{ position }}
+                    <div class="bg-light-glare">{{ value }}</div>
+                {{ /position }}
+            {{ endif }}
         </div>
     </div>
     <h3 class="h5"><a class="link-parent" href="{{ url }}">{{ title }}</a></h3>
-    {{ if birthday or height }}
-    <ul class="text-xs flex items-center divide-x divide-dark-shade/10 text-current/60 flow-space-05em">
-        {{ if birthday }}
-            <li class="flex gap-[.5em] items-center pr-1em">{{ svg src="birthday" class="h-1em w-auto" }} <span>{{ birthday date iso_format="DD/MM-YYYY" }}</span></li>
-        {{ endif }}
-        {{ if height }}
-            <li class="flex gap-[.5em] items-center pl-1em">{{ svg src="height" class="h-1em w-auto" }} <span>{{ height }} cm</span></li>
-        {{ endif }}
-    </ul>
-    {{ endif }}
+    {{ if player_sponsor }}<p class=" opacity-70 flow-space-05em">Sponsor: {{ player_sponsor }}{{ title }}{{ /player_sponsor }}</p>{{ endif }}
 </li>

@@ -1,0 +1,65 @@
+<dialog
+    x-ref="ansogningDialog"
+    id="ansogning-dialog"
+    class="ansogning-dialog bg-primary-glare text-light-glare"
+    aria-labelledby="ansogning-dialog-title"
+    @click="if ($event.target === $refs.ansogningDialog) $refs.ansogningDialog.close()"
+>
+    <div class="ansogning-dialog__inner">
+        <button
+            type="button"
+            class="ansogning-dialog__close"
+            aria-label="Luk ansøgningsformular"
+            @click="$refs.ansogningDialog.close()"
+        >
+            {{ svg src="close" class="h-1/2 w-auto" aria-hidden="true" }}
+        </button>
+
+        <header class="ansogning-dialog__header">
+            <h2 id="ansogning-dialog-title" class="ansogning-dialog__title">Ansøg om optagelse</h2>
+            <p class="ansogning-dialog__lead">Udfyld formularen, så vender vi tilbage til dig hurtigst muligt.</p>
+        </header>
+
+        <div class="ansogning-dialog__body">
+            {{ form:create in="ansogning" class="ansogning-dialog__form" redirect="" }}
+                {{ if (form:errors) }}
+                    <div class="ansogning-dialog__errors">
+                        <p>Der var desværre noget der gik forkert:</p>
+                        <ul>
+                            {{ form:errors }}
+                                <li>{{ value }}</li>
+                            {{ /form:errors }}
+                        </ul>
+                    </div>
+                {{ /if }}
+                {{ fields }}
+                    <div class="ansogning-dialog__field {{ width == '50' ?= 'ansogning-dialog__field--half' }}">
+                        <label>
+                            <span class="ansogning-dialog__label">
+                                {{ display }}
+                                {{ if validate | contains:required }}
+                                    <sup>*</sup>
+                                {{ /if }}
+                            </span>
+                            {{ field }}
+                        </label>
+                        {{ if error }}
+                            <p class="ansogning-dialog__error">{{ error }}</p>
+                        {{ /if }}
+                    </div>
+                {{ /fields }}
+                <button class="btn ansogning-dialog__submit" type="submit">
+                    Send ansøgning
+                </button>
+                <p class="ansogning-dialog__legal">
+                    Når du sender formularen, accepterer du samtidig vores
+                    <a href="/persondatapolitik">privatlivspolitik</a>.
+                    Du kan altid tilbagekalde din accept.
+                </p>
+                <input type="text" name="adresse" class="hidden" tabindex="-1" autocomplete="off" />
+            {{ /form:create }}
+        </div>
+
+        {{ svg src="logo-icon" class="ansogning-dialog__logo" aria-hidden="true" }}
+    </div>
+</dialog>

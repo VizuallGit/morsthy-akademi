@@ -17,26 +17,20 @@
             {{ svg src="logo" class="h-full w-auto relative z-10 [&_.logo-icon]:text-light" aria-hidden="true" }}
         </a>
         <nav class="hidden lg:block" aria-label="Primær navigation">
-            <menu class="flex items-center gap-[1.5em] ">
+            <menu class="flex flex-wrap items-center gap-[1.5em] ">
                 {{ nav:collection:pages }}
                     {{ if hide_in_main_nav != true }}
                         <li class="relative group">
                             {{ if highlighted_in_main_nav }}
-                                {{ partial:components/btn :text="title" class="text-xxs bg-secondary text-light-glare hover:bg-light-glare hover:text-dark-shade"  }}
+                                <button
+                                    type="button"
+                                    class="btn cursor-pointer text-xxs bg-secondary text-dark-shade hover:bg-light-glare hover:text-dark-shade"
+                                    @click="requestAnimationFrame(() => $refs.ansogningDialog.showModal())"
+                                >{{ title }}</button>
                             {{ else }}
                                 <a class="font-bold uppercase font-heading text-xs tracking-narrow relative z-60 hover:text-[color-mix(in_oklch,var(--color-secondary-glare),white_30%)] {{ is_current || is_parent ?= 'light:text-secondary dark:text-[color-mix(in_oklch,var(--color-secondary-glare),white_30%)]' }}" href="{{ url }}">{{ title }}</a>
                             {{ endif }}
-                            {{ if id == '472568dc-720f-46a0-8679-5a0baa264ef2' }}
-                                <ul class="absolute z-50 min-w-max divide-y divide-dark-shade/10 top-700 shadow-2xl opacity-0 bg-light text-dark-shade py-400 px-600 pointer-events-none group-hover:opacity-100 translate-y-200 group-hover:translate-y-0 rounded-sm group-hover:pointer-events-auto transition-all duration-300 ease-in-out before:w-full before:h-700 before:bg-transparent before:absolute before:-top-700 before:left-0 after:absolute after:-top-1.5 after:size-100 after:bg-light after:rotate-45">
-                                    {{ taxonomy:sponsor_group sort="order" }}
-                                        {{ if slug != 'ghfgdh' }}
-                                        <li class="text-sm not-first:pt-05em not-last:pb-05em">
-                                            <a class="text-xs" href="/sponsor/{{ slug }}">{{ title }}</a>
-                                        </li>
-                                        {{ /if }}
-                                    {{ /taxonomy:sponsor_group }}
-                                </ul>
-                            {{ elseif children }}
+                            {{ if children }}
                                 <ul class="absolute z-50 min-w-max divide-y divide-dark-shade/10 top-700 shadow-2xl opacity-0 bg-light text-dark-shade py-400 px-600 pointer-events-none group-hover:opacity-100 translate-y-200 group-hover:translate-y-0 rounded-sm group-hover:pointer-events-auto transition-all duration-300 ease-in-out before:w-full before:h-700 before:bg-transparent  before:absolute before:-top-700 before:left-0 after:absolute after:-top-1.5 after:size-100 after:bg-light after:rotate-45">
                                     {{ children }}
                                     <li class="text-sm not-first:pt-05em not-last:pb-05em">
@@ -95,7 +89,11 @@
                         {{ if hide_in_main_nav != true }}
                             <li class="relative group">
                                 {{ if highlighted_in_main_nav }}
-                                    {{ partial:components/btn :text="title" :url="url" class="text-sm lg:text-xxs bg-primary-glare text-light-glare w-full lg:w-auto mt-400 lg:mt-0"  }}
+                                    <button
+                                        type="button"
+                                        class="btn cursor-pointer text-sm lg:text-xxs bg-primary-glare text-light-glare w-full lg:w-auto mt-400 lg:mt-0"
+                                        @click="showMenu = false; requestAnimationFrame(() => $refs.ansogningDialog.showModal())"
+                                    >{{ title }}</button>
                                 {{ else }}
                                     <a class="font-extrabold uppercase font-heading text-600 tracking-tight flex items-center justify-between {{ is_current || is_parent ?= '' }}" href="{{ url }}"><span>{{ title }}</span>{{ if children }} {{ svg src="small-arrow" class="h-2 w-auto" }}{{ endif }}</a>
                                 {{ endif }}
@@ -113,30 +111,7 @@
                     {{ /nav:collection:pages }}
                 </menu>
             </nav>
-            <div class="flex flex-col flow-y flow-space-1em bg-light-shade p-800">
-                <h3 class="h4">Tilmeld dig vores nyhedsbrev</h3>
-                <p class="text-sm opacity-70">Her vil du modtage inspiration, nyheder og eksklusive tilbud – kun for følgere af nyhedsbrevet.</p>
-                {{ form:create formset="newsletter" redirect="/nyhedsbrev-tak-side" class="flow-space-600" }}
-                    <div class="flex h-850">
-                        {{ fields }}{{ if handle == 'email' }}
-                        <input
-                            class="grow text-xs border border-dark-shade/20 rounded-l-xs border-r-0 px-1em focus:outline-none focus:border-primary"
-                            type="email"
-                            name="{{ handle }}"
-                            placeholder="{{ placeholder }}"
-                            required
-                        >
-                        {{ /if }}{{ /fields }}
-                        <button type="submit" class="shrink-0 bg-primary-glare text-light-glare text-xs font-bold font-heading uppercase px-600 rounded-r-xs cursor-pointer">Tilmeld</button>
-                        <input type="text" class="hidden" name="{{ honeypot ?? 'honeypot' }}">
-                    </div>
-                    {{ if errors }}
-                        {{ errors }}
-                            <p class="text-xs text-red-500">{{ value }}</p>
-                        {{ /errors }}
-                    {{ /if }}
-                {{ /form:create }}
-            </div>
         </div>
     </div>
+    {{ partial:components/ansogning_dialog }}
 </header>

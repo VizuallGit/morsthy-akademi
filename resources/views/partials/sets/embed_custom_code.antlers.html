@@ -1,3 +1,7 @@
-<div>
-    {{ embed_custom_code }}
+<div class="not-prose mt-800{{ if last }} mb-0{{ else }} mb-800{{ /if }}">
+    {{ if embed_custom_code:code }}
+        {{ embed_custom_code:code | raw }}
+    {{ else }}
+        {{ embed_custom_code | raw }}
+    {{ /if }}
 </div>

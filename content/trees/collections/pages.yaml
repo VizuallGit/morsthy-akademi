@@ -1,43 +1,26 @@
 tree:
+  - entry: home
   -
-    entry: home
-  -
-    entry: 64d699b8-3be8-4209-8836-2f9ce93a4a3d
-  -
-    entry: 34f0c7a4-0c2e-4a0e-8572-c3ec4e94c434
+    entry: 62986b8c-a8e8-4a09-9c03-4efc0dc6148d
     children:
-      -
-        entry: baa84085-e191-4de7-9342-9dce5c8badff
-      -
-        entry: 7b8217f0-96e2-4b17-866c-5321d4e27e5a
-      -
-        entry: aaef5b4c-24e6-465c-b520-263eadf6101b
-      -
-        entry: 7dfb1eb8-426f-41ed-b231-c6a76504cc2c
-      -
-        entry: 27c265d0-33c4-4366-ad7d-f71d2f70e84a
-      -
-        entry: 7140ba5b-3b92-4599-800d-edc163f29a25
+      - entry: 0f8f89db-8cb2-46b8-9313-5b143bca5152
+      - entry: b7e4c2a1-9f83-4d65-8e21-1a0c5d7f9b28
   -
-    entry: 472568dc-720f-46a0-8679-5a0baa264ef2
-  -
-    entry: aefec686-06e1-4ce7-8992-1cd154e6132a
+    entry: 093f9934-6e00-44e8-9c4b-9c042566fc37
+    children:
+      - entry: b784d1fc-62fd-4849-af39-8edbc22701c0
+      - entry: 31bc7516-da15-49ce-92d3-284d43a8c74b
+      - entry: 951140d2-38aa-483f-83be-b98716da86a7
+  - entry: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+  - entry: f995f190-8998-4305-8a92-2eb30564e4c0
+  - entry: 054b4cfd-6538-4750-80ae-5cb30c308b7e
   -
     entry: 2012caea-e9b1-4c3b-a014-6360ddae3886
     children:
-      -
-        entry: f49bccdb-9969-4b36-9404-874e754ef08d
-      -
-        entry: af63d538-ef1d-49f5-8acb-a4e0731511f3
-      -
-        entry: 9c6855d5-e111-4cc0-95ac-d7bbde1ad197
-      -
-        entry: 159265f6-7d1e-418e-b7b5-12adadee91f6
-  -
-    entry: ad1ebe1f-001b-45c4-ab5d-2a7e75191078
-  -
-    entry: 1c89b578-ede1-43b2-bac8-e4a6109d6973
-  -
-    entry: b2980dbb-629c-4e5a-8089-4a30452b7271
-  -
-    entry: 76d75b65-ca35-4bf1-adce-50543e733b21
+      - entry: af63d538-ef1d-49f5-8acb-a4e0731511f3
+      - entry: f49bccdb-9969-4b36-9404-874e754ef08d
+      - entry: c8d4e2f1-3a5b-4c6d-8e9f-0a1b2c3d4e5f
+      - entry: 261512c8-24d7-4b94-9d04-95f41a1b8274
+  - entry: ad1ebe1f-001b-45c4-ab5d-2a7e75191078
+  - entry: 27c265d0-33c4-4366-ad7d-f71d2f70e84a
+  - entry: 7140ba5b-3b92-4599-800d-edc163f29a25

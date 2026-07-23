@@ -5,7 +5,7 @@ title: 'Gustav Bro Petersen'
 profile_images:
   - spillere/gustav-bro-petersen/gustav-bro-petersen.png
 squad_type:
-  - talenttruppen
+  - '2008'
 nationality:
   - Dansk
 ---

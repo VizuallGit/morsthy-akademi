@@ -5,7 +5,7 @@ title: 'Jonas Bakholdt'
 profile_images:
   - spillere/jonas-bakholdt/jonas-bakholdt.png
 squad_type:
-  - talenttruppen
+  - '2007'
 nationality:
   - Dansk
 ---

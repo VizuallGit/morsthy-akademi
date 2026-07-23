@@ -1,93 +1,96 @@
-site_name: 'Mors-Thy Håndbold'
-phone: '+45 9615 4040'
-email: info@morsthy.dk
-address: 'H. C. Ørstedvej 15'
+site_name: 'Mors-Thy Akademi'
+phone: '+45 30 62 43 04'
+email: info@m-tha.dk
+address: 'Tranevej 4'
 zip: '7900 Nykøbing Mors'
-cvr: '27318665'
+cvr: '35692207'
 socialmedia_links:
-  -
-    id: mlFXFgDlg88m6Km8ESta-
+  - id: mlFXFgDlg88m6Km8ESta-
     handle: morsthy
     prefix: 'https://www.facebook.com/'
     type: facebook
     enabled: true
-  -
-    id: 7NYRjKoaqOGgkpqkDPdfU
+    _visual_id: 92b5f7d3-63b6-4d9e-a6fb-ad0a60669486
+  - id: 7NYRjKoaqOGgkpqkDPdfU
     prefix: 'https://www.instagram.com/'
     type: instagram
     enabled: true
     handle: morsthy/
-  -
-    id: jLLgoNkGrGMcUOzvOal0l
+    _visual_id: a0dc9545-390c-46c9-8a30-244a8f0cfee7
+  - id: jLLgoNkGrGMcUOzvOal0l
     prefix: 'https://www.linkedin.com/'
     type: linkedin
     enabled: true
     handle: company/mors-thy-håndbold/
-  -
-    id: FsoXJQftqWVDIBEMColXr
+    _visual_id: 4db84784-a8d8-47b9-9ec6-181d507ec1f3
+  - id: FsoXJQftqWVDIBEMColXr
     handle: '@morsthyhaandbold'
     prefix: 'https://www.tiktok.com/'
     type: tiktok
     enabled: true
-  -
-    id: k0m_nepelxecv0exQyEV6
+    _visual_id: 42f78cc4-d56c-4d80-a949-f7666cbcb2a4
+  - id: k0m_nepelxecv0exQyEV6
     handel: '@Mors-Thy'
     prefix: 'https://www.youtube.com/'
     type: youtube
     enabled: true
+    _visual_id: 9300eec2-0fff-4675-9b76-ff6f05f2799b
 sponsor_list:
-  -
-    id: jrUQKHlH3SgVe25jGGswe
-    logo: thistedforsikring
+  - id: footer-hoved-thisted-forsikring
+    logo: sponsors/footer/thisted-forsikring.png
     size: medium
-  -
-    id: Fx1O01noAjxQNiLQIsFNd
+  - id: footer-top-jyske-bank
+    logo: sponsors/footer/jyske-bank.png
     size: medium
-  -
-    id: UDkfUV5znwOFOht0rtfQS
-    logo: thy-mors-energi
+  - id: footer-top-jysk-elteknik
+    logo: sponsors/footer/jysk-elteknik.png
     size: medium
-  -
-    id: UYGuaLLdqUKbGuupdItUT
-    logo: davidsen
+  - id: footer-top-malermester-jesper
+    logo: sponsors/footer/malermester-jesper-johansen.png
     size: medium
-  -
-    id: dMShy3DYavSbMz8lqf623
-    logo: craft
+  - id: footer-top-mth-biler
+    logo: sponsors/footer/mth-biler.png
     size: medium
-copyright: '© Mors-Thy Håndbold A/S. Alle rettigheder forbeholdes.'
+copyright: '© Mors-Thy Akademi. Alle rettigheder forbeholdes.'
 samarbejdspartner:
-  -
-    id: gnu3LWPitqMq26EOxAlh_
+  - id: gnu3LWPitqMq26EOxAlh_
+    logo: samarbejdspartner/morsoe-kommune.jpg
+    url: mors.dk/
+    prefix: 'https://'
+  - id: 8ylJTeCEPLFtJek5KLrXq
+    logo: samarbejdspartner/morsoe-gymnasium.jpg
+    url: morsoegym.dk/
+    prefix: 'https://'
+  - id: sp-euc-nordvest-001
+    logo: samarbejdspartner/euc-nordvest.jpg
+    url: eucnordvest.dk/
+    prefix: 'https://'
+  - id: sp-hf-mors-001
     logo: samarbejdspartner/hf-mors.jpg
     url: hfmors.dk/
-    prefix: 'http://'
-  -
-    id: 8ylJTeCEPLFtJek5KLrXq
+    prefix: 'https://'
+  - id: sp-thisted-ik-001
     logo: samarbejdspartner/tik.jpg
     url: thisted-ik.dk/
-    prefix: 'http://'
-  -
-    id: YjFklM_O98Tgxo1ddYYcZ
-    logo: samarbejdspartner/mtha-logo.jpg
-    url: m-tha.dk/
-    prefix: 'http://'
+    prefix: 'https://'
+  - id: sp-mth-001
+    logo: samarbejdspartner/mth.jpg
+    url: morsthy.dk/
+    prefix: 'https://'
 newsletter_section_headline:
   -
     type: heading
     attrs:
       level: 2
     content:
-      -
-        type: text
+      - type: text
         text: 'TILMELD DIG VORES NYHEDSBREV'
   -
     type: paragraph
     attrs:
       class: null
     content:
-      -
-        type: text
+      - type: text
         text: ' Og få alt det vigtigste fra klubben - direkte i din indbakke.'
 newsletter_benefits_list:
   - 'Bliv en del af fælleskabet og få seneste nyt om kampe, spillere og begivenheder samt eksklusive fordele.'

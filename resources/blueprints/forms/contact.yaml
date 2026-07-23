@@ -1,0 +1,32 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              display: Navn
+              placeholder: 'Indtast dit navn'
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              type: text
+              input_type: email
+              display: Email
+              placeholder: 'Indtast din email'
+              validate:
+                - required
+                - email
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Besked
+              placeholder: 'Skriv din besked her'
+              validate:
+                - required

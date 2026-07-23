@@ -5,10 +5,13 @@ title: 'Christian Guldhammer Højbak'
 profile_images:
   - spillere/christian-guldhammer-hoejbak/christian-guldhammer-hoejbak.png
 squad_type:
-  - talenttruppen
+  - '2007'
 nationality:
   - Dansk
 position: Playmaker
+player_sponsor:
+  - e0005001-0001-0001-0001-000000000001
+number: 12
 updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
-updated_at: 1784580071
+updated_at: 1784819809
 ---

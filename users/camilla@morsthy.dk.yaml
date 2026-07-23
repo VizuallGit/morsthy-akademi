@@ -14,7 +14,6 @@ preferences:
       columns:
         - title
         - status
-        - sponsor_group
     players:
       view: list
       columns:

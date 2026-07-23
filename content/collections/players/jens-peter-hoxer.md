@@ -5,7 +5,7 @@ title: 'Jens Peter Hoxer'
 profile_images:
   - spillere/jens-peter-hoxer/jens-peter-hoxer.png
 squad_type:
-  - talenttruppen
+  - '2009'
 nationality:
   - Dansk
 ---

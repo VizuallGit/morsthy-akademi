@@ -2,11 +2,9 @@ title: Sponsorer
 icon: collections
 template: default
 layout: layout
-taxonomies:
-  - sponsor_group
 revisions: false
 title_format: '{name}'
-slugs: false
+slugs: true
 sort_dir: asc
 date_behavior:
   past: null

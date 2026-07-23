@@ -15,11 +15,13 @@ tabs:
             field:
               type: text
               display: Name
+              validate:
+                - required
           -
             handle: logo
             field:
               container: assets
-              folder: sponsors
+              folder: sponsors/mtha
               restrict: true
               max_files: 1
               type: assets
@@ -28,7 +30,7 @@ tabs:
             handle: link
             field:
               input_type: url
-              prepend: 'https://www.'
+              prepend: 'https://'
               type: text
               display: Link
   sidebar:
@@ -37,19 +39,8 @@ tabs:
       -
         fields:
           -
-            handle: taggable_field
+            handle: slug
             field:
-              options:
-                - Hovedsponsor
-                - Gold
-                - Silver
-              type: taggable
-              display: 'Taggable Field'
-          -
-            handle: sponsor_group
-            field:
-              type: terms
-              taxonomies:
-                - sponsor_group
-              display: 'Sponsor group'
-              mode: select
+              type: slug
+              localizable: true
+              validate: 'max:200'

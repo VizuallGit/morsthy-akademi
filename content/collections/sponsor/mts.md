@@ -1,12 +1,9 @@
 ---
-id: e0004002-0001-0001-0001-000000000006
+id: e0005001-0001-0001-0001-000000000028
 blueprint: sponsor
-title: MTS
-name: MTS
+title: 'MTS'
+name: 'MTS'
 link: mtsmors.dk
-logo: sponsors/mts.png
-sponsor_group:
-  - rughave-group
-updated_by: d00c789f-53fb-4450-a58d-3a27e8ed35bc
-updated_at: 1744185600
+logo: sponsors/mtha/mts.jpg
+updated_at: 1784816642
 ---

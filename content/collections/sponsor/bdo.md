@@ -1,12 +1,9 @@
 ---
-id: e0001001-0001-0001-0001-000000000004
+id: e0005001-0001-0001-0001-000000000005
 blueprint: sponsor
-title: BDO
-name: BDO
-link: bdo.dk
-logo: sponsors/bdo.jpg
-sponsor_group:
-  - guldsponsor
-updated_by: 15aa9649-6a48-4a91-8d27-2be6ca503763
-updated_at: 1780988594
+title: 'BDO'
+name: 'BDO'
+link: bdo.dk/da-dk/kontorsteder/nykoebing-mors
+logo: sponsors/mtha/bdo.png
+updated_at: 1784816642
 ---

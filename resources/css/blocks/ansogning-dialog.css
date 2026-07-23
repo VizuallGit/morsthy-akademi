@@ -1,0 +1,234 @@
+.ansogning-dialog {
+    border: none;
+    padding: 0;
+    margin: auto;
+    width: min(52rem, calc(100vw - 2rem));
+    max-height: min(92dvh, 58rem);
+    color: var(--color-light-glare, #fff);
+    overflow: clip;
+    border-radius: var(--radius-xs, 4px);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+    background-color: var(--color-primary-glare, #1F52FD);
+    background-image: linear-gradient(90deg, transparent, color-mix(in oklch, white 10%, transparent));
+}
+
+.ansogning-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.ansogning-dialog__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: min(92dvh, 58rem);
+    overflow: clip;
+    padding: 1.5rem 1.75rem 1.25rem;
+    background: transparent;
+    color: var(--color-light-glare, #fff);
+}
+
+.ansogning-dialog__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 0;
+    border-radius: var(--radius-xs, 4px);
+    background: var(--color-dark-shade, #111);
+    color: var(--color-light-glare, #fff);
+    cursor: pointer;
+}
+
+.ansogning-dialog__close:hover {
+    background: var(--color-light-glare, #fff);
+    color: var(--color-dark-shade, #111);
+}
+
+.ansogning-dialog__header,
+.ansogning-dialog__body {
+    position: relative;
+    z-index: 10;
+}
+
+.ansogning-dialog__header {
+    flex-shrink: 0;
+    padding-right: 3rem;
+}
+
+.ansogning-dialog__title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+    font-weight: 800;
+    letter-spacing: var(--tracking-narrow, 0.02em);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.ansogning-dialog__lead {
+    margin: 0.4rem 0 0;
+    max-width: 48ch;
+    font-size: var(--size-xs, 0.8rem);
+    opacity: 0.85;
+}
+
+.ansogning-dialog__body {
+    overflow-y: auto;
+    min-height: 0;
+    padding-inline: 2px; /* room so focus border isn't clipped by overflow */
+}
+
+.ansogning-dialog__form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 0.85rem;
+    font-size: var(--size-xxs, 0.7rem);
+}
+
+.ansogning-dialog__field {
+    flex: 1 1 100%;
+    min-width: 0;
+}
+
+.ansogning-dialog__field--half {
+    flex: 1 1 calc(50% - 0.45rem);
+}
+
+.ansogning-dialog__field label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.ansogning-dialog__label {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.ansogning-dialog__field input,
+.ansogning-dialog__field select,
+.ansogning-dialog__field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    appearance: none;
+    border: 1px solid color-mix(in oklch, var(--color-light-glare), transparent 80%);
+    border-radius: var(--radius-xs, 4px);
+    background-color: color-mix(in oklch, var(--color-dark-shade) 8%, transparent);
+    color: inherit;
+    padding: 0.85em 1em;
+    font-size: inherit;
+    line-height: 1;
+}
+
+.ansogning-dialog__field input::placeholder,
+.ansogning-dialog__field textarea::placeholder {
+    color: inherit;
+    opacity: 0.7;
+}
+
+.ansogning-dialog__field select {
+    color-scheme: dark;
+}
+
+.ansogning-dialog__field textarea {
+    min-height: 3.5rem;
+    resize: vertical;
+    line-height: 1.4;
+}
+
+.ansogning-dialog__field input:focus,
+.ansogning-dialog__field select:focus,
+.ansogning-dialog__field textarea:focus {
+    outline: none;
+    border-color: var(--color-light-glare, #fff);
+    box-shadow: inset 0 0 0 1px var(--color-light-glare, #fff);
+}
+
+.ansogning-dialog__field input:-webkit-autofill,
+.ansogning-dialog__field input:-webkit-autofill:hover,
+.ansogning-dialog__field input:-webkit-autofill:focus,
+.ansogning-dialog__field textarea:-webkit-autofill,
+.ansogning-dialog__field textarea:-webkit-autofill:hover,
+.ansogning-dialog__field textarea:-webkit-autofill:focus,
+.ansogning-dialog__field select:-webkit-autofill,
+.ansogning-dialog__field select:-webkit-autofill:hover,
+.ansogning-dialog__field select:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--color-light-glare, #fff);
+    caret-color: var(--color-light-glare, #fff);
+    transition: background-color 99999s ease-in-out 0s;
+    box-shadow: 0 0 0 1000px color-mix(in oklch, var(--color-dark-shade) 8%, transparent) inset;
+}
+
+.ansogning-dialog__error {
+    margin: 0.2rem 0 0;
+    font-size: 0.75rem;
+    color: #fecaca;
+}
+
+.ansogning-dialog__errors {
+    flex: 1 1 100%;
+    font-size: 0.875rem;
+    color: #fecaca;
+}
+
+.ansogning-dialog__errors ul {
+    margin: 0.25rem 0 0;
+    padding-left: 1.25rem;
+}
+
+.ansogning-dialog__submit {
+    flex: 1 1 100%;
+    width: 100%;
+    margin-top: 0.15rem;
+    cursor: pointer;
+    background: var(--color-dark-shade, #111);
+    color: var(--color-light-glare, #fff);
+}
+
+.ansogning-dialog__submit:hover {
+    background: var(--color-light-glare, #fff);
+    color: var(--color-dark-shade, #111);
+}
+
+.ansogning-dialog__legal {
+    flex: 1 1 100%;
+    margin: 0;
+    font-size: var(--size-xs, 0.75rem);
+    opacity: 0.6;
+}
+
+.ansogning-dialog__legal a {
+    color: var(--color-light-glare, #fff);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.ansogning-dialog__logo {
+    position: absolute;
+    top: -80%;
+    right: -18%;
+    z-index: 0;
+    height: 200%;
+    width: auto;
+    transform: scaleX(-1) rotate(12deg);
+    color: color-mix(in oklch, var(--color-dark-shade) 10%, transparent);
+    pointer-events: none;
+}
+
+@media (max-width: 639px) {
+    .ansogning-dialog__field--half {
+        flex: 1 1 100%;
+    }
+
+    .ansogning-dialog__inner {
+        padding: 1.25rem 1rem 1rem;
+    }
+}

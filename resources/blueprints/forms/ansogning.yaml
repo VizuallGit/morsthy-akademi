@@ -1,0 +1,137 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              display: 'Dit navn'
+              width: 50
+              validate:
+                - required
+          -
+            handle: birthdate
+            field:
+              type: text
+              display: Fødselsdato
+              placeholder: 'DD-MM-ÅÅÅÅ'
+              width: 50
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              type: text
+              input_type: email
+              display: E-mailadresse
+              width: 50
+              validate:
+                - required
+                - email
+          -
+            handle: phone
+            field:
+              type: text
+              input_type: tel
+              display: Telefonnummer
+              width: 50
+              validate:
+                - required
+          -
+            handle: hometown
+            field:
+              type: text
+              display: Hjemby
+              width: 50
+              validate:
+                - required
+          -
+            handle: admission_year
+            field:
+              type: text
+              display: 'Ønsket optagelsesår'
+              width: 50
+              validate:
+                - required
+          -
+            handle: previous_clubs
+            field:
+              type: text
+              display: 'Tidligere klubber'
+              width: 50
+              validate:
+                - required
+          -
+            handle: current_club
+            field:
+              type: text
+              display: 'Din nuværende klub/efterskole'
+              width: 50
+              validate:
+                - required
+          -
+            handle: housing
+            field:
+              type: select
+              display: 'Ønsker du at bo på akademiet eller derhjemme?'
+              placeholder: '--'
+              width: 50
+              options:
+                -
+                  key: akademiet
+                  value: Akademiet
+                -
+                  key: derhjemme
+                  value: Derhjemme
+              validate:
+                - required
+          -
+            handle: position
+            field:
+              type: text
+              display: 'Position på banen'
+              width: 50
+              validate:
+                - required
+          -
+            handle: regional_talent
+            field:
+              type: text
+              display: 'Har du været udtaget til regional talenttræning?'
+              width: 50
+              validate:
+                - required
+          -
+            handle: national_talent
+            field:
+              type: text
+              display: 'Har du været udtaget til national talenttræning?'
+              width: 50
+              validate:
+                - required
+          -
+            handle: handball_training
+            field:
+              type: text
+              display: 'Hvor mange gange om ugen træner du håndbold?'
+              width: 50
+              validate:
+                - required
+          -
+            handle: strength_training
+            field:
+              type: text
+              display: 'Hvor mange gange om ugen styrketræner du?'
+              width: 50
+              validate:
+                - required
+          -
+            handle: message
+            field:
+              type: textarea
+              display: Besked
+              validate:
+                - required

@@ -56,3 +56,4 @@ tabs:
                 - employee_category
               display: 'Employee category'
               mode: select
+              max_items: 5

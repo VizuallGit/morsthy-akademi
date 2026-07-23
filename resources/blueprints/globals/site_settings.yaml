@@ -49,9 +49,10 @@ tabs:
                 -
                   handle: logo
                   field:
-                    path: assets/sponsors/svg
-                    path_helper: public_path
-                    type: iconamic
+                    container: assets
+                    folder: sponsors/footer
+                    max_files: 1
+                    type: assets
                     display: Logo
                 -
                   handle: size

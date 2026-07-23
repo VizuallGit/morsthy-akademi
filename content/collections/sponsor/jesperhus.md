@@ -1,12 +1,9 @@
 ---
-id: e0001001-0001-0001-0001-000000000008
+id: e0005001-0001-0001-0001-000000000014
 blueprint: sponsor
-title: Jesperhus
-name: Jesperhus
+title: 'Jesperhus'
+name: 'Jesperhus'
 link: jesperhus.dk
-logo: sponsors/jesperhus-logoferie-for-boern.jpg
-sponsor_group:
-  - eksklusiv-partner
-updated_by: d00c789f-53fb-4450-a58d-3a27e8ed35bc
-updated_at: 1744185600
+logo: sponsors/mtha/jesperhus.jpg
+updated_at: 1784816642
 ---
