@@ -1,5 +1,6 @@
 ---
 id: e0005001-0001-0001-0001-000000000009
+published: false
 blueprint: sponsor
 title: 'Budolfi Privathospital'
 name: 'Budolfi Privathospital'

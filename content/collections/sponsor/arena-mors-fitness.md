@@ -1,5 +1,6 @@
 ---
 id: e0005001-0001-0001-0001-000000000003
+published: false
 blueprint: sponsor
 title: 'Arena Mors Fitness'
 name: 'Arena Mors Fitness'

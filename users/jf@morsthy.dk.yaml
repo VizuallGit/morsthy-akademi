@@ -1,9 +1,9 @@
-name: Admin
+name: 'Jonas Fangel'
 super: false
 roles:
   - content_editor
 id: d00c789f-53fb-4450-a58d-3a27e8ed35bc
-password_hash: $2y$12$asN1vLKNVAqbWasljpoYVeyT/EKgnuoRzaTGmLhtnoX2V.Z9k/JJ6
+password_hash: $2y$12$ERoLk6SWoAcY9TLbg.VSC.IQ8UsVINGhFQ5I6QeI2AoH5F3LtfzBW
 preferences:
   collections:
     pages:

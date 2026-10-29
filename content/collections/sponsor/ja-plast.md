@@ -1,5 +1,6 @@
 ---
 id: e0005001-0001-0001-0001-000000000023
+published: false
 blueprint: sponsor
 title: 'J.A. Plast'
 name: 'J.A. Plast'
