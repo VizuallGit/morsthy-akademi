@@ -15,6 +15,6 @@
             {{ glide:imagePath width="{{ w or '500' }}" height="{{ h or '500' }}" quality="{{ q or '70' }}" fit="crop_focal" format="{{ format or 'webp' }}" }} {{ w or '500' }}w,
             {{ glide:imagePath width="{{ w or '500' }}" height="{{ h or '500' }}" quality="{{ q or '60' }}" fit="crop_focal" format="{{ format or 'webp' }}" dpr="2" }} {{ w | multiply:2 or '1000' }}w"
     src="{{ glide:imagePath width="{{ w or '500' }}" height="{{ h or '500' }}" quality="{{ q or '70' }}" fit="crop_focal" format="{{ format or 'webp' }}" }}"
-    alt="{{ imagePath:alt }}"
+    alt="{{ alt_text ?? imagePath:alt }}"
     onload="this.classList.add('lqip-loaded')"
 >
