@@ -378,4 +378,6 @@ color: light
 show_media_top_banner: false
 updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
 updated_at: 1784633786
+meta_title: 'Strategi 2030 og vedtægter'
+meta_description: 'Læs Mors-Thy Håndbolds Strategi 2030 og vedtægterne – baggrunden for holdfællesskabet mellem Mors og Thy og målene frem mod 2030.'
 ---

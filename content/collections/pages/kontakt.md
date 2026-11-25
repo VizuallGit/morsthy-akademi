@@ -35,4 +35,6 @@ color: dark
 show_media_top_banner: false
 updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
 updated_at: 1782122782
+meta_title: 'Kontakt akademiet'
+meta_description: 'Kontakt Mors-Thy Håndbold Akademi, Tranevej 4, 7900 Nykøbing Mors. Ring på +45 30 62 43 04 eller skriv til info@m-tha.dk.'
 ---

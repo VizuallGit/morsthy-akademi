@@ -212,4 +212,6 @@ page_sections:
     _visual_id: dbc014f0-f342-4ff7-af22-acd3da074a89
 updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
 updated_at: 1784748244
+meta_title: 'Kontingent og priser for elever'
+meta_description: 'Se hvad det koster at være elev på Mors-Thy Håndbold Akademi: forbrug, kontingent til HF Mors og akademiet, elitetillæg og husleje.'
 ---

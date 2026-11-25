@@ -25,4 +25,6 @@ hide_sidebar: true
 main_content_width: max-w-full
 updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
 updated_at: 1784816729
+meta_title: 'Sponsorer der støtter akademiet'
+meta_description: 'Mød sponsorerne bag Mors-Thy Håndbold Akademi – lokale virksomheder, der støtter unge håndboldtalenter på Mors og i Thy.'
 ---

@@ -11,6 +11,7 @@
     ],
     "require": {
         "php": "^8.3",
+        "eminos/statamic-consent-manager": "^2.0",
         "eminos/statamic-iconify": "^2.1",
         "jacksleight/statamic-bard-texstyle": "4.1.1",
         "laravel/framework": "^12.0",

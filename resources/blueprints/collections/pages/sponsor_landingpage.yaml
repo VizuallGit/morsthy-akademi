@@ -1,41 +1,46 @@
 hide: true
-title: 'Sponsor landingpage'
+title: Sponsor landingpage
 tabs:
   main:
     display: Main
     sections:
-      -
-        fields:
-          -
-            import: main_content
+    - fields:
+      - import: main_content
   sidebar:
     display: Sidebar
     sections:
-      -
-        fields:
-          -
-            handle: title
-            field:
-              type: text
-              required: true
-              validate:
-                - required
-          -
-            handle: slug
-            field:
-              type: slug
-              localizable: true
-              validate: 'max:200'
-          -
-            handle: color
-            field:
-              options:
-                -
-                  key: dark
-                  value: Dark
-                -
-                  key: light
-                  value: Light
-              default: dark
-              type: button_group
-              display: Color
+    - fields:
+      - handle: title
+        field:
+          type: text
+          required: true
+          validate:
+          - required
+      - handle: slug
+        field:
+          type: slug
+          localizable: true
+          validate: max:200
+      - handle: color
+        field:
+          options:
+          - key: dark
+            value: Dark
+          - key: light
+            value: Light
+          default: dark
+          type: button_group
+          display: Color
+  seo:
+    display: SEO
+    sections:
+    - display: Søgemaskiner og deling
+      fields:
+      - import: meta
+        prefix: meta_
+      - handle: meta_noindex
+        field:
+          type: toggle
+          display: Skjul for søgemaskiner (noindex)
+          instructions: Slå til for sider, der ikke skal vises i Google.
+          default: false

@@ -1,0 +1,59 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["SportsOrganization", "LocalBusiness"],
+      "@id": "{{ config:app:url }}/#organisation",
+      "name": "{{ site_settings:site_name }}",
+      "alternateName": "Mors-Thy Håndbold Akademi",
+      "url": "{{ config:app:url }}/",
+      "logo": "{{ config:app:url }}/apple-touch-icon.png",
+      "image": "{{ glide src="/assets/fa-intro/web-20250912_mth_shh.jpg" width="1200" height="630" fit="crop_focal" absolute="true" }}",
+      "description": "Håndboldakademi i Nykøbing Mors, hvor unge talenter kombinerer elitetræning hos Mors-Thy Håndbold med ungdomsuddannelse og bolig på Traneholm.",
+      "sport": "Håndbold",
+      "telephone": "{{ site_settings:phone }}",
+      "email": "{{ site_settings:email }}",
+      "vatID": "DK{{ site_settings:cvr }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ site_settings:address }}",
+        "postalCode": "7900",
+        "addressLocality": "Nykøbing Mors",
+        "addressCountry": "DK"
+      },
+      "areaServed": [{"@type": "Place", "name": "Mors"}, {"@type": "Place", "name": "Thy"}, {"@type": "Country", "name": "Danmark"}],
+      "parentOrganization": {"@type": "SportsTeam", "name": "Mors-Thy Håndbold", "url": "https://morsthy.dk/"},
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Optagelse og information",
+        "telephone": "{{ site_settings:phone }}",
+        "email": "{{ site_settings:email }}",
+        "availableLanguage": "da"
+      },
+      "sameAs": [{{ site_settings:socialmedia_links where="enabled:true" }}"{{ prefix }}{{ handle }}"{{ unless last }}, {{ /unless }}{{ /site_settings:socialmedia_links }}],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Akademiets tilbud",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Elitetræning i håndbold", "description": "Daglig træning og udvikling i samarbejde med Mors-Thy Håndbold." } },
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kollegieværelse på Traneholm", "description": "Eget værelse med bad, toilet og tekøkken i Nykøbing Mors." } },
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sport og uddannelse", "description": "Elitesport kombineret med ungdomsuddannelse på bl.a. HF Mors, Morsø Gymnasium og EUC Nordvest." } }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ config:app:url }}/#website",
+      "url": "{{ config:app:url }}/",
+      "name": "{{ site_settings:site_name }}",
+      "inLanguage": "da-DK",
+      "publisher": {"@id": "{{ config:app:url }}/#organisation"}
+    }{{ unless is_homepage }},
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{{ nav:breadcrumbs }}{"@type": "ListItem", "position": {{ count }}, "name": "{{ title | sanitize }}", "item": "{{ permalink }}"}{{ unless last }}, {{ /unless }}{{ /nav:breadcrumbs }}]
+    }{{ /unless }}
+  ]
+}
+</script>

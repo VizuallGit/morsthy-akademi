@@ -4,13 +4,15 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noindex, nofollow">
         {{ partial:meta_info }}
         {{ if site_settings.custom_script_header }}
             <script>
                 {{ site_settings.custom_script_header }}
             </script>
         {{ endif }}
+        {{ consent_manager:head }}
+        <style>@layer properties, theme, base, components, compositions, tokens, utilities;</style>
+        <link rel="stylesheet" href="{{ vite:asset src="resources/css/consent-manager.css" directory="vendor/statamic-consent-manager/frontend" }}">
         {{ vite src="resources/css/site.css|resources/js/site.js" }}
         {{ yield:view_transition }}
         {{ yield_minified section="style" }}
@@ -19,17 +21,30 @@
                 {{ site_settings.custom_css }}
             </style>
         {{ endif }}
-        <link rel="preconnect" href="https://use.typekit.net" crossorigin>
-        <link rel="preconnect" href="https://p.typekit.net" crossorigin>
-        <link rel="preload" href="https://use.typekit.net/omv5xgk.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://use.typekit.net/omv5xgk.css"></noscript>
+        {{# Adobe Fonts (Typekit) hentes kun efter samtykke til «Funktionelle» – ellers bruges widescreen-fallback fra /fonts #}}
+        {{ consent_manager:require service="adobe_fonts" }}
+            <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+            <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+            <link rel="stylesheet" href="https://use.typekit.net/omv5xgk.css">
+        {{ /consent_manager:require }}
     </head>
     <body class="{{ is_homepage ? 'dark:bg-dark-shade' : 'dark:bg-dark-glare' }}  dark:text-light-glare light:bg-light font-base leading-normal overflow-x-clip" data-theme="{{ uri | contains('/truppen') or uri | contains('/sponsor') or color == 'light' ? 'light' : 'dark' }}">
         {{ partial:site_head }}
         <main class="">
             {{ template_content }}
         </main>
+        <div class="consent-manager-block">{{ consent_manager:dialog }}</div>
+        <div class="consent-manager-block">{{ consent_manager:body }}</div>
         {{ partial:site_foot }}
+        <script>
+            document.addEventListener('click', function (e) {
+                var link = e.target.closest('a[href="#cookie-indstillinger"]');
+                if (!link) return;
+                e.preventDefault();
+                var dialog = document.querySelector('dialog[data-consent-manager="preferences"]');
+                if (dialog && !dialog.open) dialog.showModal();
+            });
+        </script>
         {{ if site_settings.custom_script_footer }}
             <script>
                 {{ site_settings.custom_script_footer }}

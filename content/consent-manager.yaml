@@ -1,0 +1,86 @@
+categories:
+  -
+    handle: necessary
+    name: Nødvendige
+    description: 'Nødvendige cookies sørger for, at hjemmesiden fungerer – fx sikkerhed, formularer og at dit cookie-valg bliver husket. De kan ikke slås fra.'
+    required: true
+    default_enabled: true
+    enabled: true
+    type: category
+  -
+    handle: functional
+    name: Funktionelle
+    description: 'Funktionelle cookies og tjenester giver ekstra funktioner og indhold fra andre udbydere, fx skrifttyper og indlejrede videoer.'
+    required: false
+    default_enabled: false
+    enabled: true
+    type: category
+  -
+    handle: analytics
+    name: Statistik
+    description: 'Statistik-cookies hjælper os med at forstå, hvordan hjemmesiden bruges, så vi kan forbedre den. Oplysningerne er anonyme.'
+    required: false
+    default_enabled: false
+    enabled: true
+    type: category
+  -
+    handle: marketing
+    name: Marketing
+    description: 'Marketing-cookies bruges til at vise relevante annoncer og måle effekten af kampagner.'
+    required: false
+    default_enabled: false
+    enabled: true
+    type: category
+services:
+  -
+    id: mta-adobe-fonts
+    handle: adobe_fonts
+    name: 'Adobe Fonts'
+    description: 'Skrifttypen til overskrifter fra Adobe Fonts (Typekit). Hentes kun, hvis du accepterer funktionelle cookies – så sendes din IP-adresse til Adobe. Der sættes ingen cookies. Uden samtykke vises en tilsvarende skrifttype fra vores egen server.'
+    categories:
+      - functional
+    type: service
+    enabled: true
+  -
+    id: mta-local-fonts
+    handle: egne_skrifttyper
+    name: 'Egne skrifttyper'
+    description: 'Øvrige skrifttyper (Barlow og Inter) hentes fra vores egen server – der sendes ingen oplysninger til tredjepart, og der sættes ingen cookies.'
+    categories:
+      - necessary
+    type: service
+    enabled: true
+integrations:
+  google_tag:
+    enabled: false
+    measurement_id: ''
+    consent_mapping:
+      -
+        category: necessary
+        storage_types:
+          - security_storage
+      -
+        category: functional
+        storage_types:
+          - functionality_storage
+          - personalization_storage
+      -
+        category: analytics
+        storage_types:
+          - analytics_storage
+      -
+        category: marketing
+        storage_types:
+          - ad_storage
+          - ad_user_data
+          - ad_personalization
+  meta_pixel:
+    enabled: false
+    pixel_id: ''
+    required_categories:
+      - marketing
+  linkedin_insight:
+    enabled: false
+    partner_id: ''
+    required_categories:
+      - marketing

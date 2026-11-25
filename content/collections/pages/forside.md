@@ -275,4 +275,5 @@ meta_title: 'Mors-Thy Håndbold - en landsdel der løfter i flok'
 meta_description: 'Talentudvikling, lokal forankring i Thy og på Mors og med bette Balkan i ryggen. Altid.'
 updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
 updated_at: 1784747133
+meta_image: 'fa-intro/web-20250912_mth_shh.jpg'
 ---

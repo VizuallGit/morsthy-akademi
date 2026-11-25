@@ -31,4 +31,6 @@ color: dark
 show_media_top_banner: false
 updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
 updated_at: 1782122800
+meta_title: 'Bestyrelsen bag akademiet'
+meta_description: 'Se bestyrelsen for Mors-Thy Håndbold Akademi med repræsentanter fra klubben, uddannelsesstederne, Morsø Kommune og forældrene.'
 ---

@@ -444,4 +444,6 @@ color: light
 show_media_top_banner: false
 updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
 updated_at: 1784633796
+meta_title: 'Persondatapolitik'
+meta_description: 'Læs hvordan personoplysninger indsamles, behandles og opbevares, når du er i kontakt med Mors-Thy Håndbold og akademiet.'
 ---

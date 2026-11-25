@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99b0299f89322cb98bf4a301eab50dbf",
+    "content-hash": "63c3759548bdf32183615577528b5052",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -852,6 +852,74 @@
                 }
             ],
             "time": "2025-03-06T22:45:56+00:00"
+        },
+        {
+            "name": "eminos/statamic-consent-manager",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eminos/statamic-consent-manager.git",
+                "reference": "c4acc6288786117c9ff589d72db8ea02ecb6a9f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eminos/statamic-consent-manager/zipball/c4acc6288786117c9ff589d72db8ea02ecb6a9f8",
+                "reference": "c4acc6288786117c9ff589d72db8ea02ecb6a9f8",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.3",
+                "statamic/cms": "^6.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^9.0|^10.0",
+                "pestphp/pest": "^4.0",
+                "pestphp/pest-plugin-laravel": "^4.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Eminos\\StatamicConsentManager\\ServiceProvider"
+                    ]
+                },
+                "statamic": {
+                    "name": "Consent Manager",
+                    "description": "GDPR-compliant consent management for Statamic"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Eminos\\StatamicConsentManager\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Emin Jasarevic",
+                    "email": "emin@kiwikiwi.se",
+                    "homepage": "https://kiwikiwi.se",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A powerful, GDPR-compliant consent management solution (\"cookie banner\") for Statamic CMS that gives you complete control over tracking scripts and user privacy.",
+            "homepage": "https://github.com/eminos/statamic-consent-manager",
+            "keywords": [
+                "addon",
+                "consent",
+                "cookie banner",
+                "gdpr",
+                "privacy",
+                "statamic"
+            ],
+            "support": {
+                "issues": "https://github.com/eminos/statamic-consent-manager/issues",
+                "source": "https://github.com/eminos/statamic-consent-manager/tree/v2.0.2"
+            },
+            "time": "2026-05-25T09:19:58+00:00"
         },
         {
             "name": "eminos/statamic-iconify",

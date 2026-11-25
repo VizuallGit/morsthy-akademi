@@ -35,4 +35,7 @@ featured_image_position: full_width
 show_media_top_banner: false
 updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
 updated_at: 1784745097
+meta_title: 'Professionelle omkring akademiet'
+meta_description: 'Mød trænerne og fagpersonerne omkring Mors-Thy Håndbold Akademi, som udvikler de unge spillere på og uden for banen.'
+meta_image: 'billeder/548108228_1372045924923437_8471953745161588108_n.jpg'
 ---

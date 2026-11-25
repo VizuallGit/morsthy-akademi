@@ -128,4 +128,7 @@ page_sections:
     _visual_id: f1910411-90b9-4dd4-835c-dbe9c13f6e37
 updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
 updated_at: 1784818276
+meta_title: 'Akademiet – faciliteter i Nykøbing Mors'
+meta_description: 'Mors-Thy Håndbold Akademi ligger i Morsø Multipark i Nykøbing Mors – tæt på gymnasium, HF, sportsarena og Limfjordsteatret.'
+meta_image: 'billeder/akademiet/drone-1-scaled-pm0in2g0vms8wtwbutdzxdlykkvf9xjpr4qfpu0ydc.jpg'
 ---

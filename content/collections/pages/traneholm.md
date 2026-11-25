@@ -73,4 +73,7 @@ color: dark
 show_media_top_banner: false
 updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
 updated_at: 1784818265
+meta_title: 'Traneholm – akademiets bolig'
+meta_description: 'Traneholm i Nykøbing Mors blev indviet i 2023 og rummer akademiets administration og 35 nye kollegieværelser tæt på gymnasiet.'
+meta_image: 'billeder/traneholm/front.jpg'
 ---

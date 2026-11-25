@@ -2,37 +2,36 @@ hide: true
 title: Home
 tabs:
   page_sections:
-    display: 'Page sections'
+    display: Page sections
     sections:
-      -
-        display: 'New Section'
-        fields:
-          -
-            handle: page_sections
-            field: page_sections.page_sections
+    - display: New Section
+      fields:
+      - handle: page_sections
+        field: page_sections.page_sections
   seo:
     display: Seo
     sections:
-      -
-        fields:
-          -
-            import: meta
-            prefix: meta_
+    - fields:
+      - import: meta
+        prefix: meta_
+      - handle: meta_noindex
+        field:
+          type: toggle
+          display: Skjul for søgemaskiner (noindex)
+          instructions: Slå til for sider, der ikke skal vises i Google.
+          default: false
   sidebar:
     display: Sidebar
     sections:
-      -
-        fields:
-          -
-            handle: title
-            field:
-              type: text
-              required: true
-              validate:
-                - required
-          -
-            handle: slug
-            field:
-              type: slug
-              localizable: true
-              validate: 'max:200'
+    - fields:
+      - handle: title
+        field:
+          type: text
+          required: true
+          validate:
+          - required
+      - handle: slug
+        field:
+          type: slug
+          localizable: true
+          validate: max:200

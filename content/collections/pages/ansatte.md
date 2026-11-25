@@ -102,4 +102,6 @@ page_sections:
     main_content_width: max-w-full
     type: main_content
     enabled: true
+meta_title: 'Ansatte – hverdagen på akademiet'
+meta_description: 'Mød de ansatte på Mors-Thy Håndbold Akademi: daglig leder, administration, køkken og rengøring, der får hverdagen til at fungere.'
 ---

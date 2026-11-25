@@ -86,4 +86,6 @@ hide_navigation_box: false
 hide_form_box: false
 updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
 updated_at: 1784749045
+meta_title: 'Samarbejdspartnere – sport og uddannelse'
+meta_description: 'Mors-Thy Håndbold Akademi samarbejder med bl.a. Morsø Kommune, Morsø Gymnasium, HF Mors, EUC Nordvest og VIA Læreruddannelsen Skive.'
 ---

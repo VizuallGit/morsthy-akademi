@@ -15,3 +15,15 @@ Route::get('/truppen/{slug}', function ($slug) {
     $term->set('template', 'players/squad_type/show');
     return $term->toResponse(request());
 });
+
+// Omdirigeringer fra det gamle One.com-site (se config/old_site.php)
+foreach (config('old_site.pages', []) as $from => $to) {
+    Route::permanentRedirect($from, $to);
+}
+
+Route::get('/onewebmedia/{path}', function (string $path) {
+    $key = mb_strtolower(rawurldecode($path));
+    $target = config('old_site.onewebmedia')[$key] ?? (str_ends_with($key, '.pdf') ? '/brochurer' : '/');
+
+    return redirect($target, 301);
+})->where('path', '.*');

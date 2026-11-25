@@ -1,36 +1,43 @@
 hide: true
-title: 'News landingpage'
+title: News landingpage
 tabs:
   main:
     display: Main
     sections:
-      -
-        fields:
-          -
-            handle: headline
-            field:
-              type: text
-              display: Headline
+    - fields:
+      - handle: headline
+        field:
+          type: text
+          display: Headline
   sidebar:
     display: Sidebar
     sections:
-      -
-        fields:
-          -
-            handle: title
-            field:
-              type: text
-              required: true
-              validate:
-                - required
-          -
-            handle: slug
-            field:
-              type: slug
-              localizable: true
-              validate: 'max:200'
-          -
-            handle: hide_in_main_nav
-            field:
-              type: toggle
-              display: 'Hide in main nav'
+    - fields:
+      - handle: title
+        field:
+          type: text
+          required: true
+          validate:
+          - required
+      - handle: slug
+        field:
+          type: slug
+          localizable: true
+          validate: max:200
+      - handle: hide_in_main_nav
+        field:
+          type: toggle
+          display: Hide in main nav
+  seo:
+    display: SEO
+    sections:
+    - display: Søgemaskiner og deling
+      fields:
+      - import: meta
+        prefix: meta_
+      - handle: meta_noindex
+        field:
+          type: toggle
+          display: Skjul for søgemaskiner (noindex)
+          instructions: Slå til for sider, der ikke skal vises i Google.
+          default: false

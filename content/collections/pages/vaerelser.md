@@ -151,4 +151,7 @@ page_sections:
     _visual_id: 6b085e58-7f2e-41ed-8f20-3a0e9552e857
 updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
 updated_at: 1784818256
+meta_title: 'Værelser – sådan bor du'
+meta_description: 'Se et enkeltmandsværelse på Mors-Thy Håndbold Akademi. Alle værelser har eget bad, toilet og tekøkken og lejes via Domea.'
+meta_image: 'billeder/vaerelser/img-1029.jpg'
 ---

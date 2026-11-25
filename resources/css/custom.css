@@ -59,3 +59,23 @@
 }
 
 }
+/* Cookie-samtykke (eminos/statamic-consent-manager): brandfarver og bredde */
+dialog[data-consent-manager] {
+    --color-blue-400: #1F52FD;
+    --color-blue-500: #1F52FD;
+    --color-blue-600: #183DBD;
+    --color-blue-700: #10287E;
+    --color-green-500: #1F52FD;
+    --color-green-600: #183DBD;
+    --color-green-700: #10287E;
+    font-family: var(--font-base);
+}
+dialog[data-consent-manager="banner"] {
+    width: calc(100% - 2rem) !important;
+    max-width: 26rem !important;
+    inset: auto 1rem 1rem auto !important;
+}
+dialog[data-consent-manager="preferences"] {
+    width: calc(100% - 2rem) !important;
+    max-width: 32rem !important;
+}
