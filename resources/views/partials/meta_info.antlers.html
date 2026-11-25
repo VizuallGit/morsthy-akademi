@@ -1,5 +1,5 @@
 {{# Titel: «Sidetitel | Mors-Thy Akademi» – meta_title fra SEO-fanen, ellers sidens titel #}}
-{{ seo_title = meta_title ?? title }}
+{{ seo_title = meta_title ?? title ?? 'Siden blev ikke fundet' }}
 <title>{{ if is_homepage && !meta_title }}{{ site_settings:site_name }}{{ else }}{{ seo_title }} | {{ site_settings:site_name }}{{ /if }}</title>
 <link rel="canonical" href="{{ current_url }}" />
 {{ if environment != 'production' || meta_noindex }}
