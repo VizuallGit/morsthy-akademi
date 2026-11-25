@@ -4,6 +4,7 @@ blueprint: samarbejdspartner
 title: 'EUC Nordvest'
 name: 'EUC Nordvest'
 link: eucnordvest.dk
-logo: samarbejdspartner/euc-nordvest.jpg
-updated_at: 1784749493
+logo: samarbejdspartner/4.png
+updated_at: 1793876330
+updated_by: d00c789f-53fb-4450-a58d-3a27e8ed35bc
 ---

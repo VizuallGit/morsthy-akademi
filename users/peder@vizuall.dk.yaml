@@ -17,6 +17,9 @@ preferences:
       view: list
     author:
       view: list
+    samarbejdspartner:
+      view: tree
   assets:
     assets:
       mode: grid
+      per_page: 100

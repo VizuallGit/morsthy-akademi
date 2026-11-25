@@ -4,6 +4,7 @@ blueprint: samarbejdspartner
 title: 'HF Mors'
 name: 'HF Mors'
 link: hfmors.dk
-logo: samarbejdspartner/hf-mors.jpg
-updated_at: 1784749493
+logo: samarbejdspartner/1.png
+updated_at: 1793876349
+updated_by: d00c789f-53fb-4450-a58d-3a27e8ed35bc
 ---
