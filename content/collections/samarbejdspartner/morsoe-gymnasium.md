@@ -4,6 +4,7 @@ blueprint: samarbejdspartner
 title: 'Morsø Gymnasium'
 name: 'Morsø Gymnasium'
 link: morsoegym.dk
-logo: samarbejdspartner/morsoe-gymnasium.jpg
-updated_at: 1784749493
+logo: samarbejdspartner/5.png
+updated_at: 1793876367
+updated_by: d00c789f-53fb-4450-a58d-3a27e8ed35bc
 ---

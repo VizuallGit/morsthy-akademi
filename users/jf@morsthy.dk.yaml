@@ -22,6 +22,7 @@ preferences:
         - slug
         - status
       after_save: continue_editing
+      per_page: 500
     news:
       view: list
     employees:
@@ -30,9 +31,13 @@ preferences:
         - title
         - status
         - category
+    author:
+      view: list
+    samarbejdspartner:
+      view: list
   assets:
     assets:
-      mode: grid
+      per_page: 500
     editor_checkerboard_mode: dark
   theme: null
   locale: da

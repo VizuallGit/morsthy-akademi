@@ -39,7 +39,8 @@ page_sections:
                           rel: null
                           target: _blank
                           title: null
-                      - type: bold
+                      -
+                        type: bold
                       -
                         type: textColor
                         attrs:
@@ -56,7 +57,8 @@ page_sections:
                   -
                     type: text
                     marks:
-                      - type: bold
+                      -
+                        type: bold
                       -
                         type: textColor
                         attrs:
@@ -80,7 +82,8 @@ page_sections:
                           rel: null
                           target: _blank
                           title: null
-                      - type: bold
+                      -
+                        type: bold
                     text: 'Kontrakt mellem elev og Mors-Thy Håndbold Akademi'
           -
             type: listItem
@@ -100,17 +103,18 @@ page_sections:
                           rel: null
                           target: _blank
                           title: null
-                      - type: bold
+                      -
+                        type: bold
                     text: 'Forældreovervejelser, hvis dit barn gerne vil på Mors-Thy Håndbold Akademi'
     hide_sidebar: true
     _visual_id: d61fe7f5-87bc-4554-8ba8-da89437af106
     type: main_content
-    enabled: true
+    enabled: false
     main_content_width: 'max-w-[85ch]'
 title: Brochurer
-hide_in_main_nav: false
+hide_in_main_nav: true
 color: dark
 show_media_top_banner: false
-updated_by: 3e9513da-d4ea-43fe-b935-005708a78c2e
-updated_at: 1784744282
+updated_by: d00c789f-53fb-4450-a58d-3a27e8ed35bc
+updated_at: 1794486894
 ---

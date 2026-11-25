@@ -1,5 +1,6 @@
 ---
 id: e0005001-0001-0001-0001-000000000039
+published: false
 blueprint: sponsor
 title: 'Thy-Mors Energi'
 name: 'Thy-Mors Energi'

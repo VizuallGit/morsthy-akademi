@@ -1,5 +1,6 @@
 ---
 id: e0005001-0001-0001-0001-000000000036
+published: false
 blueprint: sponsor
 title: 'Spar Nord'
 name: 'Spar Nord'
