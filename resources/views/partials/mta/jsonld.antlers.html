@@ -31,7 +31,7 @@
         "email": "{{ site_settings:email }}",
         "availableLanguage": "da"
       },
-      "sameAs": [{{ site_settings:socialmedia_links where="enabled:true" }}"{{ prefix }}{{ handle }}"{{ unless last }}, {{ /unless }}{{ /site_settings:socialmedia_links }}],
+      "sameAs": [{{ site_settings:socialmedia_links }}"{{ prefix }}{{ handle }}"{{ unless last }}, {{ /unless }}{{ /site_settings:socialmedia_links }}],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Akademiets tilbud",

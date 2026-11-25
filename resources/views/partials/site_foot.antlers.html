@@ -15,7 +15,7 @@
                     {{ if logo }}
                         <li class="shrink-0">
                             {{ glide :src="logo" height="48" }}
-                                <img class="{{ m_size }} w-auto opacity-60" src="{{ url }}" width="{{ width }}" height="{{ height }}" alt="">
+                                <img class="{{ m_size }} w-auto opacity-60" src="{{ url }}" width="{{ width }}" height="{{ height }}" alt="{{ logo:alt }}">
                             {{ /glide }}
                         </li>
                     {{ /if }}
@@ -68,9 +68,9 @@
                 <p>Vi samarbejder med</p>
                 <ul class="flex gap-3">
                     {{ site_settings.samarbejdspartner }}
-                    <li><a aria-label="Link til {{ url }}" target="_blank" href="{{ prefix + url }}">
+                    <li><a target="_blank" rel="noopener" href="{{ prefix + url }}">
                         {{ glide :src="logo" height="25" }}
-                            <img class="opacity-50 hover:opacity-100 transition-opacity duration-300" src="{{ url }}" width="{{ width }}" height="{{ height }}" alt="">
+                            <img class="opacity-50 hover:opacity-100 transition-opacity duration-300" src="{{ url }}" width="{{ width }}" height="{{ height }}" alt="{{ logo:alt }}">
                         {{ /glide }}
                     </a></li>
                     {{ /site_settings.samarbejdspartner }}
