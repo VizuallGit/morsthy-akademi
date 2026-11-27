@@ -1,0 +1,14 @@
+{{ squad_slug = slug }}
+{{ squad_title = title }}
+<li class="group relative flow-y">
+    <div class="aspect-square relative overflow-clip rounded-sm bg-light-glare">
+        {{ collection:players taxonomy:squad_type="{squad_slug}" limit="1" }}
+            {{ profile_images limit="1" }}
+                {{ partial:components/image :imagePath="url" :alt_text="alt ?? squad_title" w="400" h="400" class="w-full h-full object-contain object-bottom mix-blend-multiply absolute inset-0 transition-transform duration-300 ease-out group-hover:scale-105" }}
+            {{ /profile_images }}
+        {{ /collection:players }}
+        <div class="absolute bottom-100 left-100 z-20 font-heading font-bold text-xxs py-05em px-08em rounded-sm bg-primary text-light-glare">{{ entries_count }} spillere</div>
+    </div>
+    <h3 class="h5"><a class="link-parent" href="/truppen/{{ squad_slug }}">Årgang {{ squad_title }}</a></h3>
+    <p class="opacity-70 flow-space-05em">Se truppen →</p>
+</li>

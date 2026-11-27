@@ -1,0 +1,15 @@
+title: 'Elevhold – oversigt'
+fields:
+  -
+    handle: section_headline
+    field: common_fields.section_headline
+  -
+    handle: squads
+    field:
+      type: terms
+      taxonomies:
+        - squad_type
+      create: false
+      mode: select
+      display: Årgange
+      instructions: 'Vælg hvilke årgange der vises. Lad feltet stå tomt for at vise alle årgange automatisk.'

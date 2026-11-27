@@ -1,0 +1,15 @@
+{{# Oversigt over elevholdene (taksonomien squad_type) med link til /truppen/{årgang} #}}
+<section class="[ squad_overview ] wrapper space-y-gutter py-lg bg-light text-dark-shade" {{ visual_edit outline-inside="true" section-orderable="true" }}>
+    {{ partial:components/section_heading }}
+    <ul class="grid grid-cols-2 lg:grid-cols-4 gap-0.5 gap-y-gutter">
+        {{ if squads }}
+            {{ squads }}
+                {{ partial:page_sections/squad_overview_card }}
+            {{ /squads }}
+        {{ else }}
+            {{ taxonomy:squad_type sort="title" }}
+                {{ partial:page_sections/squad_overview_card }}
+            {{ /taxonomy:squad_type }}
+        {{ /if }}
+    </ul>
+</section>

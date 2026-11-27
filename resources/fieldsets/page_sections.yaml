@@ -46,6 +46,12 @@ fields:
               fields:
                 -
                   import: featured_players
+            squad_overview:
+              display: 'Elevhold – oversigt'
+              instructions: 'Kort med link til hver årgang (/truppen/…)'
+              fields:
+                -
+                  import: squad_overview
             featured_news:
               display: 'Featured news'
               image: screenshot-2026-04-12-at-23.05.35.png
