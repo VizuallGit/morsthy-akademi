@@ -13,7 +13,12 @@ Route::get('/truppen/{slug}', function ($slug) {
     }
     $term->collection(Collection::findByHandle('players'));
     $term->set('template', 'players/squad_type/show');
-    return $term->toResponse(request());
+
+    // Bevidst ikke $term->toResponse(): Statamic sammenligner dér kollektionen løst (==) med friske kopier fra
+    // taxonomy()->collections(), og kopierne kan afvige på den lazy-indlæste struktur → falsk 404 efter et rent
+    // stache-build. Vi ved, at Spillere bruger squad_type, så vi går direkte til DataResponse.
+    return (new \Statamic\Http\Responses\DataResponse($term->in(\Statamic\Facades\Site::current()->handle())))
+        ->toResponse(request());
 });
 
 // Omdirigeringer fra det gamle One.com-site (se config/old_site.php)
